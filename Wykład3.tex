@@ -8,14 +8,16 @@ Przykład dla dwóch szczelin:
 \[
 A(\vec{r}, t) = A_1(\vec{r}, t) + A_2(\vec{r}, t)
 \]
+gdzie $A_1(\vec{r}, t)$ i $A_2(\vec{r}, t)$ są amplitudami fal przechodzących przez każdą ze szczelin.
 
 Natężenie światła wyraża się wzorem:
 \[
 I(\vec{r}, t) = |A(\vec{r}, t)|^2
 \]
+co oznacza, że natężenie światła w danym punkcie jest proporcjonalne do kwadratu amplitudy fali w tym punkcie.
 
 \subsection{Elektron jako fala}
-Elektron również może być zapisany jako fala:
+Elektron również może być opisany jako fala:
 \[
 \Psi(x,y,z,t) \sim A(\vec{r}, t)
 \]
@@ -28,12 +30,13 @@ Obowiązuje zasada superpozycji (tak jak dla światła):
 \[
 \Psi = \Psi_A + \Psi_B \quad P \sim |\Psi_A + \Psi_B|^2 \neq |\Psi_A|^2 + |\Psi_B|^2
 \]
+co oznacza, że prawdopodobieństwo znalezienia elektronu w danym miejscu jest zależne od interferencji fal $\Psi_A$ i $\Psi_B$.
 
 \subsection{Interpretacja fali elektronowej}
 Mamy jeden elektron, tzn. mamy jeden sygnał, że w danym czasie go zaobserwujemy.
 Prawdopodobieństwo, że w całej przestrzeni znajdziemy elektron jest równe 1.
 \[
-\int |\Psi(\vec{r}, t)|^2 dr = 1 = \int \Psi \Psi^* d\vec{r}
+\int |\Psi(\vec{r}, t)|^2 d\vec{r} = 1 = \int \Psi \Psi^* d\vec{r}
 \]
 Wyrażenie może być ciągłe (np. dla fali) lub dyskretne.
 Szukamy znormalizowanej funkcji $\Psi$, tzn. $\Psi$ dzielimy/mnożymy, aby uzyskać 1.
@@ -52,7 +55,7 @@ To definiuje interferencję.
 E = h\nu, \quad E = \hbar \omega
 \]
 \[
-p = \frac{h}{\nu}, \quad p = \hbar k, \quad k = \frac{2\pi}{\lambda}
+p = \frac{h}{\lambda}, \quad p = \hbar k, \quad k = \frac{2\pi}{\lambda}
 \]
 Gdzie:
 \begin{itemize}
@@ -180,12 +183,12 @@ Funkcja falowa w czasie:
 \end{align*}
 
 \[
-|\Psi(x,t)|^2 = \pi^{-\frac{1}{2}}\left[\frac{\frac{\Delta p x}{\hbar}}{\left[1+i\frac{(\Delta p_x)^4 t^2}{m^2\hbar^2}\right]^{\frac{1}{2}}}\right] \exp\left[\frac{-\left(\frac{\Delta p_x}{\hbar}\right)^2(x-Vgt)^2}{1+\frac{(\Delta p_x)^4 t^4}{m^2\hbar^2}}\right]
+|\Psi(x,t)|^2 = \pi^{-\frac{1}{2}}\left[\frac{\frac{\Delta p x}{\hbar}}{\left[1+i\frac{(\Delta p_x)^4 t^2}{m^2\hbar^2}\right]^{\frac{1}{2}}}\right] \exp\left[\frac{-\left(\frac{\Delta p_x}{\hbar}\right)^2(x-V_gt)^2}{1+\frac{(\Delta p_x)^4 t^4}{m^2\hbar^2}}\right]
 \]
 
 Prędkość grupowa:
 \[
-Vg = \frac{p_0}{m}
+V_g = \frac{p_0}{m}
 \]
 Rozważamy szczególny przypadek.
 \[
