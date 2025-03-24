@@ -1,0 +1,295 @@
+\section{Stany kwantowe}
+
+\subsection{Właściwości światła}
+Czarne ciało, gdy jest zimne, pochłania wszystkie barwy światła, ale gdy jest bardzo podgrzane, to świeci na biało.
+
+Światło jest systemem \textbf{anomnym}.
+
+\subsection{Światło jako fala}
+\[
+A(\vec{r}, t) = A_1(\vec{r}, t) + A_2(\vec{r}, t)
+\]
+
+Natężenie światła wyraża się wzorem:
+\[
+I(\vec{r}, t) = |A(\vec{r}, t)|^2
+\]
+
+\subsection{Elektron jako fala}
+Elektron również może być zapisany jako fala:
+\[
+\Psi(x,y,z,t) \sim A(\vec{r}, t)
+\]
+gdzie $A(\vec{r},t)$ jest amplitudą fali elektronowej.
+
+\subsection{Interpretacja funkcji falowej}
+\[
+|\Psi(x,y,z,t)|^2
+\]
+jest \textbf{prawdopodobieństwem} znalezienia cząstki w danym obszarze przestrzeni w danym czasie.
+
+Dodatkowo:
+- $D$ - bok
+- $\lambda$ - puls częsta
+- $\lambda$ - złota zanieczyszczona
+
+\subsection{Zasada superpozycji}
+Obowiązuje zasada superpozycji (tak jak dla światła):
+
+\[
+\Psi = \Psi_A + \Psi_B
+\]
+
+ale:
+\[
+|\Psi_A + \Psi_B|^2 \neq |\Psi_A|^2 + |\Psi_B|^2
+\]
+
+\subsection{Interpretacja fali elektronowej}
+Mamy jeden elektron, tzn. mamy jeden sygnał, więc w danym obszarze go zaobserwujemy.
+
+Przyjmujemy, że w całej przestrzeni znalezienie elektronu jest równe 1, ponieważ mamy dokładnie jeden elektron:
+
+\[
+\int |\Psi(\vec{r}, t)|^2 dV = 1
+\]
+
+Szukamy znormowanej zadanej funkcji $\Psi$, tzn. dzielimy każdą funkcję przez jej normę, aby uzyskać 1.
+
+\subsection{Zasada superpozycji w mechanice kwantowej}
+\[
+\Psi = c_1 \Psi_1 + c_2 \Psi_2
+\]
+
+\[
+\Psi_1 = |\Psi_1| e^{i \delta_1}
+\]
+
+\[
+\Psi_2 = |\Psi_2| e^{i \delta_2}
+\]
+
+\[
+|\Psi|^2 = c_1^2 |\Psi_1|^2 + c_2^2 |\Psi_2|^2 + 2 \Re (c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\delta_1 - \delta_2)})
+\]
+
+To definiuje interferencję.
+
+\subsection{Fala de Broglie'a}
+\[
+E = h\nu, \quad E = \hbar \omega
+\]
+\[
+p = \frac{h}{\lambda}, \quad p = \hbar k
+\]
+
+Gdzie:
+- $E$ to energia,
+- $\nu$ to częstotliwość,
+- $\lambda$ to długość fali,
+- $p$ to pęd cząstki.
+
+\subsection{Fala płaska}
+Równanie fali płaskiej:
+\[
+\Psi(x,y,z,t) = A \exp \left( i \left( kx - \omega t \right) \right)
+\]
+Można również zapisać jako:
+\[
+\Psi = A \exp \left( \frac{i}{\hbar} (p x - E t) \right)
+\]
+
+\subsection{Najprostszy obiekt fali}
+- Stojąca fala może się zdarzyć, że nie będzie płaska.
+- Stojąca jednowymiarowa fala jest płaska.
+- Warunek brzegowy przestrzeni może być dobrany na nasz typ układu.
+
+\subsection{Opis 3D}
+Dla trzech wymiarów zapisujemy:
+\[
+\Psi(\vec{r}, t) = A \exp \left( \frac{i}{\hbar} (\vec{p} \cdot \vec{r} - E t) \right)
+\]
+
+Pęd jest opisany jako:
+\[
+p^2 = k^2
+\]
+
+\subsection{Operator pędu i energii}
+Operator pędu w kierunku $x$:
+\[
+\hat{p}_x = -i\hbar \frac{\partial}{\partial x}
+\]
+
+Operator energii:
+\[
+i\hbar \frac{\partial}{\partial t} \Psi = E \Psi
+\]
+
+Operator pędu w trzech wymiarach:
+\[
+\hat{\vec{p}} = -i\hbar \nabla
+\]
+
+\subsection{Pakiety falowe}
+Zapiszmy jednowymiarową falę cząstki:
+
+\[
+\Psi(x,t) = (2\pi\hbar)^{-1/2} \int \phi(p_x) e^{\frac{i}{\hbar} (p_x x - E t)} dp_x
+\]
+
+Jest to \textbf{fala płaska}.
+
+\subsubsection{Transformacja Fouriera}
+Funkcję falową w przestrzeni $p_x$ możemy zapisać jako:
+
+\[
+\phi(p_x) = (2\pi\hbar)^{-1/2} \int e^{-\frac{i}{\hbar} p_x x} \Psi(x) dx
+\]
+
+Jest to transformata Fouriera.
+
+\subsubsection{Interpretacja}
+Funkcja $\phi(p_x)$ opisuje rozkład prawdopodobieństwa w przestrzeni pędu.
+
+\[
+\int dp_x |\phi(p_x)|^2 = 1
+\]
+
+co oznacza, że prawdopodobieństwo znalezienia danej wartości $p_x$ jest znormalizowane.
+
+\subsubsection{Energia fali}
+Energia kinetyczna:
+
+\[
+E = \frac{p_x^2}{2m}
+\]
+
+\subsubsection{Własności pakietów falowych}
+- Fala po rozmyciu, w którym kontrolujemy szerokość, to \textbf{superpozycja różnych częstości}.
+- Determinuje interferencję oraz precyzję pomiaru.
+
+\subsection{Pakiet Gaussowski}
+Funkcja $\phi(p_x)$ dla pakietu Gaussowskiego ma postać:
+
+\[
+\phi(p_x) = C \exp \left( -\frac{(p_x - p_0)^2}{2 (\Delta p_x)^2} \right)
+\]
+
+gdzie $\Delta p_x$ oznacza niepewność pędu.
+
+\subsubsection{Normalizacja}
+\[
+\int |\phi(p_x)|^2 dp_x = 1
+\]
+
+Współczynnik normalizacyjny:
+\[
+C = \frac{1}{(2\pi\hbar)^{1/4} (\Delta p_x)^{1/2}}
+\]
+
+\subsubsection{Pakiet w przestrzeni rzeczywistej}
+\[
+\Psi(x) = \left( \frac{1}{\pi (\Delta x)^2} \right)^{1/4} e^{-\frac{x^2}{2 (\Delta x)^2}}
+\]
+
+Związek nieoznaczoności Heisenberga:
+
+\[
+\Delta x \Delta p_x \geq \frac{\hbar}{2}
+\]
+
+\subsubsection{Interpretacja}
+- Jeśli pakiet jest dobrze zlokalizowany (krótki) w przestrzeni, to jest źle zlokalizowany w przestrzeni pędu.
+- Dla podstawowego stanu nie uwzględniamy elektronów.
+
+\subsection{Ewolucja w czasie}
+
+Energia wyrażona przez pęd:
+\[
+E = \frac{p_x^2}{2m}
+\]
+
+Funkcja falowa w czasie:
+\[
+\Psi(x,t) = (2\pi\hbar)^{-1/4} e^{i p_0 x / \hbar} e^{-i E t / \hbar}
+\]
+
+Niepewności pędu i położenia:
+\[
+\Delta x \Delta p_x = \frac{\hbar}{2}
+\]
+
+Szczególny przypadek:
+\[
+\Delta X \cdot C = \frac{\hbar}{2} p_x
+\]
+
+Niepewność Heisenberga:
+\[
+\Delta x \Delta p \geq \hbar
+\]
+
+To jest grube przybliżenie, ponieważ rzeczywistość wymaga bardziej dokładnych obliczeń.
+
+\subsection{Niepewność i interferencja}
+
+Jeśli suponować interferencję, to będzie wymiarowana z elektronem i obiektem.
+
+Niepewności:
+\[
+\Delta y \Delta p_y \geq \hbar
+\]
+\[
+\Delta x \Delta p_x \geq \hbar
+\]
+
+\subsubsection{Para czas-energia}
+Transformata Fouriera:
+\[
+\Psi(t) = \frac{1}{\sqrt{2\pi}} \int g(\omega) e^{-i\omega t} d\omega
+\]
+
+Związek nieoznaczoności:
+\[
+\Delta t \Delta E \geq \hbar
+\]
+
+Zależność energii od częstotliwości:
+\[
+E = \hbar \omega
+\]
+
+Graficzna ilustracja nieoznaczoności czasu i energii pokazuje, że krótkie impulsy prowadzą do szerokiego rozkładu częstotliwości.
+
+\subsection{Równanie Schrödingera}
+
+\subsubsection{Motywacja}
+Chcemy znaleźć równanie, które będzie opisywało ewolucję fali.
+
+Własności funkcji falowej:
+\begin{itemize}
+    \item Jeśli $\Psi_1$ i $\Psi_2$ są rozwiązaniami, to kombinacja liniowa $c_1 \Psi_1 + c_2 \Psi_2$ również jest rozwiązaniem.
+    \item $\Psi(x,t)$ jest funkcją zespoloną.
+\end{itemize}
+
+\subsubsection{Fala płaska}
+\[
+\Psi(x,t) = A e^{i(px - Et)/\hbar}
+\]
+
+Podstawiając zależności:
+\[
+\hat{p} = -i\hbar \frac{\partial}{\partial x}, \quad \hat{E} = i\hbar \frac{\partial}{\partial t}
+\]
+
+Dla swobodnej cząstki:
+\[
+i\hbar \frac{\partial}{\partial t} \Psi(x,t) = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \Psi(x,t)
+\]
+
+\subsubsection{Równanie Schrödingera z potencjałem}
+W obecności potencjału $V(x,t)$ równanie przyjmuje postać:
+\[
+i\hbar \frac{\partial}{\partial t} \Psi(x,t) = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V(x,t) \right] \Psi(x,t)
+\]
