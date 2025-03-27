@@ -30,7 +30,7 @@ Co zobaczymy na ekranie? Na ekranie zobaczymy coś niespodziewanego - będzie to
 
 Zastanówmy się, w jaki sposób można opisać intensywności światła ukazujące się na ekranie.
 
-Zacznijmy od amplitudy fali (amplitudy światła) - jest to wektor zależny od położenia w przestrzeni oraz czasu:
+Zacznijmy od amplitudy fali (amplitudy światła) - jest to wektor zależny od położenia w~przestrzeni oraz czasu:
 \begin{equation*}
     A(\bar{r}, t)
 \end{equation*}
@@ -120,3 +120,294 @@ Rozwiązując dla $x$ otrzymujemy:
 \end{equation*}
 W ten sposób możemy wytłumaczyć obraz interferencyjny - pojawiają się punkty o maksymalnej intensywności
 rozłożone wzdłuż osi $x$, a odległość między kolejnymi punktami wynosi $\frac{\lambda D}{d}$.
+
+\subsection{Ciało czarne}
+
+\textbf{Ciało czarne}, gdy jest zimne, pochłania wszystkie barwy (światło), ale gdy jest bardzo podgrzane, to świeci na biało.
+Słońce jest ciałem czarnym.
+
+\subsection{Światło jako fala}
+Przykład dla dwóch szczelin:
+\[
+A(\vec{r}, t) = A_1(\vec{r}, t) + A_2(\vec{r}, t)
+\]
+gdzie $A_1(\vec{r}, t)$ i $A_2(\vec{r}, t)$ są amplitudami fal przechodzących przez każdą ze szczelin.
+
+Natężenie światła wyraża się wzorem:
+\[
+I(\vec{r}, t) = |A(\vec{r}, t)|^2
+\]
+co oznacza, że natężenie światła w danym punkcie jest proporcjonalne do kwadratu amplitudy fali w tym punkcie.
+
+\subsection{Elektron jako fala}
+W mechanice kwantowej elektron $e^-$ jest traktowany jako fala, co jest formalnie określone poprzez funkcję falową. 
+
+Funkcja falowa $\Psi(x,y,z,t)$ opisuje stan elektronu w trójwymiarowej przestrzeni oraz w~czasie. Dla swobodnego elektronu można przyjąć:
+\[
+\Psi(x,y,z,t) \sim A(\vec{r}, t)
+\]
+gdzie $A(\vec{r},t)$ jest amplitudą fali elektronowej.
+
+Kwadrat modułu funkcji falowej $|\Psi(\Sigma, t)|^2$ jest \textbf{prawdopodobieństwem} (gęstością prawdopodobieństwa) znalezienia cząstki w danym obszarze przestrzeni w danym czasie.
+Przy czym: 0 - brak cząstki, 1 - jakaś cząstka została zarejestrowana. Można go traktować jako ,,intensywność'' fali elektronowej.
+
+Obowiązuje zasada superpozycji (tak jak dla światła).
+Zatem jeżeli mamy dwie funkcje falowe, $\Psi_A$ i $\Psi_B$, możemy je zsumować, otrzymując nową funkcję falową, będącą superpozycją tych funkcji.
+\[
+\Psi = \Psi_A + \Psi_B \quad P \sim |\Psi_A + \Psi_B|^2 \neq |\Psi_A|^2 + |\Psi_B|^2
+\]
+Prawdopodobieństwo znalezienia elektronu w danym miejscu jest proporcjonalne do kwadratu modułu sumy funkcji falowych,
+co oznacza, że prawdopodobieństwo znalezienia elektronu w danym miejscu jest zależne od interferencji fal $\Psi_A$ i $\Psi_B$.
+
+\subsection{Interpretacja fali elektronowej}
+Mamy jeden elektron, tzn. mamy jeden sygnał, że w danym czasie go zaobserwujemy.
+Całkowite prawdopodobieństwo, że w całej przestrzeni znajdziemy elektron musi być równe 1.
+Dlatego funkcja falowa musi być znormalizowana, zatem:
+\[
+\int |\Psi(\vec{r}, t)|^2 d\vec{r} = 1 = \int \Psi \Psi^* d\vec{r}
+\]
+Wyrażenie może być ciągłe (np. dla fali) lub dyskretne.
+Szukamy znormalizowanej funkcji $\Psi$, tzn. $\Psi$ dzielimy/mnożymy, aby uzyskać 1.
+
+Wróćmy do superpozycji dwóch funkcji falowych. Ogólna funkcja falowa może być liniową kombinacją dwóch funkcji falowych, gdzie $c_1$ i $c_2$ są współczynnikami.
+Każda funkcja falowa może być wyrażona w postaci zespolonej, z amplitudą $|\Psi_i|$ oraz fazą $\delta_i$.
+Stąd moduł kwadratu funkcji falowej $|\Psi|^2$ daje się rozwinąć do postaci:
+\begin{align*}
+\Psi &= c_1 \Psi_1 + c_2 \Psi_2\\
+\Psi_1 &= |\Psi_1| e^{i \delta_1}\\
+\Psi_2 &= |\Psi_2| e^{i \delta_2}\\
+|\Psi|^2 &= c_1^2 |\Psi_1|^2 + c_2^2 |\Psi_2|^2 + 2 \Re (c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\delta_1 - \delta_2)})
+\end{align*}
+Ten wzór uwzględnia zarówno intensywności poszczególnych fal, jak i interferencję między nimi. Człon odpowiedzialny za interferencję ma postać:
+\begin{equation*}
+    2 \Re \left[ c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\delta_1 - \delta_2)} \right]
+\end{equation*}
+
+\subsection{Fala de Broglie'a}
+\[
+E = h\nu, \quad E = \hbar \omega
+\]
+\[
+p = \frac{h}{\lambda}, \quad p = \hbar k, \quad k = \frac{2\pi}{\lambda}
+\]
+Gdzie:
+\begin{itemize}
+    \item $E$ to energia,
+    \item $\nu$ to częstotliwość,
+    \item $\lambda$ to długość fali,
+    \item $p$ to pęd cząstki,
+    \item $k$ jest wektorem, który opisuje kierunek i długość fali.
+\end{itemize}
+
+\subsection{Fala płaska}
+Równanie fali płaskiej:
+\[
+\Psi(x,y,z,t) = A \exp \left( i \left( kx - \omega t \right) \right)
+\]
+Można również zapisać jako:
+\[
+\Psi = A \exp \left( \frac{i}{\hbar} (p_x x - E(p_x) t) \right)
+\]
+\begin{itemize}
+    \item W zależności od położenia rzeczywista część to cosinus i to jest zwykła fala.
+    \item Najprostszy obiekt jaki możemy mieć.
+    \item Stojąca fala może się zdarzyć, że nie będzie płaska.
+    \item Stojąca jednowymiarowa fala jest płaska.
+    \item Kierunek przestrzeni może być dowolny, nie musi to być $x$.
+\end{itemize}
+
+Dla trzech wymiarów zapisujemy:
+\[
+\Psi(\vec{r}, t) = A \exp \left( \frac{i}{\hbar} (\vec{p} \cdot \vec{r} - E(p) t) \right)
+\]
+
+Pęd jest opisany jako:
+\[
+\vec{p} \equiv \hbar \vec{k}
+\]
+
+Dużym problemem jest całka po całej przestrzeni, bo jest nieskończona.
+
+$\partial_x$: $-i\hbar \frac{\partial}{\partial x} \Psi = p_x \Psi$,
+
+$\partial_t$: $i\hbar \frac{\partial}{\partial t} \Psi = E \Psi$
+
+Operator pędu:
+\[
+\vec{P}_0 = -i\hbar \vec{\nabla}
+\]
+
+\subsection{Pakiety falowe}
+Zamiast jednej fali zbiór fal (jesteśmy w jednym wymiarze):
+\[
+\Psi(x,t) = (2\pi\hbar)^{-1/2} \int_{-\infty}^{+\infty} \phi(p_x) e^{\frac{i}{\hbar} (p_x x - E(p_x) t)} dp_x
+\]
+Wyrażenie pod całką to \textbf{fala płaska}, a $\phi(p_x)$ to funkcja określająca pakiet falowy.
+
+Rozważmy $t = 0$, wtedy funkcję falową w przestrzeni położenia ma postać:
+\[
+\Psi(x,0) = (2\pi\hbar)^{-1/2} \int_{-\infty}^{+\infty} \phi(p_x) e^{\frac{i}{\hbar} p_x x} dp_x
+\]
+
+Funkcję falową w przestrzeni pędu możemy zapisać jako:
+\[
+\phi(p_x) = (2\pi\hbar)^{-1/2} \int e^{-\frac{i}{\hbar} p_x x} \Psi(x) dx
+\]
+Jest to transformata Fouriera.
+
+Niech $\Psi'(x) = (2\pi\hbar)^{-1/2} e^{\frac{i}{\hbar} p_x x}$, wtedy:
+\begin{align*}
+\phi(p_x) &= (2\pi\hbar)^{-1/2} \int e^\frac{-ip_x x}{\hbar} \cdot e^\frac{ip'_x x}{\hbar} dx \\
+&= (2\pi\hbar)^{-1/2} \int e^\frac{i(p'_x - p_x) x}{\hbar} dx \\
+&= \delta(p'_x - p_x)
+\end{align*}
+
+Fala na przykład po wrzuceniu kamienia do wody to superpozycja różnych częstości.
+
+\[
+\int |\delta(p'_x - p_x)|^2 dp_x = \delta(0)
+\]
+
+\subsection{Pakiet Gaussowski}
+Funkcja $\phi(p_x)$ dla pakietu Gaussowskiego ma postać:
+\[
+\phi(p_x) = C \exp \left( -\frac{(p_x - p_0)^2}{2 (\Delta p_x)^2} \right)
+\]
+
+gdzie $\Delta p_x$ oznacza szerokość pakietu, a $p_0$ to środek pakietu.
+
+\[
+\int |\phi(p_x)|^2 dp_x = 1 = |C|^2 \pi^{1/2} (\Delta p_x)
+\]
+Stąd:
+\[
+C = \pi^{-\frac{1}{4}} \frac{1}{\sqrt{\Delta p_x}}
+\]
+
+\[
+\int e^{-\alpha/\mu^2} e^{-\beta \mu^2} d\mu = \left(\frac{\pi}{\alpha}\right)^\frac{1/2} \exp{\frac{\beta^2}{4\alpha}}
+\]
+
+\begin{align*}
+\Psi(x) &= (2\pi\hbar)^{-1/2} \int e^{\frac{i}{\hbar} (p_x x - E(p_x) t)} \phi(p_x) dp_x \\
+&= \cdots \\
+&= \pi^{-1/4} \hbar^{-1/2} (\Delta p_x)^{-1/2} e^{\frac{ip_0 x}{\hbar} e^{-(\Delta p_x)^2 x^2}{2\hbar^2}}
+\end{align*}
+
+\[
+(\frac{(\Delta p_x)^2}{\hbar^2}) = \frac{1}{(\Delta x)^2} \quad \Delta x \Delta p_x = \hbar
+\]
+\begin{itemize}
+    \item Jeśli pakiet jest dobrze zlokalizowany (wąski) w przestrzeni, to jest źle zlokalizowany w przestrzeni pędu.
+    \item Jeśli jest nieskończenie szeroki to nie znajdziemy elektronu.
+\end{itemize}
+
+\subsection{Ewolucja w czasie}
+
+Energia wyrażona przez pęd:
+\[
+E = \frac{p_x^2}{2m}
+\]
+
+Funkcja falowa w czasie:
+\begin{align*}
+\Psi(x,t) &= \left(2\pi\hbar \right)^{-1/2} \int e^{i\frac{p_x x - E(p_x)t}{\hbar}} \phi(p_x) dp_x \\
+&= \pi^{-\frac{1}{4}}\left[\frac{\frac{\Delta p x}{\hbar}}{1+i\frac{(\Delta p_x)^2 t}{m\hbar}}\right] \exp\left[\frac{\frac{ip_0 x}{\hbar}-\left(\frac{\Delta p_x}{\hbar}\right)^2\frac{x^2}{2}-\frac{ip_0 t}{2x\hbar}}{1+i(\Delta p_x)^2 \frac{t}{m\hbar}}\right]
+\end{align*}
+
+\[
+|\Psi(x,t)|^2 = \pi^{-\frac{1}{2}}\left[\frac{\frac{\Delta p x}{\hbar}}{\left[1+i\frac{(\Delta p_x)^4 t^2}{m^2\hbar^2}\right]^{\frac{1}{2}}}\right] \exp\left[\frac{-\left(\frac{\Delta p_x}{\hbar}\right)^2(x-V_gt)^2}{1+\frac{(\Delta p_x)^4 t^4}{m^2\hbar^2}}\right]
+\]
+
+Prędkość grupowa:
+\[
+V_g = \frac{p_0}{m}
+\]
+Rozważamy szczególny przypadek.
+\[
+\Delta x (t) = \frac{\hbar}{\Delta p_x} \underbrace{\left[1 + \frac{(\Delta p_x)^4}{m^2\hbar^2}t^2\right]^{1/2}}_{B}
+\]
+Zawsze $B \geq 1$.
+\[
+\Delta x \Delta p = \hbar B
+\]
+
+Nierówność Heisenberga:
+\[
+\Delta x \Delta p \geq \hbar
+\]
+
+To jest grube przybliżenie, ponieważ rzeczywistość wymaga bardziej dokładnych obliczeń.
+
+Interpretacja $x$ to błąd wymiaru.
+\[
+\Delta y \Delta p_y \geq \hbar
+\]
+\[
+\Delta z \Delta p_z \geq \hbar
+\]
+
+\subsection{Para czas/energia}
+Transformata Fouriera:
+\[
+\begin{cases}
+\Psi(t) = \frac{1}{\sqrt{2\pi}} \int G(\omega) e^{-i\omega t} d\omega\\
+G(\omega) = \frac{1}{\sqrt{2\pi}} \int \Psi(t) e^{i\omega t} dt
+\end{cases}
+\]
+
+Stąd
+\[
+\Delta \omega \Delta t \geq 1
+\]
+
+Związek nieoznaczoności:
+\[
+\Delta E \Delta t \geq \hbar
+\]
+
+Zależność energii od częstotliwości:
+\[
+E = \hbar \omega
+\]
+
+\subsection{Równanie Schrödingera}
+
+\textbf{Motywacja}: chcemy znaleźć równanie, które będzie opisywało ewolucję fali.
+
+\[
+\begin{cases}
+    \Psi_1 \text{ -- rozwiązanie} \\
+    \Psi_2 \text{ -- rozwiązanie}
+\end{cases} \Rightarrow c_1 \Psi_1 + c_2 \Psi_2 \text{ -- rozwiązanie}
+\]
+Rozwiązanie równania Schrödingera jest liniowe. $\Psi$ musi posiadać pierwszą pochodną.
+
+Fala płaska:
+\[
+\Psi(x,t) = A e^{\frac{i(px x - Et)}{\hbar}}
+\]
+
+$\frac{\partial}{\partial x}$ $-i \hbar \frac{\partial}{\partial x} \Psi = p_x \Psi \xRightarrow{\frac{\partial}{\partial x}} \frac{\partial^2\Psi}{\partial x^2} = -\frac{p^2}{\hbar^2} \Psi = -\frac{2mE}{\hbar^2} \Psi$
+
+$\frac{\partial}{\partial t}$ $\frac{\partial\Psi}{\partial t} = \frac{-iE\Psi}{\hbar}$
+
+\[
+-i\hbar \frac{\partial}{\partial t} \Psi(x, t) = -\frac{-\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \Psi(x, t)
+\]
+
+Interpretacja:
+\[
+-i\hbar \frac{\partial}{\partial x} \sim p_x \Rightarrow \frac{-\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \sim E_{\text{kin}}
+\]
+
+Gdy dodamy potencjał $V(x,t)$:
+\[
+-i\hbar \frac{\partial}{\partial t} \Psi(x,t) = \left[ -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x,t) \right] \Psi(x,t)
+\]
+Gdy $V(x,t) = 0$ to mamy rozwiązanie.
+W trzech wymiarach:
+\[
+i\hbar \frac{\partial}{\partial t} \Psi(\vec{r},t) = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r},t) \right] \Psi(\vec{r},t)
+\]
+Jest to równanie Schrödingera.
