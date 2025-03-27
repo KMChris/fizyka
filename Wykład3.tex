@@ -1,4 +1,4 @@
-\section{Wykład 3}
+\subsection{Ciało czarne}
 
 \textbf{Ciało czarne}, gdy jest zimne, pochłania wszystkie barwy (światło), ale gdy jest bardzo podgrzane, to świeci na biało.
 Słońce jest ciałem czarnym.
@@ -17,38 +17,48 @@ I(\vec{r}, t) = |A(\vec{r}, t)|^2
 co oznacza, że natężenie światła w danym punkcie jest proporcjonalne do kwadratu amplitudy fali w tym punkcie.
 
 \subsection{Elektron jako fala}
-Elektron również może być opisany jako fala:
+W mechanice kwantowej elektron $e^-$ jest traktowany jako fala, co jest formalnie określone poprzez funkcję falową. 
+
+Funkcja falowa $\Psi(x,y,z,t)$ opisuje stan elektronu w trójwymiarowej przestrzeni oraz w czasie. Dla swobodnego elektronu można przyjąć:
 \[
 \Psi(x,y,z,t) \sim A(\vec{r}, t)
 \]
 gdzie $A(\vec{r},t)$ jest amplitudą fali elektronowej.
 
-$|\Psi(\Sigma, t)|^2$ jest \textbf{prawdopodobieństwem} znalezienia cząstki w danym obszarze przestrzeni w danym czasie.
-Przy czym: 0 - brak cząstki, 1 - jakaś cząstka została zarejestrowana.
+$|\Psi(\Sigma, t)|^2$ jest \textbf{prawdopodobieństwem} (gęstością prawdopodobieństwa) znalezienia cząstki w danym obszarze przestrzeni w danym czasie.
+Przy czym: 0 - brak cząstki, 1 - jakaś cząstka została zarejestrowana. Można go traktować jako ,,intensywność'' fali elektronowej.
 
-Obowiązuje zasada superpozycji (tak jak dla światła):
+Obowiązuje zasada superpozycji (tak jak dla światła).
+Zatem jeżeli mamy dwie funkcje falowe, $\Psi_A$ i $\Psi_B$, możemy je zsumować, otrzymując nową funkcję falową, będącą superpozycją tych funkcji.
 \[
 \Psi = \Psi_A + \Psi_B \quad P \sim |\Psi_A + \Psi_B|^2 \neq |\Psi_A|^2 + |\Psi_B|^2
 \]
+Prawdopodobieństwo znalezienia elektronu w danym miejscu jest proporcjonalne do kwadratu modułu sumy funkcji falowych,
 co oznacza, że prawdopodobieństwo znalezienia elektronu w danym miejscu jest zależne od interferencji fal $\Psi_A$ i $\Psi_B$.
 
 \subsection{Interpretacja fali elektronowej}
 Mamy jeden elektron, tzn. mamy jeden sygnał, że w danym czasie go zaobserwujemy.
-Prawdopodobieństwo, że w całej przestrzeni znajdziemy elektron jest równe 1.
+Całkowite prawdopodobieństwo, że w całej przestrzeni znajdziemy elektron musi być równe 1.
+Dlatego funkcja falowa musi być znormalizowana, zatem:
 \[
 \int |\Psi(\vec{r}, t)|^2 d\vec{r} = 1 = \int \Psi \Psi^* d\vec{r}
 \]
 Wyrażenie może być ciągłe (np. dla fali) lub dyskretne.
 Szukamy znormalizowanej funkcji $\Psi$, tzn. $\Psi$ dzielimy/mnożymy, aby uzyskać 1.
 
-Zasada superpozycji:
+Wróćmy do superpozycji dwóch funkcji falowych. Ogólna funkcja falowa może być liniową kombinacją dwóch funkcji falowych, gdzie $c_1$ i $c_2$ są współczynnikami.
+Każda funkcja falowa może być wyrażona w postaci zespolonej, z amplitudą $|\Psi_i|$ oraz fazą $\delta_i$.
+Stąd moduł kwadratu funkcji falowej $|\Psi|^2$ daje się rozwinąć do postaci:
 \begin{align*}
 \Psi &= c_1 \Psi_1 + c_2 \Psi_2\\
 \Psi_1 &= |\Psi_1| e^{i \delta_1}\\
 \Psi_2 &= |\Psi_2| e^{i \delta_2}\\
 |\Psi|^2 &= c_1^2 |\Psi_1|^2 + c_2^2 |\Psi_2|^2 + 2 \Re (c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\delta_1 - \delta_2)})
 \end{align*}
-To definiuje interferencję.
+Ten wzór uwzględnia zarówno intensywności poszczególnych fal, jak i interferencję między nimi. Człon odpowiedzialny za interferencję ma postać:
+\begin{equation*}
+    2 \Re \left[ c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\delta_1 - \delta_2)} \right]
+\end{equation*}
 
 \subsection{Fala de Broglie'a}
 \[
