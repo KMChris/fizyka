@@ -1,17 +1,26 @@
 \section{Funkcja falowa}
 
 \subsection{Eksperyment z dwoma szczelinami}
-Eksperyment z dwoma szczelinami to doświadczenie, w którym światło przechodzi przez dwie szczeliny i na ekranie za nimi pojawia się interferencja.
+
+Wobrażmy sobie ścianę z dwoma wąskimi otworami oraz drugą równoległą ścianę za nią, która nie ma żadnych otworów.
+Teraz wyobraźmy sobie, że osoba strzela kulami we wszystkich kierunkach. Większość kul zatrzymuje się na pierwszej ścianie,
+lecz część kul przechodzi przez otwory i trafia na drugą ścianę.
+Jakiego obrazu spodziewamy się na drugiej ścianie? Spodziewamy się dwóch kropek, w miejscach odpowiadających otworom na pierwszej ścianie. To też obserwujemy.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{szczeliny}
-    \caption{Eksperyment z dwoma szczelinami. \textit{Źródło: Ranjbar, Vahid. (2023)}}
+    \caption{Uderzanie cząstkami przez szczeliny. \textit{Źródło: Ranjbar, Vahid. (2023)}}
     \label{fig:szczeliny}
 \end{figure}
 
 \subsection{Eksperyment ze światłem}
+W roku 1801 Thomas Young przeprowadził podobny eksperyment, ale przepuszczając przez szczeliny światło.
+Przez dwie szczeliny przechodziła tak zwana fala płaska, poruszająca się w kierunku ekranu.
+W sensie optyki klasycznej albo termodynamiki klasycznej, możemy powiedzieć, że przykładowo światło słoneczne jest taką falą płaską.
+Ta fala płaska przechodzi przez szczeliny, a następnie dalej jako fala płaska przemieszcza się w kierunku oddalonego ekranu.
 
+Co zobaczymy na ekranie? Na ekranie zobaczymy coś niespodziewanego - będzie to obraz interferencyjny.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{szczeliny-fale}
@@ -19,76 +28,149 @@ Eksperyment z dwoma szczelinami to doświadczenie, w którym światło przechodz
     \label{fig:szczeliny-fale}
 \end{figure}
 
-Amplituda światła: $A(\vec{r}, t)$
+Zastanówmy się, w jaki sposób można opisać intensywności światła ukazujące się na ekranie.
 
-Intensywność światła: $I = |A|^2$
+Zacznijmy od amplitudy fali (amplitudy światła) - jest to wektor zależny od położenia w przestrzeni oraz czasu:
+\begin{equation*}
+    A(\bar{r}, t)
+\end{equation*}
+Intensnywność światła $I$ można zapisać jako kwadrat amplitudy niezależnej od modułu:
+\begin{equation*}
+    I = |A|^2
+\end{equation*}
+Następnie pojawia się tak zwana zasada superpozycji. Aby obliczyć amplitudę całkowitą, musimy zsumować amplitudy fal pochodzących z obu szczelin (z obu źródeł):
+\begin{equation*}
+    \bar{A}(\bar{r}, t) = \bar{A}_1(\bar{r}, t) + \bar{A}_2(\bar{r}, t)
+\end{equation*}
+
+Intensywność całkowita będzie przybierać następującą postać:
 \begin{equation*}
     I = |A_1|^2 + |A_2|^2 + A_1 A_2^* + A_1^* A_2
 \end{equation*}
-Jest to skutek superpozycji.
+
+Człon $A_1 A_2^* + A_1^* A_2$ jest odpowiedzialny za interferencję. Obraz widoczny na ekranie jest spowodowany superpozycją fal pochodzących z obu szczelin.
 
 \subsection{Proste zagadnienie}
 
-Amplitudy w dwóch miejscach:
+Rozważmy najprostsze zagadnienie. W tym zagadnieniu podkreślamy, że odległość między szczelinami $d$ jest mała (dużo mniejsza niż odległość do ekranu $D$).
+Na ekranie zaznaczamy pewien punkt $x$ oraz zaznaczamy odległości punktu $x$ od szczelin. Odległość $x$ od szczeliny $1$ wynosi $r_1$, a odległość $x$
+od szczeliny $2$ wynosi $r_2$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{prosty-eksperyment}
+    \caption{Prosty eksperyment.}
+    \label{fig:prosty-eksperyment}
+\end{figure}
+
+Rozważamy proste fale monochromatyczne, to znaczy amplitudy dla nich mają następującą postać:
 \begin{equation*}
-    A_1 = a_1 \exp[i(\omega t - k r_1 + \delta_1)]
+    A_1 = a_1 \exp[i(\omega t - \bar{k} \bar{r}_1 + \delta_1)]
 \end{equation*}
 \begin{equation*}
-    A_2 = a_2 \exp[i(\omega t - k r_2 + \delta_2)]
+    A_2 = a_2 \exp[i(\omega t - \bar{k} \bar{r}_2 + \delta_2)]
 \end{equation*}
 
-Niech $a_1 = a_2 = a$ i $\delta_1 = \delta_2$. Dla dużych odległości ($D >> d$), fale są płaskie:
+Ponieważ mamy jedno źródło światła, możemy przyjąć, że $a_1 = a_2 = a$ i $\delta_1 = \delta_2 = 0$. 
+Symbol $k$ oznacza wektor falowy, który ma kierunek fali. Zapisujemy go jako:
+\begin{equation*}
+    k = \frac{2\pi}{\lambda}
+\end{equation*}
+Wersor kierunku fali zapisujemy jako:
+\begin{equation*}
+    \frac{\bar{k}}{|k|}
+\end{equation*}
+Przechodzimy do geometrii. Chcemy zrozumieć, jaka będzie intensywność w punkcie $x$ na ekranie.
+
+Wektory $\bar{k}_1$ i $\bar{k}_2$ będą równoległe do siebie, zatem możemy zapisać: $\bar{k}_1 = \bar{k}_2$.
+
+
+Wyznaczamy $r_1^2$ i $r_2^2$:
 \begin{equation*}
     r_1^2 = D^2 + \left(x + \frac{d}{2} \right)^2
 \end{equation*}
 \begin{equation*}
     r_2^2 = D^2 + \left(x - \frac{d}{2} \right)^2
 \end{equation*}
-
 Stąd:
-\begin{align*}
-    r_1^2 - r_2^2 &= 2xd\\
-    r_1 - r_2 &\approx \frac{xd}{D}
-\end{align*}
-
+\begin{equation*}
+    r_1^2 - r_2^2 = 2xd
+\end{equation*}
+Ponieważ $r_1$ i $r_2$ są bardzo duże, a różnica między nimi jest mała, możemy zapisać:
+\begin{equation*}
+    r_1 - r_2 \approx \frac{xd}{D}
+\end{equation*}
 Intensywność końcowa:
 \begin{align*}
-    I &= \left(a\cdot e^{i\omega t}\right)^2 \cdot \left[e^{-ikr_1}+e^{-ikr_2}\right] \\
+    I &= \left(a\cdot e^{i\omega t}\right)^2 \cdot \left[e^{-ikr_1}+e^{-ikr_2}\right]^2 \\
     &= 2 a^2 \left(\cos{\left(kr_1-kr_2\right)}+1\right) \\
     &= 2 a^2 \left(1 + \cos{\left(k(r_1-r_2)\right)}\right) \\
-    &= 2 a^2 \left(1 + \cos{\left(\frac{2\pi}{x}\cdot\frac{xd}{D}\right)}\right)
+    &= 2 a^2 \left(1 + \cos{\left(\frac{2\pi}{\lambda}\cdot\frac{xd}{D}\right)}\right) = I(x)
 \end{align*}
+
+Pytanie - dla jakich $x$ będzie maksymalna intensywność?
+Aby znaleźć maksimum, obliczamy pochodną $I(x)$ i przyrównujemy do zera - wartość w zerze będzie albo maksimum, albo minimum.
+Chcemy zatem, aby argument cosinusa przyjmował wartość $1$. Będzie to dla $2k\pi$, $k=0,1,2,3,\ldots$. Przyrównując:
+\begin{equation*}
+    \frac{2\pi}{\lambda} \frac{xd}{D} = 2k\pi
+\end{equation*}
+Rozwiązując dla $x$ otrzymujemy:
+\begin{equation*}
+    x_{max} = k \frac{\lambda D}{d}
+\end{equation*}
+W ten sposób możemy wytłumaczyć obraz interferencyjny - pojawiają się punkty o maksymalnej intensywności
+rozłożone wzdłuż osi $x$, a odległość między kolejnymi punktami wynosi $\frac{\lambda D}{d}$.
+
+
 
 \subsection{Funkcja falowa swobodnego elektronu}
 
-$e^- \sim \text{fala}$ (formalna definicja później)
+W mechanice kwantowej elektron $e^-$ jest traktowany jako fala, co jest formalnie określone poprzez funkcję falową. 
 
-Niech $\Psi(x,y,z,t) \sim A(\vec{z}, t)$.  
+Funkcja falowa $\Psi(x,y,z,t)$ opisuje stan elektronu w trójwymiarowej przestrzeni oraz w czasie. Dla swobodnego elektronu można w uproszczeniu przyjąć, że:
+\begin{equation*}
+    \Psi(x,y,z,t) \sim A(\bar{z}, t),
+\end{equation*}
 
-$|\Psi|^2 = P$ -- ,,Intensywność'' fali elektronowej, prawdopodobieństwo znalezienia elektronu w tej chwili w danym miejscu.
+co oznacza, że funkcja falowa jest zależna od kierunku $\bar{z}$ oraz czasu $t$.
 
-Dla dwóch funkcji falowych:
+Moduł kwadratu funkcji falowej, $|\Psi|^2$, reprezentuje gęstość prawdopodobieństwa znalezienia elektronu w danym punkcie przestrzeni w danej chwili.
+Można go traktować jako ,,intensywność'' fali elektronowej. Zapisujemy: 
+\begin{equation*}
+    |\Psi|^2 = P
+\end{equation*}
+
+Jeżeli mamy dwie funkcje falowe, $\Psi_A$ i $\Psi_B$, możemy je zsumować, otrzymując nową funkcję falową, będącą superpozycją tych funkcji:
 \begin{equation*}
     \Psi = \Psi_A + \Psi_B
 \end{equation*}
+
+Prawdopodobieństwo znalezienia elektronu w danym miejscu jest proporcjonalne do kwadratu modułu nowej funkcji falowej:
 \begin{equation*}
     P \sim |\Psi_A + \Psi_B|^2
 \end{equation*}
 
-Prawdopodobieństwo znalezienia elektronu w danej przestrzeni $= 1$. Zatem
+Całkowite prawdopodobieństwo znalezienia elektronu w przestrzeni musi być równe 1.
+Dlatego funkcja falowa musi być znormalizowana, co oznacza, że jest całkowalna kwadratowo, zatem:
 \begin{equation*}
-    \int |\Psi(z,t)|^2 dz = 1.
+    \int |\Psi(\bar{z},t)|^2 d\bar{z} = 1.
 \end{equation*}
 
-Funkcja falowa znormalizowana do jedynki. Funkcja falowa jest całkowalna kwadratowo.
-
-Superpozycja:
+Wróćmy do superpozycji dwóch funkcji falowych. Ogólna funkcja falowa może być liniową kombinacją dwóch funkcji falowych, gdzie $c_1$ i $c_2$ są współczynnikami.
+Każda funkcja falowa może być wyrażona w postaci zespolonej, z amplitudą $|\Psi_i|$ oraz fazą $\alpha_i$.
 \begin{align*}
     \Psi &= c_1 \Psi_1 + c_2 \Psi_2 \\
     \Psi_1 &= |\Psi_1| e^{i \alpha_1} \\
     \Psi_2 &= |\Psi_2| e^{i \alpha_2}
 \end{align*}
-Stąd:
+Stąd moduł kwadratu funkcji falowej $|\Psi|^2$ daje się rozwinąć do postaci:
 \begin{equation*}
-    |\Psi|^2 = |c_1 \Psi_1|^2 + |c_2 \Psi_2|^2 + 2 \Re \left[ c_1 c_2^* \Psi_1 \Psi_2 e^{i \alpha_1 - \alpha_2} \right]
+    |\Psi|^2 = |c_1 \Psi_1|^2 + |c_2 \Psi_2|^2 + 2 \Re \left[ c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\alpha_1 - \alpha_2)} \right]
 \end{equation*}
+
+Ten wzór uwzględnia zarówno intensywności poszczególnych fal, jak i interferencję między nimi. Człon odpowiedzialny za interferencję ma postać:
+\begin{equation*}
+    \Re \left[ c_1 c_2^* |\Psi_1| |\Psi_2| e^{i (\alpha_1 - \alpha_2)} \right]
+\end{equation*}
+
+
