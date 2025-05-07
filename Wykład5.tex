@@ -113,6 +113,7 @@ Analogicznie:
 
 Gdy $A=0$, fala biegnie w lewo, prąd jest ujemny, co odpowiada przepływowi w przeciwnym kierunku. \\
 
+\newpage
 \textbullet{$A = B$}
 
 \begin{equation*}
@@ -123,6 +124,13 @@ Wynikiem jest:
 \begin{equation*}
     x = \frac{\pm \frac{\pi}{2} + n \pi}{k}, n \in \mathbb{N} \implies \cos(kx) = 0
 \end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fala-stojaca}
+    \caption{Fala stojąca.}
+    \label{fig:fala-stojaca}
+\end{figure}
 
 Gdy $A=B$ otrzymujemy węzły równomiernie rozmieszczone na osi $x$ - mamy falę stojącą (nieruchomą)
 $\psi(x) \propto \cos(kx)$, gdzie prawdopodobieństwo jest nierównomiernie rozłożone i nie ma przepływu prądu. \\
@@ -147,6 +155,13 @@ Strumień będzie albo w jednym, albo w drugim kierunku. Zależnie czy większe 
 Potencjał schodkowy to jedno z najprostszych i najważniejszych zagadnień w mechanice kwantowej, ilustrujące zachowanie
 cząstki napotykającej nagłą zmianę potencjału. Model ten jest podstawą do zrozumienia zjawisk takich jak odbicie i
 przejście cząstek na granicy różnych obszarów potencjału.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{potencjal-schodkowy}
+    \caption{Potencjał schodkowy.}
+    \label{fig:potencjal-schodkowy}
+\end{figure}
 
 
 
@@ -243,8 +258,13 @@ Otrzymujemy:
 \end{cases}
 \end{equation*}
 
-{{ UZUPEŁNIĆ OBRAZEK }}
-{{ KOMENTARZ DO OBRAZKA }} Gdy wysokość schodka dąży do nieskończoności, to ogon jest jak "L".
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{fala-schodka}
+    \label{fig:fala-schodka}
+\end{figure}
+
+Gdy wysokość schodka dąży do nieskończoności, to ogon jest jak "L".
 
 Współczynnik odbicia:
 \begin{equation*}
@@ -329,6 +349,14 @@ Współczynnik odbicia $R$ oraz współczynnik przejścia $T$ dają w sumie 1:
 
 
 \subsection{Bariera potencjału}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{bariera-potencjalu}
+    \caption{Bariera potencjału.}
+    \label{fig:bariera-potencjalu}
+\end{figure}
+
 \begin{equation*}
     V(x) = 
     \begin{cases}
@@ -367,6 +395,7 @@ Definiujemy współczynnik przejścia $T$ oraz współczynnik odbicia $R$ analog
     R = \frac{\left| B \right|^2}{\left| A \right|^2}
 \end{equation*}
 
+\newpage
 Rozwiązujemy zgodnie z warunkami ciągłości:
 
 
@@ -407,7 +436,14 @@ Rozwiązujemy zgodnie z warunkami ciągłości:
 Otrzymanych równań nie da się rozwiązać analitycznie, a więc rozwiązuje się je numerycznie. W mechanice kwantowej rozwiązania
 numeryczne są bardzo (n razy) trudne. \\
 
-{{ UZUPEŁNIĆ WYKRES }}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{czastka-przechodzi-przez-bariere}
+    \caption{Cząstka przechodzi przez barierę.}
+    \label{fig:czastka-przechodzi-przez-bariere}
+\end{figure}
+
+
 Na wykresie widzimy, że cząstka przechodzi przez barierę potencjału. Następuje tzw. "tunelowanie" cząstki przez barierę potencjału.
 Tunelowanie kwantowe oznacza, że cząstka ma niezerowe prawdopodobieństwo znalezienia się po drugiej stronie bariery,
 mimo że klasycznie byłoby to niemożliwe.\\
@@ -439,13 +475,24 @@ Dla tego przypadku otrzumujemy następujące wzory na współczynniki odbicia $R
 
 Warto zauważyć, że współczynniki te wykazują oscylacje w funkcji szerokości bariery, co odpowiada zjawisku rezonansowego przejścia fali. \\
 
-{{ UZUPEŁNIĆ WYKRES }}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{wsp-przejscia}
+    \label{fig:wsp-przejscia}
+\end{figure}
 
 Na wykresie widzimy, że mimo że mamy wysoką energię, mogą występować lokalne minima. \\
 
 
 \subsubsection{Przykład: mikroskop tunelowy}
 Zastosowanie tunelowania cząstek do badania struktury w mikroskopie tunelowym (skaningowym). (1979r.) \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{mikroskop-tunelowy}
+    \caption{Mikroskop tunelowy.}
+    \label{fig:mikroskop-tunelowy}
+\end{figure}
 
 Mikroskop tunelowy wykorzystuje zjawisko tunelowania elektronów między ostrzem a badanym materiałem,
 pozwalając na obrazowanie powierzchni z rozdzielczością atomową.
@@ -462,6 +509,13 @@ które mogą zakłócić pomiar prądu tunelowego. Gdy tramwaj przejeżdza przez
 \subsection{Nieskończona kwadratowa studnia potencjału}
 
 Nieskończona studnia potencjału to model idealizowany, w którym cząstka jest całkowicie uwięziona między nieprzekraczalnymi barierami potencjału.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{nieskonczona-studnia-kwadratowa}
+    \caption{Nieskończona studnia kwadratowa.}
+    \label{fig:nieskonczona-studnia-kwadratowa}
+\end{figure}
 
 \begin{equation*}
     V(x) = 
@@ -576,10 +630,177 @@ Gdzie $k_n$ jest związane z $E_n$ następująco:
 Poziomy energetyczne zależą od szerokości studni $L=2a$ oraz masy cząstki, a minimalna energia jest większa niż zero, co jest efektem kwantowym.
 Wartości $k_n$ są ściśle powiązane z poziomami energii i określają kształt funkcji falowej w studni. \\
 
-
-
-{{ UZUPEŁNIĆ WYKRES }}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{studnia-kwadratowa-rozwiazanie}
+    \caption{Poziomy energetyczne w nieskończonej studni potencjału.}
+    \label{fig:studnia-kwadratowa-rozwiazanie}
+\end{figure}
 
 Wykres pokazuje dyskretne funkcje falowe cząstki w nieskończonej studni potencjału.
 Każda krzywa odpowiada stanowi o określonej energii $E_n$. Liczba węzłów rośnie z numerem stanu,
 a funkcje falowe są ograniczone do obszaru studni, zerując się na jej brzegach.
+
+
+\subsection{Studnia kwantowa}
+
+Studnia kwantowa o skończonej głębokości jest bardziej realistycznym modelem niż
+studnia nieskończona – pozwala na częściowe „wyciekanie” funkcji falowej poza
+obszar studni, czyli tunelowanie.
+
+Wewnątrz studni potencjał jest stały i ujemny, a poza studnią równy zeru.
+Cząstka o energii mniejszej niż zero jest związana z obszarem studni,
+ale jej funkcja falowa nie zeruje się na brzegach, tylko zanika wykładniczo poza studnią.
+
+\begin{equation*}
+    V(x) = 
+    \begin{cases}
+        -V_0, & |x| < a \\
+        0, & |x| > a
+    \end{cases}
+\end{equation*}
+
+Mamy dwa przypadki - $E < 0$ oraz $E > 0$. \\
+Dla $E < 0$ otrzymujemy stany związane (bound states), natomiast dla $E > 0$ – stany
+rozproszone (scattering states).
+
+\textbullet{ $E < 0$}
+
+Pierwsze równanie dla $|x| < a$:
+
+\begin{equation*}
+    \frac{\partial^2}{\partial x^2} \psi(x) + \alpha^2 \psi(x) = 0
+\end{equation*}
+
+\begin{equation*}
+    \alpha = \left( \frac{2m}{\hbar^2}(V_0 + E) \right)^{1/2} = \left( \frac{2m}{\hbar^2}(V_0 = |E|) \right)^{1/2}
+\end{equation*}
+
+
+Drugie równanie dla $x > a$:
+
+\begin{equation*}
+    \frac{\partial^2}{\partial x^2} \psi(x) - \beta^2 \psi = 0
+\end{equation*}
+
+\begin{equation*}
+    \beta = \left( \frac{2m}{\hbar^2} E \right)^{1/2}
+\end{equation*}
+
+Rozważmy teraz dla $x > 0$:
+
+\begin{equation*}
+    \begin{cases}
+        \psi_{\text{wewnętrzna}}(x) = A \cos(\alpha x), & 0 < x < a \\
+        \psi_{\text{zewnętrzna}}(x) = C e^{-\beta x}, & x > a
+    \end{cases}
+\end{equation*}
+
+
+\begin{equation*}
+    \psi \in C'(-\infty, \infty) \implies
+    \begin{cases}
+        A \cos(\alpha a) = C e^{-\beta a} \\
+        - \alpha A \sin(\alpha a) = - \beta C e^{-\beta a}
+    \end{cases}
+    \implies
+    \alpha \tan(\alpha a) = \beta
+\end{equation*}
+
+
+Oraz
+
+\begin{equation*}
+    \begin{cases}
+        \psi_{\text{wewnętrzna}}(x) = B \sin(\alpha x), & 0 < x < a \\
+        \psi_{\text{zewnętrzna}}(x) = C e^{-\beta x}, & x > a
+    \end{cases}
+    \implies
+    \alpha \cot(\alpha a) = -\beta
+\end{equation*}
+
+
+To daje nam dwa równania:
+
+
+\[
+\begin{cases}
+    \xi = \alpha a \\
+    \eta = \beta a
+\end{cases}
+\implies
+\begin{cases}
+    \xi \tan(\xi) = \eta \quad (1) \\
+    \xi \cot(\xi) = -\eta \quad (2)
+\end{cases}
+\]
+
+Równania te można rozwiązać graficznie lub numerycznie – liczba stanów
+związanych zależy od głębokości i szerokości studni.
+
+
+Własności:
+\begin{itemize}
+    \item $\xi^2 \eta^2 = \gamma^2$
+    \item $\gamma = \sqrt{\frac{2mV_0 a^2}{\hbar^2}}$
+\end{itemize}
+
+Im większa głębokość lub szerokość studni, tym więcej stanów związanych może istnieć.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{studnia-rozw}
+    \caption{Wykres po lewej odpowiada równaniu (1), a po prawej (2).}
+    \label{fig:studnia-rozw}
+\end{figure}
+
+Węzły ukazują stany związane.
+
+\textbullet{ $E > 0$}
+
+Dla energii $E > 0$ rozwiązania opisują fale rozpraszane na studni – cząstka nie
+jest już związana, lecz może przechodzić przez obszar studni z pewnym prawdopodobieństwem.
+
+
+\begin{equation*}
+    \begin{cases}
+        \psi(x) =
+        \begin{cases}
+            A e^{ikx} + B e^{-ikx}, & x < -a \\
+            C e^{ikx}, & x > a \\
+            F e^{i\alpha x} + G e^{-i\alpha x}, & |x| < a
+        \end{cases}
+    \end{cases}
+\end{equation*}
+
+Gdzie:
+\begin{itemize}
+    \item $k = \left( \frac{2mE}{\hbar^2} \right)^{1/2}$
+    \item $\alpha = \left( \frac{2m(E + V_0)}{\hbar^2} \right)^{1/2}$
+\end{itemize}
+
+
+Z tych równań otrzymujemy współczynniki odbicia i przejścia:
+
+\begin{equation*}
+    R = \left( 1 + \frac{4 E (V_0 + E)}{V_0^2 \sin^2(\alpha L)} \right) ^{-1}
+\end{equation*}
+
+\begin{equation*}
+    T = \left( 1 + \frac{V_0^2 \sin^2(\alpha L)}{4 E (V_0 + E)} \right) ^{-1}
+\end{equation*}
+
+Współczynniki odbicia i przejścia określają prawdopodobieństwo odbicia i
+transmisji cząstki przez studnię – ich suma zawsze wynosi 1.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{studnia-rozw-2}
+    \caption{Rozwiązania przy różnych $gamma$. Po prawej widać rezonanse.}
+    \label{fig:studnia-rozw-2}
+\end{figure}
+
+Funkcje falowe opisują fale biegnące rozpraszane na studni, a współczynnik
+przejścia wykazuje rezonanse – energie, dla których prawdopodobieństwo
+przejścia przez studnię jest bliskie 1. Zjawisko to wynika z interferencji
+falowej i prowadzi do lokalnych maksimów transmisji.
