@@ -1,1 +1,214 @@
-\section{Równanie Schrödingera (własności)}
+\section{Równanie Schrödingera: Własności}
+
+\subsection{Zachowanie prawdopodobieństwa}
+
+W mechanice kwantowej funkcja falowa $\psi(\vec{r}, t)$ opisuje stan cząstki. Z równania Schrödingera
+
+$$
+i\hbar \frac{\partial}{\partial t} \psi(\vec{r}, t) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}, t) \right) \psi(\vec{r}, t),
+$$
+
+można wyprowadzić zasady zachowania prawdopodobieństwa. Zakładamy, że potencjał $V(\vec{r}, t)$ jest funkcją ciągłą lub ma skończone skoki (czyli skończoną wysokość skoków, nawet jeśli może być ich nieskończenie wiele). 
+
+Z definicji gęstości prawdopodobieństwa
+
+$$
+\rho(\vec{r}, t) = |\psi(\vec{r}, t)|^2,
+$$
+
+oraz warunku unormowania funkcji falowej
+
+$$
+\int_{\mathbb{R}^3} |\psi(\vec{r}, t)|^2 \, d\vec{r} = 1,
+$$
+
+wynika, że całkowite prawdopodobieństwo znalezienia cząstki w całej przestrzeni wynosi 1. Aby to było spełnione w każdym momencie czasu, pochodna całkowitego prawdopodobieństwa po czasie musi być równa zeru:
+
+$$
+\frac{d}{dt} \int_V |\psi(\vec{r}, t)|^2 \, d\vec{r} = 0.
+$$
+
+Powyższe równanie można przekształcić do postaci równania ciągłości. Najpierw zapisujemy pochodną jako
+
+$$
+\int_V \left( \psi^* \frac{\partial \psi}{\partial t} + \frac{\partial \psi^*}{\partial t} \psi \right) \, d\vec{r} = 0.
+$$
+
+Podstawiając wyrażenie z równania Schrödingera (i jego sprzężenia zespolonego)
+
+$$
+i\hbar \frac{\partial \psi}{\partial t} = \left( -\frac{\hbar^2}{2m} \nabla^2 + V \right) \psi, \quad
+-i\hbar \frac{\partial \psi^*}{\partial t} = \left( -\frac{\hbar^2}{2m} \nabla^2 + V \right) \psi^*,
+$$
+
+otrzymujemy
+\begin{align*}
+\int_V \left( \psi^* \frac{\partial \psi}{\partial t} + \frac{\partial \psi^*}{\partial t} \psi \right) \, d\vec{r}
+&= \frac{i\hbar}{2m} \int_V \left( \psi^* \nabla^2 \psi - \psi \nabla^2 \psi^* \right) \, d\vec{r} \\
+&= \frac{i\hbar}{2m} \int_V \vec{\nabla} \cdot \left( \psi^* \vec{\nabla} \psi - \psi \vec{\nabla} \psi^* \right) \, d\vec{r} \\
+&= - \int_V \vec{\nabla} \cdot \vec{j} d\vec{r}.
+\end{align*}
+
+Zgodnie z twierdzeniem Gaussa (znanym też jako twierdzenie Greena–Ostrogradskiego), możemy tę całkę objętościową zapisać jako całkę powierzchniową
+
+$$
+\int_V \vec{\nabla} \cdot \vec{j} \, d\vec{r} = \int_{\partial V} \vec{j} \cdot d\vec{S},
+$$
+
+gdzie
+
+$$
+\vec{j}(\vec{r}, t) = \frac{\hbar}{2mi} \left( \psi^* \vec{\nabla} \psi - \psi \vec{\nabla} \psi^* \right) = \Re \left\{ \psi^* \frac{\hbar}{im} \vec{\nabla} \psi \right\}
+$$
+
+jest gęstością prądu prawdopodobieństwa. Ostatecznie otrzymujemy równanie ciągłości
+
+$$
+\frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{j}(\vec{r}, t) = 0,
+$$
+
+co formalnie wyraża zasadę zachowania prawdopodobieństwa — analogiczną do równania zachowania masy w hydrodynamice.
+
+
+\subsection{Obserwable — wielkości obserwowalne}
+
+W mechanice kwantowej \textbf{obserwabla} (ang. observable) to fizyczna wielkość, którą można zmierzyć eksperymentalnie, np. położenie, pęd, energia czy spin. Każdej obserwabli odpowiada hermitowski operator $\hat{A}$ działający na funkcje falowe przestrzeni Hilberta. Wartość średnia obserwabli $\hat{A}$ w stanie opisanym funkcją falową $\psi(\vec{r}, t)$ dana jest przez wyrażenie:
+
+$$
+\langle \hat{A} \rangle = \int \psi^*(\vec{r}, t) \hat{A} \psi(\vec{r}, t) \, d\vec{r}.
+$$
+
+Operator $\hat{A}$ musi być hermitowski, aby wartości średnie $\langle \hat{A} \rangle$ były liczbami rzeczywistymi, zgodnie z wymaganiami eksperymentu:
+
+$$
+\langle \hat{A} \rangle \in \mathbb{R}.
+$$
+
+Dla hermitowskiego operatora $\hat{A}$ zachodzi również
+
+$$
+\langle \hat{A} \rangle = \int \psi^* (\hat{A} \psi) \, d\vec{r} = \int (\hat{A} \psi)^* \psi \, d\vec{r}.
+$$
+
+\paragraph{Przykłady obserwabli:}
+
+\begin{itemize}
+    \item Średnia wartość położenia:
+    $$
+    \langle \hat{\vec{r}} \rangle = \int \psi^*(\vec{r}, t) \vec{r} \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+
+    \item Średnia wartość funkcji $f(\vec{r}, t)$:
+    $$
+    \langle f(\vec{r}, t) \rangle = \int \psi^*(\vec{r}, t) f(\vec{r}, t) \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+
+    \item Średnia wartość pędu (w reprezentacji położeniowej, po transformacji Fouriera):
+    $$
+    \langle \vec{p} \rangle = \int \psi^*(\vec{r}, t) \left( -i\hbar \vec{\nabla} \right) \psi(\vec{r}, t) \, d\vec{r}.
+    $$
+\end{itemize}
+
+\subsubsection*{Przykład: Operator spinu $\hat{S}$}
+
+Rozważmy cząstkę o trzech możliwych stanach własnych spinu: $\ket{+}$, $\ket{0}$, $\ket{-}$, dla których zachodzi
+\begin{align*}
+\langle + | \hat{S} | + \rangle &= +1, \\
+\langle 0 | \hat{S} | 0 \rangle &= 0, \\
+\langle - | \hat{S} | - \rangle &= -1.
+\end{align*}
+
+Dla stanu ogólnego
+$$
+\ket{\psi} = C_+ \ket{+} + C_0 \ket{0} + C_- \ket{-},
+$$
+średnia wartość operatora spinu wynosi
+$$
+\langle \hat{S} \rangle = \langle \psi | \hat{S} | \psi \rangle = |C_+|^2 \cdot (+1) + |C_0|^2 \cdot 0 + |C_-|^2 \cdot (-1) = |C_+|^2 - |C_-|^2.
+$$
+
+Powyższy wynik pokazuje, że średnia wartość operatora zależy jedynie od składowych stanu własnego spinu o wartościach różniących się znakiem.
+
+\subsection{Twierdzenie Ehrenfesta}
+
+W mechanice klasycznej ruch cząstki opisywany jest przez równania Hamiltona
+
+$$
+\begin{cases}
+    \dfrac{d \vec{r}}{dt} = \dfrac{\vec{p}}{m}, \\
+    \dfrac{d \vec{p}}{dt} = -\vec{\nabla} V(\vec{r}),
+\end{cases}
+$$
+
+co prowadzi do analogicznych równań dla wartości średnich w mechanice kwantowej
+
+$$
+\begin{cases}
+    \dfrac{d \langle \vec{r} \rangle}{dt} = \dfrac{\langle \vec{p} \rangle}{m}, \\
+    \dfrac{d \langle \vec{p} \rangle}{dt} = -\langle \vec{\nabla} V(\vec{r}) \rangle.
+\end{cases}
+$$
+
+Dla porównania, druga zasada dynamiki Newtona ma postać:
+
+$$
+m \dfrac{d^2 \vec{r}}{dt^2} = -\vec{\nabla} V(\vec{r}) = \vec{F}.
+$$
+
+Wartość średnia wektora położenia $\vec{z}$ wyraża się jako
+
+$$
+\langle \vec{z} \rangle = 
+\begin{pmatrix}
+\langle x \rangle \\
+\langle y \rangle \\
+\langle z \rangle
+\end{pmatrix}.
+$$
+
+Rozpocznijmy analizę twierdzenia Ehrenfesta od wyznaczenia pochodnej czasowej wartości średniej położenia:
+\begin{align*}
+\frac{d}{dt} \langle x \rangle &= \frac{d}{dt} \int \psi^*(\vec{r},t) \, x \, \psi(\vec{r},t) \, d\vec{r} = \int \psi^* \, x \, \frac{\partial \psi}{\partial t} \, d\vec{r} + \int \frac{\partial \psi^*}{\partial t} \, x \, \psi \, d\vec{r} \\
+&\overset{\text{RS}}{=}\frac{1}{i\hbar} \left( \int \psi^* x \hat{H} \psi \, d\vec{r} - \int (\hat{H} \psi)^* x \psi \, d\vec{r} \right) \\
+&= \frac{1}{i\hbar} \left( \int \psi^* x \left( -\frac{\hbar^2}{2m} \nabla^2 \psi + V \psi \right) d\vec{r} - \int \left( -\frac{\hbar^2}{2m} \nabla^2 \psi^* + V \psi^* \right) x \psi \, d\vec{r} \right) \\
+&= \frac{i\hbar}{2m} \int \left[ \psi^* x \nabla^2 \psi - (\nabla^2 \psi^*) x \psi \right] d\vec{r} = *.
+\end{align*}
+
+Aby uprościć ten wyraz, skorzystamy z tożsamości Greena:
+$$
+\int_V \left[ u \nabla^2 v + (\vec{\nabla} u) \cdot (\vec{\nabla} v) \right] d\vec{r} = \int_S u (\vec{\nabla} v) \, d\vec{s},
+$$
+
+gdzie $u = u(x,y,z)$, $v = v(x,y,z)$ są funkcjami o odpowiednim zachowaniu na brzegu (zanikają do zera). Zatem
+\begin{align*}
+\int (\nabla^2 \psi^*) x \psi \, d\vec{r} &= \underbrace{\int_S x \psi (\vec{\nabla} \psi^*) \, d\vec{s}}_{=\,0} - \int (\vec{\nabla} \psi^*) \cdot \vec{\nabla}(x \psi) \, d\vec{r} \\
+&= - \int (\vec{\nabla} \psi^*) \cdot \vec{\nabla}(x \psi) \, d\vec{r} \\
+&= \underbrace{\int_S \psi^* \vec{\nabla}(x \psi) \, d\vec{s}}_{=\,0} + \int \psi^* \nabla^2 (x \psi) \, d\vec{r} \\
+&= \int \psi^* \nabla^2 (x \psi) \, d\vec{r}.
+\end{align*}
+
+Wracając do wyrażenia $*$, mamy
+\begin{align*}
+\frac{d}{dt} \langle x \rangle = * &= \frac{i\hbar}{2m} \int \psi^* \left( x \nabla^2 \psi - \nabla^2 (x \psi) \right) d\vec{r} \\
+&= -\frac{i\hbar}{m} \int \psi^* \frac{\partial \psi}{\partial x} \, d\vec{r}.
+\end{align*}
+
+Z definicji operatora pędu w kierunku $x$:
+
+$$
+\hat{p}_x = -i\hbar \frac{\partial}{\partial x},
+$$
+
+wynika, że
+
+$$
+\frac{d}{dt} \langle x \rangle = \frac{1}{m} \int \psi^* \left(-i\hbar \frac{\partial}{\partial x}\right) \psi \, d\vec{r} = \frac{1}{m} \langle \hat{p}_x \rangle.
+$$
+
+Analogicznie, pochodna wartości średniej pędu wyraża się przez
+
+$$
+\frac{d}{dt} \langle \hat{p}_x \rangle = - \left\langle \frac{\partial V}{\partial x} \right\rangle.
+$$
+
+Powyższe dwa równania stanowią treść twierdzenia Ehrenfesta i pokazują, że średnie wartości położenia i pędu w mechanice kwantowej zmieniają się zgodnie z klasycznymi równaniami ruchu. 
