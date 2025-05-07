@@ -3,89 +3,70 @@
 \subsection{Zachowanie prawdopodobieństwa}
 
 W mechanice kwantowej funkcja falowa $\psi(\vec{r}, t)$ opisuje stan cząstki. Z równania Schrödingera
-
 $$
 i\hbar \frac{\partial}{\partial t} \psi(\vec{r}, t) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}, t) \right) \psi(\vec{r}, t),
 $$
-
 można wyprowadzić zasady zachowania prawdopodobieństwa. Zakładamy, że potencjał $V(\vec{r}, t)$ jest funkcją ciągłą lub ma skończone skoki (czyli skończoną wysokość skoków, nawet jeśli może być ich nieskończenie wiele). 
 
 Z definicji gęstości prawdopodobieństwa
-
 $$
 \rho(\vec{r}, t) = |\psi(\vec{r}, t)|^2,
 $$
-
 oraz warunku unormowania funkcji falowej
-
 $$
 \int_{\mathbb{R}^3} |\psi(\vec{r}, t)|^2 \, d\vec{r} = 1,
 $$
-
 wynika, że całkowite prawdopodobieństwo znalezienia cząstki w całej przestrzeni wynosi 1. Aby to było spełnione w każdym momencie czasu, pochodna całkowitego prawdopodobieństwa po czasie musi być równa zeru:
-
 $$
 \frac{d}{dt} \int_V |\psi(\vec{r}, t)|^2 \, d\vec{r} = 0.
 $$
 
 Powyższe równanie można przekształcić do postaci równania ciągłości. Najpierw zapisujemy pochodną jako
-
 $$
 \int_V \left( \psi^* \frac{\partial \psi}{\partial t} + \frac{\partial \psi^*}{\partial t} \psi \right) \, d\vec{r} = 0.
 $$
 
 Podstawiając wyrażenie z równania Schrödingera (i jego sprzężenia zespolonego)
-
 $$
 i\hbar \frac{\partial \psi}{\partial t} = \left( -\frac{\hbar^2}{2m} \nabla^2 + V \right) \psi, \quad
 -i\hbar \frac{\partial \psi^*}{\partial t} = \left( -\frac{\hbar^2}{2m} \nabla^2 + V \right) \psi^*,
 $$
-
 otrzymujemy
 \begin{align*}
 \int_V \left( \psi^* \frac{\partial \psi}{\partial t} + \frac{\partial \psi^*}{\partial t} \psi \right) \, d\vec{r}
 &= \frac{i\hbar}{2m} \int_V \left( \psi^* \nabla^2 \psi - \psi \nabla^2 \psi^* \right) \, d\vec{r} \\
 &= \frac{i\hbar}{2m} \int_V \vec{\nabla} \cdot \left( \psi^* \vec{\nabla} \psi - \psi \vec{\nabla} \psi^* \right) \, d\vec{r} \\
-&= - \int_V \vec{\nabla} \cdot \vec{j} d\vec{r}.
+&= - \int_V \vec{\nabla} \cdot \vec{j} \, d\vec{r}.
 \end{align*}
 
 Zgodnie z twierdzeniem Gaussa (znanym też jako twierdzenie Greena–Ostrogradskiego), możemy tę całkę objętościową zapisać jako całkę powierzchniową
-
 $$
-\int_V \vec{\nabla} \cdot \vec{j} \, d\vec{r} = \int_{\partial V} \vec{j} \cdot d\vec{S},
+\int_V \vec{\nabla} \cdot \vec{j} \, d\vec{r} = \int_{\partial V} \vec{j} \, d\vec{S},
 $$
-
 gdzie
-
 $$
 \vec{j}(\vec{r}, t) = \frac{\hbar}{2mi} \left( \psi^* \vec{\nabla} \psi - \psi \vec{\nabla} \psi^* \right) = \Re \left\{ \psi^* \frac{\hbar}{im} \vec{\nabla} \psi \right\}
 $$
-
 jest gęstością prądu prawdopodobieństwa. Ostatecznie otrzymujemy równanie ciągłości
-
 $$
 \frac{\partial \rho(\vec{r}, t)}{\partial t} + \vec{\nabla} \cdot \vec{j}(\vec{r}, t) = 0,
 $$
-
 co formalnie wyraża zasadę zachowania prawdopodobieństwa — analogiczną do równania zachowania masy w hydrodynamice.
 
 
-\subsection{Obserwable — wielkości obserwowalne}
+\subsection{Obserwable -- wielkości obserwowalne}
 
 W mechanice kwantowej \textbf{obserwabla} (ang. observable) to fizyczna wielkość, którą można zmierzyć eksperymentalnie, np. położenie, pęd, energia czy spin. Każdej obserwabli odpowiada hermitowski operator $\hat{A}$ działający na funkcje falowe przestrzeni Hilberta. Wartość średnia obserwabli $\hat{A}$ w stanie opisanym funkcją falową $\psi(\vec{r}, t)$ dana jest przez wyrażenie:
-
 $$
 \langle \hat{A} \rangle = \int \psi^*(\vec{r}, t) \hat{A} \psi(\vec{r}, t) \, d\vec{r}.
 $$
 
 Operator $\hat{A}$ musi być hermitowski, aby wartości średnie $\langle \hat{A} \rangle$ były liczbami rzeczywistymi, zgodnie z wymaganiami eksperymentu:
-
 $$
 \langle \hat{A} \rangle \in \mathbb{R}.
 $$
 
 Dla hermitowskiego operatora $\hat{A}$ zachodzi również
-
 $$
 \langle \hat{A} \rangle = \int \psi^* (\hat{A} \psi) \, d\vec{r} = \int (\hat{A} \psi)^* \psi \, d\vec{r}.
 $$
@@ -132,31 +113,26 @@ Powyższy wynik pokazuje, że średnia wartość operatora zależy jedynie od sk
 \subsection{Twierdzenie Ehrenfesta}
 
 W mechanice klasycznej ruch cząstki opisywany jest przez równania Hamiltona
-
 $$
-\begin{cases}
-    \dfrac{d \vec{r}}{dt} = \dfrac{\vec{p}}{m}, \\
-    \dfrac{d \vec{p}}{dt} = -\vec{\nabla} V(\vec{r}),
-\end{cases}
+\begin{dcases}
+    \frac{d \vec{r}}{dt} = \frac{\vec{p}}{m}, \\
+    \frac{d \vec{p}}{dt} = -\vec{\nabla} V(\vec{r}),
+\end{dcases}
 $$
-
 co prowadzi do analogicznych równań dla wartości średnich w mechanice kwantowej
-
 $$
-\begin{cases}
-    \dfrac{d \langle \vec{r} \rangle}{dt} = \dfrac{\langle \vec{p} \rangle}{m}, \\
-    \dfrac{d \langle \vec{p} \rangle}{dt} = -\langle \vec{\nabla} V(\vec{r}) \rangle.
-\end{cases}
+\begin{dcases}
+    \frac{d \langle \vec{r} \rangle}{dt} = \frac{\langle \vec{p} \rangle}{m}, \\
+    \frac{d \langle \vec{p} \rangle}{dt} = -\langle \vec{\nabla} V(\vec{r}) \rangle.
+\end{dcases}
 $$
 
 Dla porównania, druga zasada dynamiki Newtona ma postać:
-
 $$
-m \dfrac{d^2 \vec{r}}{dt^2} = -\vec{\nabla} V(\vec{r}) = \vec{F}.
+m \frac{d^2 \vec{r}}{dt^2} = -\vec{\nabla} V(\vec{r}) = \vec{F}.
 $$
 
 Wartość średnia wektora położenia $\vec{z}$ wyraża się jako
-
 $$
 \langle \vec{z} \rangle = 
 \begin{pmatrix}
@@ -170,15 +146,14 @@ Rozpocznijmy analizę twierdzenia Ehrenfesta od wyznaczenia pochodnej czasowej w
 \begin{align*}
 \frac{d}{dt} \langle x \rangle &= \frac{d}{dt} \int \psi^*(\vec{r},t) \, x \, \psi(\vec{r},t) \, d\vec{r} = \int \psi^* \, x \, \frac{\partial \psi}{\partial t} \, d\vec{r} + \int \frac{\partial \psi^*}{\partial t} \, x \, \psi \, d\vec{r} \\
 &\overset{\text{RS}}{=}\frac{1}{i\hbar} \left( \int \psi^* x \hat{H} \psi \, d\vec{r} - \int (\hat{H} \psi)^* x \psi \, d\vec{r} \right) \\
-&= \frac{1}{i\hbar} \left( \int \psi^* x \left( -\frac{\hbar^2}{2m} \nabla^2 \psi + V \psi \right) d\vec{r} - \int \left( -\frac{\hbar^2}{2m} \nabla^2 \psi^* + V \psi^* \right) x \psi \, d\vec{r} \right) \\
-&= \frac{i\hbar}{2m} \int \left[ \psi^* x \nabla^2 \psi - (\nabla^2 \psi^*) x \psi \right] d\vec{r} = *.
+&= \frac{1}{i\hbar} \left( \int \psi^* x \left( -\frac{\hbar^2}{2m} \nabla^2 \psi + V \psi \right)\, d\vec{r} - \int \left( -\frac{\hbar^2}{2m} \nabla^2 \psi^* + V \psi^* \right) x \psi \, d\vec{r} \right) \\
+&= \frac{i\hbar}{2m} \int \left[ \psi^* x \nabla^2 \psi - (\nabla^2 \psi^*) x \psi \right]\, d\vec{r} = *.
 \end{align*}
 
 Aby uprościć ten wyraz, skorzystamy z tożsamości Greena:
 $$
-\int_V \left[ u \nabla^2 v + (\vec{\nabla} u) \cdot (\vec{\nabla} v) \right] d\vec{r} = \int_S u (\vec{\nabla} v) \, d\vec{s},
+\int_V \left[ u \nabla^2 v + (\vec{\nabla} u) \cdot (\vec{\nabla} v) \right]\, d\vec{r} = \int_S u (\vec{\nabla} v) \, d\vec{s},
 $$
-
 gdzie $u = u(x,y,z)$, $v = v(x,y,z)$ są funkcjami o odpowiednim zachowaniu na brzegu (zanikają do zera). Zatem
 \begin{align*}
 \int (\nabla^2 \psi^*) x \psi \, d\vec{r} &= \underbrace{\int_S x \psi (\vec{\nabla} \psi^*) \, d\vec{s}}_{=\,0} - \int (\vec{\nabla} \psi^*) \cdot \vec{\nabla}(x \psi) \, d\vec{r} \\
@@ -189,26 +164,173 @@ gdzie $u = u(x,y,z)$, $v = v(x,y,z)$ są funkcjami o odpowiednim zachowaniu na b
 
 Wracając do wyrażenia $*$, mamy
 \begin{align*}
-\frac{d}{dt} \langle x \rangle = * &= \frac{i\hbar}{2m} \int \psi^* \left( x \nabla^2 \psi - \nabla^2 (x \psi) \right) d\vec{r} \\
+\frac{d}{dt} \langle x \rangle = * &= \frac{i\hbar}{2m} \int \psi^* \left( x \nabla^2 \psi - \nabla^2 (x \psi) \right)\, d\vec{r} \\
 &= -\frac{i\hbar}{m} \int \psi^* \frac{\partial \psi}{\partial x} \, d\vec{r}.
 \end{align*}
 
 Z definicji operatora pędu w kierunku $x$:
-
 $$
 \hat{p}_x = -i\hbar \frac{\partial}{\partial x},
 $$
-
 wynika, że
-
 $$
 \frac{d}{dt} \langle x \rangle = \frac{1}{m} \int \psi^* \left(-i\hbar \frac{\partial}{\partial x}\right) \psi \, d\vec{r} = \frac{1}{m} \langle \hat{p}_x \rangle.
 $$
 
 Analogicznie, pochodna wartości średniej pędu wyraża się przez
-
 $$
 \frac{d}{dt} \langle \hat{p}_x \rangle = - \left\langle \frac{\partial V}{\partial x} \right\rangle.
 $$
 
 Powyższe dwa równania stanowią treść twierdzenia Ehrenfesta i pokazują, że średnie wartości położenia i pędu w mechanice kwantowej zmieniają się zgodnie z klasycznymi równaniami ruchu. 
+
+\subsection{Stacjonarne równanie Schrödingera (niezależne od czasu)}
+
+W celu rozwiązania równania Schrödingera w ogólnej postaci, często zakłada się, że funkcja falowa układu kwantowego może być rozdzielona na część zależną od współrzędnych przestrzennych oraz część zależną od czasu
+$$
+\Psi(\vec{r}, t) = \psi(\vec{r}) \cdot f(t).
+$$
+
+Podstawiając tę postać do ogólnego, czasowego równania Schrödingera:
+$$
+i\hbar \frac{\partial \Psi(\vec{r}, t)}{\partial t} = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}) \right] \Psi(\vec{r}, t)
+$$
+otrzymujemy
+$$
+i\hbar \psi(\vec{r}) \frac{df(t)}{dt} = \left[ -\frac{\hbar^2}{2m} \nabla^2 \psi(\vec{r}) + V(\vec{r}) \psi(\vec{r}) \right] f(t).
+$$
+
+Dzieląc obie strony przez $\psi(\vec{r}) f(t)$, otrzymujemy
+$$
+i\hbar \frac{1}{f(t)} \frac{df(t)}{dt} = \frac{1}{\psi(\vec{r})} \left[ -\frac{\hbar^2}{2m} \nabla^2 \psi(\vec{r}) + V(\vec{r}) \psi(\vec{r}) \right].
+$$
+
+Lewa strona równania zależy wyłącznie od czasu, a prawa wyłącznie od współrzędnych przestrzennych. Oznacza to, że obie strony muszą być równe stałej, którą oznaczamy przez $E$. Jest to tzw. energia całkowita układu
+$$
+i\hbar \frac{1}{f(t)} \frac{df(t)}{dt} = E, \quad
+\left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}) \right] \psi(\vec{r}) = E \psi(\vec{r}).
+$$
+
+Otrzymujemy w ten sposób układ równań
+$$
+\begin{dcases}
+i\hbar \frac{df(t)}{dt} = E f(t), \\
+\left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}) \right] \psi(\vec{r}) = E \psi(\vec{r}).
+\end{dcases}
+$$
+
+Pierwsze z równań ma rozwiązanie
+$$
+f(t) = c \cdot \exp\left( -\frac{iEt}{\hbar} \right).
+$$
+
+Drugie równanie jest tzw. stacjonarnym równaniem Schrödingera (SRS) i ma postać
+$$
+\hat{H} \psi(\vec{r}) = E \psi(\vec{r}),
+$$
+gdzie operator Hamiltona $\hat{H}$ dany jest przez
+$$
+\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}).
+$$
+
+Hamiltonian jest operatorem hermitowskim, co oznacza, że jego wartości własne $E$ są zawsze rzeczywiste. Oznacza to, że funkcje własne $\psi_n$ odpowiadają rzeczywistym wartościom energii.
+
+Jeśli $\psi_n$ jest rozwiązaniem równania Schrödingera, to jego sprzężenie zespolone $\psi_n^*$ również jest rozwiązaniem (o ile potencjał $V(\vec{r})$ jest rzeczywisty). Wynika to z faktu, że równanie Schrödingera jest liniowe i zachowuje postać względem sprzężenia zespolonego.
+
+W konsekwencji, jeśli $\psi_n$ nie jest funkcją rzeczywistą, możemy zbudować dwie rzeczywiste funkcje falowe
+$$
+\Re[\psi_n] = \frac{\psi_n + \psi_n^*}{2}, \quad
+\Im[\psi_n] = \frac{\psi_n - \psi_n^*}{2i},
+$$
+które również spełniają stacjonarne równanie Schrödingera. Dzięki temu często można wybierać rozwiązania rzeczywiste, co bywa wygodne zarówno obliczeniowo, jak i interpretacyjnie.
+
+Z powyższych powodów analiza stacjonarnego równania Schrödingera odgrywa centralną rolę w mechanice kwantowej -- pozwala znaleźć dozwolone poziomy energetyczne układu oraz odpowiadające im stany stacjonarne.
+
+\subsection{Własności stanów własnych energii}
+
+Funkcje własne operatora Hamiltona $\hat{H}$, oznaczane jako $\psi_E(\vec{r})$, spełniają równanie Schrödingera $\hat{H} \psi_E = E \psi_E,$ gdzie $E$ jest odpowiadającą im wartością własną, interpretowaną jako energia stanu. Zakładamy, że funkcje $\psi_E(\vec{r})$ są unormowane
+$$
+\int \psi_E^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 1,
+$$
+oraz ortogonalne względem siebie dla różnych wartości energii
+$$
+\int \psi_E^*(\vec{r}) \psi_{E'}(\vec{r}) \, d\vec{r} = 0
+\quad \text{dla } E \ne E'.
+$$
+
+Rozważmy teraz dowód ortogonalności stanów własnych odpowiadających różnym wartościom energii. Zakładamy, że $\hat{H}$ jest hermitowski, tzn. spełnia warunek
+$$
+\int \phi^*(\vec{r}) \hat{H} \psi(\vec{r}) \, d\vec{r}
+= \int (\hat{H} \phi(\vec{r}))^* \psi(\vec{r}) \, d\vec{r}.
+$$
+
+Jeśli $\hat{H} \psi_E = E \psi_E$ i $\hat{H} \psi_{E'} = E' \psi_{E'}$, to
+\begin{align*}
+\psi_{E'}^* \hat{H} \psi_E &= E \psi_{E'}^* \psi_E, \\
+(\hat{H} \psi_{E'})^* \psi_E &= E' \psi_{E'}^* \psi_E.
+\end{align*}
+
+Z powyższych równań wynika, że
+$$
+(E - E') \psi_{E'}^*(\vec{r}) \psi_E(\vec{r}) = 0.
+$$
+
+Po całkowaniu po całej przestrzeni mamy
+$$
+(E - E') \int \psi_{E'}^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 0.
+$$
+
+Dla $E \ne E'$ całka musi być równa zeru, czyli funkcje własne odpowiadające różnym wartościom energii są ortogonalne.
+
+Z faktu, że operator Hamiltona jest hermitowski, wynika również, że jego funkcje własne tworzą pełną bazę przestrzeni Hilberta. Oznacza to, że każdą funkcję falową $\Psi(\vec{r}, t)$ można przedstawić jako kombinację liniową funkcji własnych Hamiltonianu
+$$
+\Psi(\vec{r}, t) = \sum_E C_E(t) \psi_E(\vec{r}),
+$$
+gdzie suma biegnie po wszystkich stanach odpowiadających różnym energiom, w tym zdegenerowanym.
+
+\subsubsection*{Przypadek degeneracji}
+
+W przypadku degeneracji, tzn. gdy istnieje więcej niż jeden liniowo niezależny stan własny $\psi_{E_i}$ o tej samej energii $E$, można przeprowadzić proces ortogonalizacji w celu uzyskania ortonormalnej bazy. Wykorzystuje się do tego metodę Grama-Schmidta:
+\begin{align*}
+\phi_{E_1} &= \psi_{E_1}, \\
+\phi_{E_2} &= \psi_{E_2} + a_{21} \phi_{E_1}, \\
+\phi_{E_3} &= \psi_{E_3} + a_{31} \phi_{E_1} + a_{32} \phi_{E_2}, \\
+&\vdots
+\end{align*}
+
+Współczynniki $a_{ij}$ dobiera się tak, aby funkcje $\phi_{E_i}$ były ortogonalne
+$$
+a_{ij} = -\int \phi_{E_i}^*(\vec{r}) \psi_{E_j}(\vec{r}) \, d\vec{r}.
+$$
+
+Po przeprowadzeniu ortogonalizacji uzyskujemy ortonormalną bazę stanów zdegenerowanych.
+
+\subsubsection*{Rozwiązanie równania Schrödingera w bazie funkcji własnych}
+
+Rozwijając ogólną funkcję falową w bazie $\{ \psi_E \}$:
+$$
+\Psi(\vec{r}, t) = \sum_E C_E(t) \psi_E(\vec{r}),
+$$
+możemy wstawić ten rozwinięty stan do czasozależnego równania Schrödingera
+$$
+i\hbar \frac{\partial}{\partial t} \Psi(\vec{r}, t) = \tilde{H} \Psi(\vec{r}, t),
+$$
+gdzie $\tilde{H}$ jest (być może różnym od $\hat{H}$) operatorem Hamiltona.
+
+Podstawiając rozwinięcie do równania
+$$
+i\hbar \sum_E \dot{C}_E(t) \psi_E(\vec{r}) = \sum_E C_E(t) E \psi_E(\vec{r}).
+$$
+
+Wykorzystując ortogonalność funkcji $\psi_E$, uzyskujemy równania różniczkowe dla współczynników $C_E(t)$:
+$$
+i\hbar \dot{C}_E(t) = E C_E(t).
+$$
+
+Rozwiązaniem jest
+$$
+C_E(t) = C_E(t_0) \cdot \exp\left(-\frac{i E (t - t_0)}{\hbar}\right),
+$$
+co pokazuje, że każdy współczynnik rozwinięcia ewoluuje w czasie jako faza zespolona zależna od energii.
+
+\paragraph{Wniosek:} Przedstawienie stanu kwantowego w bazie funkcji własnych Hamiltonianu upraszcza rozwiązanie równania Schrödingera, ponieważ czasowa ewolucja sprowadza się do prostych czynników fazowych.
