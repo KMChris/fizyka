@@ -1,1 +1,361 @@
-\section{Formalizm mechaniki kwantowej}
+\section{Formalizm Mechaniki Kwantowej}
+\subsection{Stan układu}
+Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym samym co axiomy w matematyce ale mimo wszystko są czymś czego nie możemy wyprowadzić a co jest nam bardzo potrzebne aby zbudować jakąś teorie.
+
+\textbf{Postulat 1:} Do zespołu układów fizycznych w pewnych przypadkach można przypisać funkcję falową lub funkcję stałą która zawiera wszystkie informacje jakie można znać o tym zespole. Funkcja ta jest zespolona, można pomnożyć tą funkcję przez dowolną liczbę zespoloną (poza zerem) bez zmiany jej znaczenia fizycznego.
+
+\textbf{Pytanie z sali:} Liczbę zespoloną o module zero tak? \textbf{Odp.} Normalizacja ucierpi wtedy, to znaczy będzie inna normalizacja, ale jeżeli wrzucimy do równania Schrödingera to z równia wynik będzie taki sam. i nawet potem jak zobaczymy i obliczamy dowolne obserwable to wtedy w niezależności od normalizacji funkcji otrzymamy ten sam wynik.
+
+" Postulat 1.2" \hspace{1pt} jest implikacją postulatu 1.
+
+\textbf{"Postulat 1.2":}
+\begin{equation*}
+	\begin{split}
+		I &= \int \vert \psi(\vec{r}, t)\vert^2 d\vec{r} = (1?) \quad \text{ jest skończona} \\
+		I &= \int \vert \psi (\vec{r_1}, \dots, \vec{r_n}, t)\vert^2 d\vec{r_1}\dots d\vec{r_n} = (1?) = \int P(\vec{r_1}, \dots, \vec{r_n}, t)d\vec{r_1}\dots d\vec{r_n}
+	\end{split}
+\end{equation*}
+
+Jedynka jest ze znakiem zapytania ponieważ tak zazwyczaj wychodzi dla wygody ale to nie jest to zawsze.
+
+\textbf{Komentarz z sali} Implikacja mi się wydaje że może być tylko dlatego bo chcemy mieć dowolną informację a to daje nam informacje o prawdopodobieństwie położenia więc jakby to było nieskończone to byśmy tracili jakąś informacje. To jedyne co mogę wymyślić dlaczego to jest implikacja a nie postulat 1.2. \textbf{Odp.} No racja, faktycznie można tak powiedzieć.
+
+Jeszcze taka rzecz której jeszcze nie mieliśmy. Jeżeli chcemy znaleźć prawdopodobieństwo tego że cząstka się znajduje w jakimś punkcie $r_1$ w jakimś czasie $t$ wtedy możemy wciąć prawdopodobieństwo dla całego układu $n$ cząstek i zcałkować wszystko po współrzędnych zaczynając od $r_2$, czyli po wszystkich cząstkach poza tą która nas ciekawi
+
+\begin{equation*}
+	P(\vec{r_1}, t) = \int P (\vec{r_1}, \dots, \vec{r_n}, t) d\vec{r_2}\dots d\vec{r_n}
+\end{equation*}
+
+To jest rzecz której nie wprowadziliśmy wcześniej bo nie mieliśmy układów wielocząstkowych.
+
+Mówiliśmy o tym że funkcja falowa z jakimś zdefiniowanym pędem to fala płaska która nie jest całkowalna kwadratowa, to znaczy całka nie daje nam skończonej liczb.y Czemu możemy powiedzieć że nie mamy z tym problemu? \textbf{Z sali:} bo wszechświat jest skończony. \textbf{Odp.} Faktycznie ma pan racje, bo kiedy mówimy o jakiejś funkcji falowej to znaczy coś co chociażby teoretycznie możemy użyć aby zmierzyć cząstkę. Jeżeli pewna cząstka, na przykład elektron, ma doskonale zdefiniowany pęd to znaczy z nieoznaczoności Heisenberga będzie wynikało że nieoznaczoność położenia będzie nieskończona. To znaczy że jeżeni ktoś chce zmierzyć taki elektron to to oznacza że on teoretycznie może znaleźć nie tylko w państwa laboratorium a również na marsie, w innej galaktyce i tak dalej. Więc nawet teoretycznie nie możemy sobie wyobrazić takiej sytuacji gdzie ktoś zmierzy absolutnie dokładnie pęd elektrony. W takim razie będziemy pracować z pakietami falowym które są dobrze całkowalne.
+
+\textbf{Postulat 2: Zasada superpozycji dla $\psi$:} Jeżeli mamy dwie $\psi_1, \psi_2$ to spokojnie możemy je ze sobą dodać z jakimiś współczynnikami $c_1, c_2$ i otrzymamy inną funkcję falową. 
+
+\begin{equation*}
+	\psi = c_1 \psi_1 + c_2 \psi_2
+\end{equation*}
+
+Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolonych, są tylko pewne specjalne zagadnienia kiedy funkcje falowe sa rzeczywiste.
+
+\textbf{Funkcja falowa w przestrzeni pędu}
+\begin{equation*}
+	\phi (\overrightarrow{p_1}, \dots, \overrightarrow{p_{\omega}}, t) = \int |\psi|^2 d \overrightarrow{p} = 1
+\end{equation*}
+\begin{equation*}
+	\begin{split}
+		\phi (\overrightarrow{p_1}, \dots, \overrightarrow{p_{\omega}}, t) \equiv (2 \pi \hbar)^{\frac{-3\omega}{2}} \int \text{exp}&\left[ -\frac{i}{\hbar} (\overrightarrow{p_1} \cdot \overrightarrow{z_1} + \dots + \overrightarrow{p_N} \cdot \overrightarrow{z_N})  \right] \\
+		&\cdot \vspace{10cm}\psi(\overrightarrow{z_1}, \dots, \overrightarrow{z_N}, t) \hspace{2pt} \text{d}\overrightarrow{z_1} \dots \text{d}\overrightarrow{z_N}
+	\end{split}
+\end{equation*}
+\begin{equation*}
+		\left< \psi_1 \vert \psi_2 \right> \equiv \int \psi_1^*(\overrightarrow{z}) \psi_2^*(\overrightarrow{z})\text{d}\overrightarrow{z}	
+\end{equation*}
+\subsection{Zmienne dynamiczne a operatory}
+\textbf{Postulat 3:} Z każdą zmienną powiązany jest operator liniowy. 
+Więc kiedy mówimy o czymś co możemy wymyślić w przypadku fizyki klasycznej (ale nie tylko), na przykład położenie, pęd, energia, wtedy mamy operator który odpowiada tej zmiennej dynamicznej. W mechanice kwantowej będą rzeczy których może nie być w fizyce klasycznej, na przykład spin. 
+Co to znaczy że operator jest liniowy? Operator taki musi spełniać poniższe
+\begin{equation*}
+	A(c_1 \psi_1 + c_2 \psi_2) = c_1 A(\psi_1) + c_2 A(\psi_2)
+\end{equation*}
+W jaki sposób te operatory zapisujemy? Taki operator może być zależny od różnych parametrów, na przykład Hamiltonian był zależny od położenia i pędu, więc generalnie operatory możemy jako zależny od wszystkich położeń oraz pędów w czasie. Jaki to jest problem? Problem jest taki że my pracujemy albo w przestrzeni położenia albo w przestrzeni pędów, więc oba na raz wyglądają nieco dziwnie, więc możemy zapisać jak poniżej za pomocą operatora Nabla.
+\begin{equation*}
+	\begin{split}
+		&A(\overrightarrow{z_1}, \dots, \overrightarrow{z_N}, \overrightarrow{p_1}, \dots, \overrightarrow{p_N}, t) = \\
+		&A(\overrightarrow{z_1}, \dots, \overrightarrow{z_N}, -i \hbar \overrightarrow{\nabla}_{z_1}, \dots, t) = \\
+		&A(-i \hbar \overrightarrow{\nabla}_{p_1}, \dots, p_1, \dots, t)
+	\end{split}	
+\end{equation*}
+\textbf{Definicja:} ${a_n \psi_n}$ to jest zbiór wartości własnych a również stanów operatora A $\iff$ $A \psi_n = a_n \psi_n$.
+
+\textbf{Postulat 4:} Jedynym wynikiem pomiaru zmiennej A jest jedna z wartości własnych operatora liniowego A skojarzonego z tą zmienną A.
+
+Może się zdarzyć sytuacja w której mamy jakiś stan p który jest jak poniżej
+\begin{equation*}
+	|p_x \rangle = e^{-ip_x x}
+\end{equation*}
+Czy to jest operator? Nie, to nie jest operator, to jest oznaczenie stanu. Trzeba wyćwiczyć co to jest operatora a co to jest wartość własna operatora.
+
+\textbf{Definicja:} Operator Hermitowski A to jest taki operator który dla którego zachodzi
+\begin{equation*}
+	\left< x | (A\psi) \right> = \langle (Ax) \vert \psi \rangle
+\end{equation*}
+\begin{equation*}
+	\left< x | (A\psi) \right> \equiv \langle x | A \vert \psi \rangle
+\end{equation*}
+Korzystając z powyższych możemy zapisać
+\begin{align*}
+	&\left.
+	\begin{aligned}
+		\left< \psi_n | A | \psi_n \right> &= a_n \left< \psi_n | \psi_n \right> \\
+		(A \psi_n)^* = a_n^* \psi_n^* &= \langle (A \psi_n) | \psi_n \rangle = a_n^* \left< \psi_n | \psi_n \right>
+	\end{aligned}
+	\right\}
+	\Rightarrow a_n = a_n^*, \quad a_n \in \Re
+\end{align*}
+\textbf{Postulat 5:} Jeżeli seria pomiarów zmiennej dynamicznej A zostanie wykonana na zespole układów opisaną funkcją falową $\psi$ wtedy wartość oczekiwana (średnia) tej zmiennej wynosi
+\begin{equation*}
+	A = \frac{\langle \psi | A | \psi \rangle}{\langle\psi | \psi\rangle}
+\end{equation*}
+Tutaj trzeba zwrócić uwagę na jedną bardzo ważną rzecz, mianowicie wszystkie układy tego pomiaru (np. atomy) muszą być w dokładnie takim samym stanie. Tu jest różnica między statystyką klasyczną (jak na przykład przy pomiaru prędkości atomów w gazie) a kwantową (gdzie wszystkie atomy s.ą przygotowane w dokładnie takim samym stanie ale proces kiedy mierzymy ten stan jest procesem z jakimś pewnym prawdopodobieństwem).
+
+\textbf{Pytanie z sali:} A dlaczego wprowadzamy formalizm dopiero teraz? \textbf{Odp.} Bo gdyby wprowadzić formalizm mechaniki kwantowej na samym początku to by nie było wiadomo co się dzieje, a tak zaczynaliśmy od prostszych zagadnień i teraz mamy podstawę do tego by to zrozumieć.
+
+\textbf{Definicja:} Operator sprzężony $A^{\dagger}$ definiujemy następująco
+\begin{equation*}
+	\langle x | A^{\dagger} | \psi \rangle = \langle (Ax)  | \psi \rangle = \langle \psi | A | x \rangle^{*}
+\end{equation*}
+
+Możemy też zapisać że 
+\begin{equation*}
+	\langle \phi |  = \langle x | A^{\dagger} \iff | \phi \rangle = A | x \rangle
+\end{equation*}
+
+Mówimy, że kiedy równość $A = A^{\dagger}$ to operator jest samo-sprzężony. Własności takiego operatora to
+
+\begin{equation*}
+	\begin{split}
+		&(CA)^{\dagger} = C^* A^{\dagger} \\
+		&(A + B)^{\dagger} = A^{\dagger} + B^{\dagger}\\
+		&(AB)^{\dagger} = B^{\dagger}A^{\dagger}
+	\end{split}
+\end{equation*}
+Możemy też rozpisywać funkcje operatorowe.
+\begin{equation*}
+	f(z) = \sum_{i = 0}^{\infty} c_i z^i \rightarrow f(A) = \sum_{i = 0}^{\infty} c_i A^i,
+\end{equation*}
+gdzie $A^i$ oznacza że operator A powtarza swoje działanie $i$-razy, $A^i = \underbrace{A \cdot A \cdot A \cdot \dotsc \cdot A}_{\text{i razy}}$.
+W ten sposób możemy zapisać
+\begin{equation*}
+	\begin{split}
+		A^i \psi_n = A \cdot \dotsc \cdot A \psi_n = (a_n)^i
+		A\psi_n = a_n \psi_n
+	\end{split}
+\end{equation*}
+Z powyższych $(*)$ możemy w takim razie połączyć, że
+\begin{equation*}
+	f(A) \psi_n = f(a_n) \psi_n
+\end{equation*}
+Ostatnie co możemy z tej definicji wyciągamy to
+\begin{equation*}
+	[f(A)]^{\dagger} = \sum_{i = 0}^{\infty} c_i^* (A^i)^{\dagger} = f^*(A^{\dagger})
+\end{equation*}
+Możemy też zdefiniować operator odwrotny oraz unitarny.
+
+\textbf{Definicja:} B jest odwrotny do operatora A $\iff$ $BA = AB = I$ i zapisujemy $B = A^{-1}$
+
+\textbf{Definicja:} U jest unitarny $\iff$ $U^{-1} = U^{\dagger}$, $U U^{\dagger} = U^{\dagger} U = I$. 
+
+Zawsze też możemy zapisać $U = e^{iA}$, gdzie $A$ - operator Hermitowski, ponieważ \newline $U^{\dagger} = (e^{iA})^{\dagger} = e^{-iA} = U^{-1} $
+
+\textbf{Definicja:} A jest operatorem idempotentnym $\iff A^2 = 1$
+
+\textbf{Definicja:} Operator projekcji jest Hermitowski i idempotentny.
+Z tego możemy powiedzieć że 
+\begin{equation*}
+	\begin{split}
+		&\forall \psi \exists \phi, x \quad \langle \phi | x \rangle = 0, \psi = \phi + x \\
+		&\therefore \phi = \Lambda \psi, x = (1 - \Lambda) \psi  \\
+		&\Rightarrow \langle \phi | x \rangle = \langle \Lambda \psi | (1 - \Lambda) \psi \rangle =  \langle  \psi | \Lambda - \Lambda^2 | \psi \rangle = 0 
+	\end{split}
+\end{equation*}
+\subsection{Rozłożenie w funkcje własne}
+\begin{align*}
+	&\left.
+	\begin{aligned}
+		\therefore \phi_n = \phi_m, \quad n \neq m \Rightarrow A \psi_j = a_j \psi_j \\
+		A \psi_i = a_i \psi_i
+	\end{aligned}
+	\right\}
+	\Rightarrow (a_i - a_j)\langle \psi_i | \psi_j \rangle 
+\end{align*}
+\begin{equation}
+	(a_i - a_j)\langle \psi_i | \psi_j \rangle  = \langle a_i \psi_i | \psi_j \rangle - \langle \psi_i | a_j \psi_j \rangle = \langle (A \psi_i) | \psi_j \rangle - \langle \psi_i | (A \psi_j) \rangle = 0 \Rightarrow \langle \psi_i | \psi_j \rangle = \delta_{ij}
+\end{equation}
+Powyższe pozwala udowodnić że w przypadku gdy stany własne mają różne energie własne to wtedy te stany są ortogonalne.
+
+Stany zdegenorwane $\Rightarrow A\psi_{n^r} = a_r \psi_{n^r}, \quad r = 1, 2, \dots, \alpha \Rightarrow G.S. $
+
+\textbf{Postulat 5:} Funkcję falową reprezentującą dowolny stan dynamiczny można wyrazić jako kombinacje liniową funkcji własnych operatora A, gdzie A jest operatorem związanym z naszą zmienną. Inaczej, $\psi = \sum_n e_n \psi_n$. Liczba stanów nie musi być skończona ale liczba ta nie jest dla nas jakoś specjalnie ciekawa. Będziemy odcinać stany które nie są praktyczne w obliczeniu
+
+Jaka jest różnica między stanem a funkcją falową? \textbf{Odpowiedź z sali:} stan to nasze zaobserwowanie cząstki a funkcja falowa to wszystkie stany jakie ta cząstka może przyjąć. Możemy zapisywać $\langle x | \Xi \rangle \equiv \psi (\overrightarrow{x})$, gdzie po lewej mamy stan a po prawej funkcję falową, czyli z definicji zawiera wszystkie informacje aby określić stan. Możemy tez dla pędu zapisać $\langle p | \Xi \rangle \equiv \phi (\overrightarrow{p})$. Możemy rozpisywać $$ \psi(t, x_1, x_2) = \psi_1(t, x_1) \psi_2(t, x_2) $$ dla cząstek.
+Mówimy że jeżeli w taki sposób jesteśmy w stanie zapisać takie wyrażenie to zbiór $\{\psi_n\}$ jest pełny. Ale nie każdy operator Hermitowski generuje zbiór funkcji własnych. Powiedzmy że jakiś operator ma trzy funkcje własne, wtedy nigdy nie potrafimy rozpisać dowolnej funkcji falowej (na przykład wodoru) jako taką kombinację z tych trzech funkcji, bo to by oznaczało że chcemy nieskończenie wymiarowy wektor i zmieniamy bazę z przestrzeni nieskończenie-wielowymiarowej do bazy trzy-wymiarowej co nie do końca ma sens. Taka baza musi być przynajmniej nieskończona żeby to się dało obliczyć.
+
+Dalej, mówimy że 
+\begin{equation*}
+	\langle X | Y \rangle = \sum \langle X | \psi_n \rangle \langle \psi_n | Y \rangle
+\end{equation*}
+Możemy też zapisać operator jednostkowy $ \psi=\sum C_{n} \psi_{n} H $ ponieważ
+\begin{equation*}
+	\sum_{n}\left|\psi_{n}\right\rangle\left\langle\psi_{n}\right|=I 
+\end{equation*}
+\textbf{Pytanie z sali:} a tutaj nie ma problemu że kolejność jest odwrotna? \textbf{Odp.} Możemy zauważyć że jeżeli weźmiemy na przykład operator P
+\begin{equation*}
+	P \psi=\sum_{n} |\psi_{n} \rangle \langle \psi_{n} | \sum_{k} c_{k} |\psi_{n} \rangle  =\sum_{n}\left|\psi_{n}\right\rangle c_{n}=\psi,
+\end{equation*}
+więc sam operator nic nie zmienia.
+No a w przypadku gdy obliczamy średnią wartość operatora $A$ to jest 
+\begin{equation*}
+	\langle A\rangle=\langle\psi| A|\psi\rangle= \dotsc = \sum_{n}\left|c_{n}\right|^{2} a_{n}
+\end{equation*}
+Normalizacja w przypadku gdy $\langle \psi | \psi \rangle = 1$ to z tego wynika że $\sum |c_n^2|$ też jest $1$.
+W przypadku gdy istnieją stany zdegenerowane, wtedy możemy $\psi$ możemy rozpisać jako 
+\begin{equation*}
+	\psi = \sum_n \sum_{r=1}^{\alpha} c_{n_r} \psi_{n_r}
+\end{equation*}
+
+Nie zawsze mamy wartości własne dyskretne dlatego też musimy rozważyć spektrum ciągłe. Wtedy możemy zapisać $A \psi_a = a \psi_a$ gdzie $\psi_a$ to funkcja własna tego operatora a $A$ jest wartością własną która jest ciągła i będziemy w tym wypadku wtedy pisać że iloczyn skarany pomiędzy tymi dwoma stanami dotyczącymi różnych wartości własnych będzie po prostu delta funkcji w której argument jest różnicą miedzy tymi wartościami własnymi $\langle \psi_{a'} | \psi_a  \rangle = \delta(a - a')$.
+Wtedy też zmienimy trochę \textbf{Postulat 6} i zapiszemy
+\begin{equation*}
+	\psi = \sum_n c_n \psi_n + \int c(a) \psi_a \text{d}a
+\end{equation*}
+I powyższe to istotny sposób jeżeli ktoś chce dobrze opisać wszystkie stany własne atomu helu na przykład to wtedy mogą być stany tak zwane podwójne wzbudzone i wtedy nie da się ich normalnie opisać w iny sposób mimo że to są stany w których mówi że rezonansy są dyskretne.
+\subsection{Obserwable \& nieoznaczoności}
+\textbf{Definicja:} Komutator operatorów $A, B$ to $[A, B] = AB - BA$.
+W przypadku gdy mamy $[A, B] = 0$ to mówimy że $A, B$ są przemienne.
+
+\textbf{Twierdzenie:} $A, B$ przemienne $\iff$ posiadają ten sam zbiór stanów własnych. Zadanie dla czytającego dowieść to twierdzenie.
+Mamy też następujące własności
+\begin{equation}
+	\begin{split}
+		&[A, B] = - [B, A] \\
+		&[A, B+C] = [A, B] + [A, C] \\
+		&[A, BC] = [A,B]C = B[A,C] \\
+		&[A,[B,C]] + [B,[A,C]] + [C,[A,B]] = 0
+	\end{split}
+\end{equation}
+\textbf{Twierdzenie:} Niech $\langle A\rangle=\langle\psi| A|\psi\rangle$ oraz $\langle B\rangle=\langle\psi| B|\psi\rangle$. Dalej mówimy że $\Delta A \equiv (\langle (A - A)^2\rangle)^{\frac12}$ to wtedy mamy $$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|.$$
+\textbf{Dowód:} A, B - Hermitowskie. $\bar{A} \equiv A-\langle A\rangle,  \bar{B} \equiv B-\langle B\rangle $. 
+Możemy zapisać $ (\Delta A)^{2}=\langle\bar{A}^{2}\rangle,  (\Delta B)^{2}=\langle\bar{B}^{2}\rangle $. 
+Z tego natomiast mamy $$ [\bar{A}, \bar{B}]=[A-\langle A\rangle, B-\langle B\rangle]=[A, B].$$ 
+Dalej definiujemy operator $C \equiv \bar{A}+i \lambda \bar{B}$ oraz operator do niego sprzężony $C^+ \equiv \bar{A}-i \lambda \bar{B}$. 
+Następnie jesteśmy ciekawi jaka będzie wartość $$  \langle C C^{+}\rangle=\langle\psi| C C^{+}|\psi\rangle= \langle C^{+} \psi|C^{+} \psi\rangle \geqslant 0  .$$
+Ale tak samo możemy podstawić definicje tego operator i dostajemy
+\begin{equation*}
+	\langle C C^{+}\rangle =\langle (\bar{A}+ i \lambda \bar{B}) (\bar{A}-i \lambda \bar{B})\rangle  =\underbrace{\langle A^{2}+\lambda^{2} \bar{B}^{2}-i\lambda[\bar{A}, \bar{B}]\rangle}_{\equiv f(\lambda)} \geqslant 0 
+\end{equation*}
+Więc wychodzi
+\begin{equation*}
+	0 \leq f(\lambda) = \langle\bar{A}^{2}\rangle + \lambda^{2}\langle B^{2}\rangle + i\lambda\langle[A, B]\rangle \geq 0 
+\end{equation*}
+Ponieważ $(\Delta A^2)^2$ oraz $(\Delta B^2)^2$ są większe od zera mamy
+\begin{equation*}
+	\Rightarrow i \lambda \langle[A, B]\rangle \in \Re, \quad \text{Re}(\langle[A, B]\rangle) = 0
+\end{equation*}
+Dalej mówimy że $f(\lambda)$ ma minimum w punkcie $\lambda_0  = \frac{i}{2} \frac{\langle[A, B]\rangle}{(\Delta B)^2}$ i z tego mamy
+\begin{equation*}
+	f(\lambda_0)  = (\Delta A)^2 \frac{1}{4} \frac{(\langle[A, B]\rangle)^2}{(\Delta B)^2}
+\end{equation*}
+\begin{align*}
+	&\left.
+	\begin{aligned}
+		f(\lambda_0)  = (\Delta A)^2 \frac{1}{4} \frac{(\langle[A, B]\rangle)^2}{(\Delta B)^2} \\
+		f(\lambda_0) \geq 0
+	\end{aligned}
+	\right\}
+	\Rightarrow (\Delta A)^2 \cdot (\Delta B)^2 \geq -\frac14(\langle[A, B]\rangle)
+\end{align*}
+Dalej przypominamy sobie że $(\langle[A, B]\rangle)^2 = -| \langle[A, B]\rangle |$ i z ego końcowo dostajemy $$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|.$$
+\textbf{Przykład} Dla $[x, p_x] = i \hbar$ dostaniemy $\Delta x \Delta p \geq \frac12 \hbar$.
+Ktoś może zapytać czy możemy stworzyć stan który będzie posiadał faktycznie tutaj znak równości a nie $\geq$. 
+Żeby zyskać odpowiedź musimy znaleźć minimalną nieoznaczoność i do tego musimy wziąć $\lambda = \lambda_0$. 
+Powiedzmy że mamy ten przypadek $[x, p_x]$. Mamy $\bar{A} = x - \langle x \rangle$, $\bar{B} = p_x - \langle p_x \rangle$, a $\lambda_0 = \frac{-\hbar}{2(\Delta p_x)^2}$. 
+Pamiętajmy tez że $C^+ \psi = 0$ a także $(\bar{A} - i \lambda_0 \bar{B})\psi = 0$. Rozpisujemy to i mamy
+\begin{equation*}
+	\begin{split}
+		\left(-i \hbar \frac{d}{dx} - \langle p_x \rangle \right)\psi(x) = \frac{2i(\Delta p_x)^2}{\hbar} (x - \langle x \rangle) \psi(x) \\
+		\psi(x) = C \cdot \exp \left(\frac{i}{\hbar}\langle p_x \rangle x\right) \cdot \exp \left( - \frac{(\Delta p_x)^2 (x - \langle x \rangle)^2}{\hbar^2} \right)
+	\end{split}
+\end{equation*}
+To są tak zwane stany koherentne. 
+\subsection{Przekształcenia Unitarne}
+Niech $A = A^{\dagger}$ i niech $A \psi = X$. Dalej niech $U U^{\dagger} = I$ oraz $\psi' = U \psi, X' = UX$. Dalej powiedzmy że $A' \psi' = X'$ i pytanie jakie jest $A'$. Piszemy
+\begin{equation*}
+	A' U \psi = UX = UA\psi \Rightarrow A'U = UA
+\end{equation*}
+Następnie piszemy
+\begin{equation*}
+	\begin{split}
+		A' U U^{\dagger} &= U A U^{\dagger} \\
+		A' &= U A U^{\dagger} \\
+		A &= U^{\dagger} A U
+	\end{split}
+\end{equation*}
+Własności:
+\begin{enumerate}
+	\item Jeżeli $A = A^{\dagger}$ to $A' = (A')^{\dagger}$
+	\item Jeżeli $  A=\alpha B+\beta C D \Rightarrow A^{\prime}=\alpha B^{\prime}+\beta C' D^{\prime}  $ i jeżeli $[A, B] = \gamma$ to $[A', B'] = \gamma$
+	\item $A, A'$ posiadają taką samą bazę stanów własnych
+	\item $\langle X | A | \psi \rangle = \langle X' | A' | \psi' \rangle$ 
+\end{enumerate}
+Następna rzecz to nieskończenie małe przekształcenia unitarne (\textit{infinitesimal}). Niech $U = I + i \epsilon F$, gdzie $\epsilon << 1$, a $F = F^{\dagger}$. Chcemy pokazać że $U$ jest unitarny.
+\begin{equation*}
+	U^{\dagger} U = (I - i \epsilon F^{\dagger})(I + i \epsilon F) = I + i \epsilon\underbrace{(F - F^{\dagger})}_{= 0} + \epsilon^2F^{\dagger}F \sim I \Rightarrow U \text{jest unitarny.}
+\end{equation*}
+Teraz chcemy zobaczyć jak to działa na funkcję falową. $F$ nazywamy generatorem przekształcenia. Teraz zapiszmy $$\psi' \equiv \psi = \delta \psi = U \psi = (I + i \epsilon F)\psi \Rightarrow \delta \psi = i \epsilon F \psi.$$ W przypadku gdy mamy jakiś operator $A$ też możemy tak zadziałać
+\begin{equation*}
+	A' = A + \delta A = U A U^{\dagger} = \dotsc = A + i \epsilon [F, A] + O(\epsilon^2) \Rightarrow \delta A \sim i \epsilon [F, A]
+\end{equation*}
+\subsection{Wektory i Macierze}
+\begin{align*}
+	&\left.
+	\begin{aligned}
+		X = A \psi \\
+		\psi = \sum_n c_n \psi_n
+	\end{aligned}
+	\right\}
+	\Rightarrow X = \sum_m d_m \psi_m
+\end{align*}
+Gdzie $$d_m = \langle \psi_m | X \rangle = \sum_n \langle \psi_m | A | \psi_n \rangle c_n.$$ Mówimy że $\langle \psi_m | A | \psi_n \rangle = A_{m,n}$ to element macierzowy w jakieś bazie. Inaczej też przypisujemy $ d_m = \sum_n A_{mn}c_n $ i wtedy możemy wprowadzić to jako $\overrightarrow{d} = A \overrightarrow{c}$. W przypadku gdy chcemy obliczyć iloczyn skalarny między stanem $X$ a $\psi$ to wtedy $$ \langle X | \psi \rangle = \sum_n d_n^* c_n = (\overrightarrow{d^{\dagger}} \cdot \overrightarrow{c})$$. 
+Jeżeli mamy zbiór stanów ${\psi_n}$ i chcemy przekształcić w zbiór ${\phi_m}$ to wtedy piszemy
+\begin{equation*}
+	\psi_n = \sum_m U_{mn}\phi_n, \hspace{1cm} \text{gdzie} U_{mn} = \langle \phi_m | \psi_n \rangle
+\end{equation*}
+Można z tego udowodnić że gdy $U$ jest unitarny oraz $A$ jest Hermitowski to ślad generatora A to ślad A
+\subsection{Równanie Schrödingera}
+\textbf{Postulat 7:} Ewolucję czasową funkcji falowej układu wyznacza zależne od czasu równanie Schrödingera które można zapisać następująco:
+\begin{equation*}
+	i \hbar \frac{\partial}{\partial t} \psi(t)=H \psi(t)
+\end{equation*}
+gdzie $H$ to hamiltonian - operator całkowitej energii układu.
+
+Zazwyczaj zapisujemy Hamiltonian następująco:
+$$  H=\sum_{i=1}^{N} \hat{\overrightarrow{p}}^{2} \frac{1}{2 m_{i}} + U\left(\vec{r}, \ldots \overrightarrow{r_{n}}, t\right)  $$
+Operator pędu zapisujemy jako $\hat{\overrightarrow{p}} = -i \hbar \overrightarrow{\nabla}_i$
+Następnie wprowadzamy Operator Ewolucji $U(t, t_0)$ i ma właściwości:
+\begin{itemize}
+	\item $  \psi(t)=u\left(t, t_{0}\right) \psi\left(t_{0}\right)  $
+	\item $U(t_0, t_0) = I$
+	\item $U(t, t_0) = U(t, t')U(t', t_0)$
+	\item $U^{-1}(t, t_0) = U(t_0, t)$
+\end{itemize}
+Kiedy wstawimy to wszystko w RS to dostaniemy 
+\begin{equation*}
+	\begin{split}
+		i \hbar \frac{\partial}{\partial t} U(t, t_0) \psi(t_0) = H U(t, t_0) \psi(t_0) \\
+		U(t, t_0) = I - \frac{i}{\hbar} \int_{t_0}^t HU(t', t_0)dt'	
+	\end{split}
+\end{equation*}
+Teraz chcemy pokazać że operator $U$ jest unitarny.
+\begin{equation*}
+	\begin{split}
+		1=\langle\psi(t_{0}) | \psi(t_0)\rangle = \langle\psi(t) | \psi(t)\rangle = \langle U(t, t_0) \psi(t_0) | U(t, t_0) \psi(t_0) \rangle = \langle \psi(t_0) | U^{\dagger}(t, t_0) U(t, t_0)| \psi(t_0)  \rangle
+	\end{split}
+\end{equation*}
+Aby końcowe wyrażenie było takie samo jak początkowe musimy wprowadzić że $U U^{\dagger} = I$ więc $U$ jest unitarny.
+
+Dalej chcemy rozważać sytuacje że Hamiltonian jest niezależny od czasu, wtedy $$  U\left(t, t_{0}\right)=\exp \left(-\frac{i}{\hbar} H \cdot(t-t_{0})\right)  $$
+$$  \psi(t)=\exp \left(-\frac{i}{\hbar} H \cdot(t-t_{0})\right) \psi(t_0)  $$
+Na koniec chcemy rozważyć tak zwane równanie schrödingera dla operatorów. Powiedzmy że mamy operator Hermitowski i chcemy zobaczyć jak będzie się zmieniać jego wartość średnia w czasie. Mamy wtedy 
+\begin{equation*}
+	\begin{split}
+		\frac{d}{dt} \langle A \rangle &= \frac{d}{d t}\langle\psi| A|\psi\rangle \\
+		&= \left\langle\frac{\partial \psi}{\partial t}\left|  A\right| \psi\right\rangle+\left\langle\psi| \frac{\partial A}{\partial t}| \psi\right\rangle+\left\langle\psi\left| A\right|\frac{\partial \psi}{\partial t}\right\rangle \\
+		&= (-i \hbar)^{-1} \langle H\psi| A|\psi\rangle + \left\langle\psi| \frac{\partial A}{\partial t}| \psi\right\rangle + (-i \hbar)^{-1} \langle \psi| A|H\psi\rangle \\
+		&= (i\hbar)^{-1} \langle [A, H] \rangle + \langle \frac{\partial A}{\partial t} \rangle \\
+		&= \frac{d}{dt}A
+	\end{split}
+\end{equation*}
+To jest tak zwane równanie Heisenberga. \textbf{Pytanie z sali:} H jest samo-sprzężony tutaj? \textbf{Odp.} Tak, bo wartości własne mają być rzeczywiste bo jest energia, ale niektórzy twierdzą że aby operator miał rzeczywiste wartości własne może spełniać inne warunki i nie musi być Hermitowski.
+\textbf{Ważny przykład} kiedy Hamiltonian nie jest zależny od czasu to piszemy $\delta_x \frac{\partial H}{\partial t} = 0$ a także $$ \frac{d}{dt} \langle H \rangle =\langle (i \hbar)^{-1} [H, H] \rangle = 0$$
+I to co tutaj jest zapisane jest kwantowo-mechaniczną odpowiedzią do tego że energia się zachowuje. Gdyby tu zamiast $H$ był inny operator niezależny od czasu to by oznaczało że fizycznie zmienna tego operatora jest wartością która się zachowuje.
