@@ -1,14 +1,14 @@
 \section{Formalizm Mechaniki Kwantowej}
 \subsection{Stan układu}
-Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym samym co axiomy w matematyce ale mimo wszystko są czymś czego nie możemy wyprowadzić a co jest nam bardzo potrzebne aby zbudować jakąś teorie.
+Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym samym co aksjomaty w matematyce, ale mimo wszystko są czymś, czego nie możemy wyprowadzić, a co jest nam bardzo potrzebne, aby zbudować jakąś teorię.
 
-\textbf{Postulat 1:} Do zespołu układów fizycznych w pewnych przypadkach można przypisać funkcję falową lub funkcję stałą która zawiera wszystkie informacje jakie można znać o tym zespole. Funkcja ta jest zespolona, można pomnożyć tą funkcję przez dowolną liczbę zespoloną (poza zerem) bez zmiany jej znaczenia fizycznego.
+\textbf{Postulat 1:} Do zespołu układów fizycznych w pewnych przypadkach można przypisać funkcję falową lub funkcję stanu, która zawiera wszystkie informacje, jakie można znać o~tym zespole. Funkcja ta jest zespolona, można pomnożyć tę funkcję przez dowolną liczbę zespoloną (poza zerem) bez zmiany jej znaczenia fizycznego.
 
-\textbf{Pytanie z sali:} Liczbę zespoloną o module zero tak? \textbf{Odp.} Normalizacja ucierpi wtedy, to znaczy będzie inna normalizacja, ale jeżeli wrzucimy do równania Schrödingera to z równia wynik będzie taki sam. i nawet potem jak zobaczymy i obliczamy dowolne obserwable to wtedy w niezależności od normalizacji funkcji otrzymamy ten sam wynik.
+\textbf{Pytanie z sali:} Liczbę zespoloną o module zero, tak? \textbf{Odp.} Normalizacja ucierpi wtedy, to znaczy będzie inna normalizacja, ale jeżeli wrzucimy do równania Schrödingera, to wynik będzie taki sam. I nawet potem, jak zobaczymy i obliczamy dowolne obserwable, to wtedy niezależnie od normalizacji funkcji otrzymamy ten sam wynik.
 
-" Postulat 1.2" \hspace{1pt} jest implikacją postulatu 1.
+Postulat 1.2 jest implikacją postulatu 1.
 
-\textbf{"Postulat 1.2":}
+\textbf{Postulat 1.2:}
 \begin{equation*}
 	\begin{split}
 		I &= \int \vert \psi(\vec{r}, t)\vert^2 d\vec{r} = (1?) \quad \text{ jest skończona} \\
@@ -16,27 +16,27 @@ Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym
 	\end{split}
 \end{equation*}
 
-Jedynka jest ze znakiem zapytania ponieważ tak zazwyczaj wychodzi dla wygody ale to nie jest to zawsze.
+Jedynka jest ze znakiem zapytania, ponieważ tak zazwyczaj wychodzi dla wygody, ale to nie jest tak zawsze.
 
-\textbf{Komentarz z sali} Implikacja mi się wydaje że może być tylko dlatego bo chcemy mieć dowolną informację a to daje nam informacje o prawdopodobieństwie położenia więc jakby to było nieskończone to byśmy tracili jakąś informacje. To jedyne co mogę wymyślić dlaczego to jest implikacja a nie postulat 1.2. \textbf{Odp.} No racja, faktycznie można tak powiedzieć.
+\textbf{Komentarz z sali:} Implikacja mi się wydaje, że może być tylko dlatego, bo chcemy mieć dowolną informację, a to daje nam informację o prawdopodobieństwie położenia, więc jakby to było nieskończone, to byśmy tracili jakąś informację. To jedyne, co mogę wymyślić, dlaczego to jest implikacja, a nie postulat 1.2. \textbf{Odp.} No racja, faktycznie można tak powiedzieć.
 
-Jeszcze taka rzecz której jeszcze nie mieliśmy. Jeżeli chcemy znaleźć prawdopodobieństwo tego że cząstka się znajduje w jakimś punkcie $r_1$ w jakimś czasie $t$ wtedy możemy wciąć prawdopodobieństwo dla całego układu $n$ cząstek i zcałkować wszystko po współrzędnych zaczynając od $r_2$, czyli po wszystkich cząstkach poza tą która nas ciekawi
+Jeszcze taka rzecz, której nie mieliśmy. Jeżeli chcemy znaleźć prawdopodobieństwo tego, że cząstka znajduje się w jakimś punkcie $r_1$ w jakimś czasie $t$, wtedy możemy wziąć prawdopodobieństwo dla całego układu $n$ cząstek i zcałkować wszystko po współrzędnych zaczynając od $r_2$, czyli po wszystkich cząstkach poza tą, która nas ciekawi:
 
 \begin{equation*}
 	P(\vec{r}_1, t) = \int P (\vec{r}_1, \dots, \vec{r}_n, t) d\vec{r}_2\dots d\vec{r}_n
 \end{equation*}
 
-To jest rzecz której nie wprowadziliśmy wcześniej bo nie mieliśmy układów wielocząstkowych.
+To jest rzecz, której nie wprowadziliśmy wcześniej, bo nie mieliśmy układów wielocząstkowych.
 
-Mówiliśmy o tym że funkcja falowa z jakimś zdefiniowanym pędem to fala płaska która nie jest całkowalna kwadratowa, to znaczy całka nie daje nam skończonej liczb.y Czemu możemy powiedzieć że nie mamy z tym problemu? \textbf{Z sali:} bo wszechświat jest skończony. \textbf{Odp.} Faktycznie ma pan racje, bo kiedy mówimy o jakiejś funkcji falowej to znaczy coś co chociażby teoretycznie możemy użyć aby zmierzyć cząstkę. Jeżeli pewna cząstka, na przykład elektron, ma doskonale zdefiniowany pęd to znaczy z nieoznaczoności Heisenberga będzie wynikało że nieoznaczoność położenia będzie nieskończona. To znaczy że jeżeni ktoś chce zmierzyć taki elektron to to oznacza że on teoretycznie może znaleźć nie tylko w państwa laboratorium a również na marsie, w innej galaktyce i tak dalej. Więc nawet teoretycznie nie możemy sobie wyobrazić takiej sytuacji gdzie ktoś zmierzy absolutnie dokładnie pęd elektrony. W takim razie będziemy pracować z pakietami falowym które są dobrze całkowalne.
+Mówiliśmy o tym, że funkcja falowa z jakimś zdefiniowanym pędem to fala płaska, która nie jest całkowalna kwadratowo, to znaczy całka nie daje nam skończonej liczby. Czemu możemy powiedzieć, że nie mamy z tym problemu? \textbf{Z sali:} bo wszechświat jest skończony. \textbf{Odp.} Faktycznie, ma pan rację, bo kiedy mówimy o jakiejś funkcji falowej, to znaczy coś, co chociażby teoretycznie możemy użyć, aby zmierzyć cząstkę. Jeżeli pewna cząstka, na przykład elektron, ma doskonale zdefiniowany pęd, to z nieoznaczoności Heisenberga będzie wynikało, że nieoznaczoność położenia będzie nieskończona. To znaczy, że jeżeli ktoś chce zmierzyć taki elektron, to to oznacza, że on teoretycznie może znaleźć się nie tylko w państwa laboratorium, a również na Marsie, w innej galaktyce i tak dalej. Więc nawet teoretycznie nie możemy sobie wyobrazić takiej sytuacji, gdzie ktoś zmierzy absolutnie dokładnie pęd elektronu. W takim razie będziemy pracować z pakietami falowymi, które są dobrze całkowalne.
 
-\textbf{Postulat 2: Zasada superpozycji dla $\psi$:} Jeżeli mamy dwie $\psi_1, \psi_2$ to spokojnie możemy je ze sobą dodać z jakimiś współczynnikami $c_1, c_2$ i otrzymamy inną funkcję falową. 
+\textbf{Postulat 2: Zasada superpozycji dla $\psi$:} Jeżeli mamy dwie $\psi_1, \psi_2$, to spokojnie możemy je ze sobą dodać z jakimiś współczynnikami $c_1, c_2$ i otrzymamy inną funkcję falową. 
 
 \begin{equation*}
 	\psi = c_1 \psi_1 + c_2 \psi_2
 \end{equation*}
 
-Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolonych, są tylko pewne specjalne zagadnienia kiedy funkcje falowe sa rzeczywiste.
+Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolonych, są tylko pewne specjalne zagadnienia, kiedy funkcje falowe są rzeczywiste.
 
 \textbf{Funkcja falowa w przestrzeni pędu}
 \begin{equation*}
@@ -45,15 +45,15 @@ Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolony
 \begin{equation*}
 	\begin{split}
 		\phi (\vec{p}_1, \dots, \vec{p}_{\omega}, t) \equiv (2 \pi \hbar)^{\frac{-3\omega}{2}} \int \text{exp}&\left[ -\frac{i}{\hbar} (\vec{p}_1 \cdot \vec{z}_1 + \dots + \vec{p}_N \cdot \vec{z}_N)  \right] \\
-		&\cdot \vspace{10cm}\psi(\vec{z}_1, \dots, \vec{z}_N, t) \hspace{2pt} \text{d}\vec{z}_1 \dots \text{d}\vec{z}_N
+		&\cdot \psi(\vec{z}_1, \dots, \vec{z}_N, t) \hspace{2pt} \text{d}\vec{z}_1 \dots \text{d}\vec{z}_N
 	\end{split}
 \end{equation*}
 \begin{equation*}
-		\left< \psi_1 \vert \psi_2 \right> \equiv \int \psi_1^*(\vec{z}) \psi_2^*(\vec{z})\text{d}\vec{z}	
+	\left< \psi_1 \vert \psi_2 \right> \equiv \int \psi_1^*(\vec{z}) \psi_2(\vec{z})\text{d}\vec{z} 	
 \end{equation*}
 \subsection{Zmienne dynamiczne a operatory}
 \textbf{Postulat 3:} Z każdą zmienną powiązany jest operator liniowy. 
-Więc kiedy mówimy o czymś co możemy wymyślić w przypadku fizyki klasycznej (ale nie tylko), na przykład położenie, pęd, energia, wtedy mamy operator który odpowiada tej zmiennej dynamicznej. W mechanice kwantowej będą rzeczy których może nie być w fizyce klasycznej, na przykład spin. 
+Więc kiedy mówimy o~czymś co możemy wymyślić w przypadku fizyki klasycznej (ale nie tylko), na przykład położenie, pęd, energia, wtedy mamy operator który odpowiada tej zmiennej dynamicznej. W mechanice kwantowej będą rzeczy których może nie być w fizyce klasycznej, na przykład spin. 
 Co to znaczy że operator jest liniowy? Operator taki musi spełniać poniższe
 \begin{equation*}
 	A(c_1 \psi_1 + c_2 \psi_2) = c_1 A(\psi_1) + c_2 A(\psi_2)
@@ -97,7 +97,7 @@ Korzystając z powyższych możemy zapisać
 \begin{equation*}
 	A = \frac{\langle \psi | A | \psi \rangle}{\langle\psi | \psi\rangle}
 \end{equation*}
-Tutaj trzeba zwrócić uwagę na jedną bardzo ważną rzecz, mianowicie wszystkie układy tego pomiaru (np. atomy) muszą być w dokładnie takim samym stanie. Tu jest różnica między statystyką klasyczną (jak na przykład przy pomiaru prędkości atomów w gazie) a kwantową (gdzie wszystkie atomy s.ą przygotowane w dokładnie takim samym stanie ale proces kiedy mierzymy ten stan jest procesem z jakimś pewnym prawdopodobieństwem).
+Tutaj trzeba zwrócić uwagę na jedną bardzo ważną rzecz, mianowicie wszystkie układy tego pomiaru (np. atomy) muszą być w dokładnie takim samym stanie. Tu jest różnica między statystyką klasyczną (jak na przykład przy pomiaru prędkości atomów w gazie) a~kwantową (gdzie wszystkie atomy s.ą przygotowane w dokładnie takim samym stanie ale proces kiedy mierzymy ten stan jest procesem z jakimś pewnym prawdopodobieństwem).
 
 \textbf{Pytanie z sali:} A dlaczego wprowadzamy formalizm dopiero teraz? \textbf{Odp.} Bo gdyby wprowadzić formalizm mechaniki kwantowej na samym początku to by nie było wiadomo co się dzieje, a tak zaczynaliśmy od prostszych zagadnień i teraz mamy podstawę do tego by to zrozumieć.
 
@@ -199,7 +199,7 @@ No a w przypadku gdy obliczamy średnią wartość operatora $A$ to jest
 	\langle A\rangle=\langle\psi| A|\psi\rangle= \dotsc = \sum_{n}\left|c_{n}\right|^{2} a_{n}
 \end{equation*}
 Normalizacja w przypadku gdy $\langle \psi | \psi \rangle = 1$ to z tego wynika że $\sum |c_n^2|$ też jest $1$.
-W przypadku gdy istnieją stany zdegenerowane, wtedy możemy $\psi$ możemy rozpisać jako 
+W~przypadku gdy istnieją stany zdegenerowane, wtedy możemy $\psi$ możemy rozpisać jako 
 \begin{equation*}
 	\psi = \sum_n \sum_{r=1}^{\alpha} c_{n_r} \psi_{n_r}
 \end{equation*}
@@ -324,7 +324,7 @@ $$  H=\sum_{i=1}^{N} \hat{\overrightarrow{p}}^{2} \frac{1}{2 m_{i}} + U\left(\ve
 Operator pędu zapisujemy jako $\hat{\vec{p}} = -i \hbar \vec{\nabla}_i$
 Następnie wprowadzamy Operator Ewolucji $U(t, t_0)$ i ma właściwości:
 \begin{itemize}
-	\item $  \psi(t)=u\left(t, t_{0}\right) \psi\left(t_{0}\right)  $
+	\item $\psi(t)=u\left(t, t_{0}\right) \psi\left(t_{0}\right)$
 	\item $U(t_0, t_0) = I$
 	\item $U(t, t_0) = U(t, t')U(t', t_0)$
 	\item $U^{-1}(t, t_0) = U(t_0, t)$
@@ -339,7 +339,8 @@ Kiedy wstawimy to wszystko w RS to dostaniemy
 Teraz chcemy pokazać że operator $U$ jest unitarny.
 \begin{equation*}
 	\begin{split}
-		1=\langle\psi(t_{0}) | \psi(t_0)\rangle = \langle\psi(t) | \psi(t)\rangle = \langle U(t, t_0) \psi(t_0) | U(t, t_0) \psi(t_0) \rangle = \langle \psi(t_0) | U^{\dagger}(t, t_0) U(t, t_0)| \psi(t_0)  \rangle
+		1=\langle\psi(t_{0}) | \psi(t_0)\rangle &= \langle\psi(t) | \psi(t)\rangle = \\
+		&=\langle U(t, t_0) \psi(t_0) | U(t, t_0) \psi(t_0) \rangle = \langle \psi(t_0) | U^{\dagger}(t, t_0) U(t, t_0)| \psi(t_0)  \rangle
 	\end{split}
 \end{equation*}
 Aby końcowe wyrażenie było takie samo jak początkowe musimy wprowadzić że $U U^{\dagger} = I$ więc $U$ jest unitarny.
