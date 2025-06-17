@@ -12,7 +12,7 @@ Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym
 \begin{equation*}
 	\begin{split}
 		I &= \int \vert \psi(\vec{r}, t)\vert^2 d\vec{r} = (1?) \quad \text{ jest skończona} \\
-		I &= \int \vert \psi (\vec{r_1}, \dots, \vec{r_n}, t)\vert^2 d\vec{r_1}\dots d\vec{r_n} = (1?) = \int P(\vec{r_1}, \dots, \vec{r_n}, t)d\vec{r_1}\dots d\vec{r_n}
+		I &= \int \vert \psi (\vec{r_1}, \dots, \vec{r}_n, t)\vert^2 d\vec{r_1}\dots d\vec{r}_n = (1?) = \int P(\vec{r_1}, \dots, \vec{r}_n, t)d\vec{r_1}\dots d\vec{r}_n
 	\end{split}
 \end{equation*}
 
@@ -23,7 +23,7 @@ Jedynka jest ze znakiem zapytania ponieważ tak zazwyczaj wychodzi dla wygody al
 Jeszcze taka rzecz której jeszcze nie mieliśmy. Jeżeli chcemy znaleźć prawdopodobieństwo tego że cząstka się znajduje w jakimś punkcie $r_1$ w jakimś czasie $t$ wtedy możemy wciąć prawdopodobieństwo dla całego układu $n$ cząstek i zcałkować wszystko po współrzędnych zaczynając od $r_2$, czyli po wszystkich cząstkach poza tą która nas ciekawi
 
 \begin{equation*}
-	P(\vec{r_1}, t) = \int P (\vec{r_1}, \dots, \vec{r_n}, t) d\vec{r_2}\dots d\vec{r_n}
+	P(\vec{r}_1, t) = \int P (\vec{r}_1, \dots, \vec{r}_n, t) d\vec{r}_2\dots d\vec{r}_n
 \end{equation*}
 
 To jest rzecz której nie wprowadziliśmy wcześniej bo nie mieliśmy układów wielocząstkowych.
@@ -40,16 +40,16 @@ Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolony
 
 \textbf{Funkcja falowa w przestrzeni pędu}
 \begin{equation*}
-	\phi (\overrightarrow{p_1}, \dots, \overrightarrow{p_{\omega}}, t) = \int |\psi|^2 d \overrightarrow{p} = 1
+	\phi (\vec{p}_1, \dots, \vec{p}_{\omega}, t) = \int |\psi|^2 d \vec{p} = 1
 \end{equation*}
 \begin{equation*}
 	\begin{split}
-		\phi (\overrightarrow{p_1}, \dots, \overrightarrow{p_{\omega}}, t) \equiv (2 \pi \hbar)^{\frac{-3\omega}{2}} \int \text{exp}&\left[ -\frac{i}{\hbar} (\overrightarrow{p_1} \cdot \overrightarrow{z_1} + \dots + \overrightarrow{p_N} \cdot \overrightarrow{z_N})  \right] \\
-		&\cdot \vspace{10cm}\psi(\overrightarrow{z_1}, \dots, \overrightarrow{z_N}, t) \hspace{2pt} \text{d}\overrightarrow{z_1} \dots \text{d}\overrightarrow{z_N}
+		\phi (\vec{p}_1, \dots, \vec{p}_{\omega}, t) \equiv (2 \pi \hbar)^{\frac{-3\omega}{2}} \int \text{exp}&\left[ -\frac{i}{\hbar} (\vec{p}_1 \cdot \vec{z}_1 + \dots + \vec{p}_N \cdot \vec{z}_N)  \right] \\
+		&\cdot \vspace{10cm}\psi(\vec{z}_1, \dots, \vec{z}_N, t) \hspace{2pt} \text{d}\vec{z}_1 \dots \text{d}\vec{z}_N
 	\end{split}
 \end{equation*}
 \begin{equation*}
-		\left< \psi_1 \vert \psi_2 \right> \equiv \int \psi_1^*(\overrightarrow{z}) \psi_2^*(\overrightarrow{z})\text{d}\overrightarrow{z}	
+		\left< \psi_1 \vert \psi_2 \right> \equiv \int \psi_1^*(\vec{z}) \psi_2^*(\vec{z})\text{d}\vec{z}	
 \end{equation*}
 \subsection{Zmienne dynamiczne a operatory}
 \textbf{Postulat 3:} Z każdą zmienną powiązany jest operator liniowy. 
@@ -61,12 +61,12 @@ Co to znaczy że operator jest liniowy? Operator taki musi spełniać poniższe
 W jaki sposób te operatory zapisujemy? Taki operator może być zależny od różnych parametrów, na przykład Hamiltonian był zależny od położenia i pędu, więc generalnie operatory możemy jako zależny od wszystkich położeń oraz pędów w czasie. Jaki to jest problem? Problem jest taki że my pracujemy albo w przestrzeni położenia albo w przestrzeni pędów, więc oba na raz wyglądają nieco dziwnie, więc możemy zapisać jak poniżej za pomocą operatora Nabla.
 \begin{equation*}
 	\begin{split}
-		&A(\overrightarrow{z_1}, \dots, \overrightarrow{z_N}, \overrightarrow{p_1}, \dots, \overrightarrow{p_N}, t) = \\
-		&A(\overrightarrow{z_1}, \dots, \overrightarrow{z_N}, -i \hbar \overrightarrow{\nabla}_{z_1}, \dots, t) = \\
-		&A(-i \hbar \overrightarrow{\nabla}_{p_1}, \dots, p_1, \dots, t)
+		&A(\vec{z}_1, \dots, \vec{z}_N, \vec{p}_1, \dots, \vec{p}_N, t) = \\
+		&A(\vec{z}_1, \dots, \vec{z}_N, -i \hbar \vec{\nabla}_{z_1}, \dots, t) = \\
+		&A(-i \hbar \vec{\nabla}_{p_1}, \dots, p_1, \dots, t)
 	\end{split}	
 \end{equation*}
-\textbf{Definicja:} ${a_n \psi_n}$ to jest zbiór wartości własnych a również stanów operatora A $\iff$ $A \psi_n = a_n \psi_n$.
+\textbf{Definicja:} ${a_n \psi}_n$ to jest zbiór wartości własnych a również stanów operatora A $\iff$ $A \psi_n = a_n \psi_n$.
 
 \textbf{Postulat 4:} Jedynym wynikiem pomiaru zmiennej A jest jedna z wartości własnych operatora liniowego A skojarzonego z tą zmienną A.
 
@@ -178,7 +178,7 @@ Stany zdegenorwane $\Rightarrow A\psi_{n^r} = a_r \psi_{n^r}, \quad r = 1, 2, \d
 
 \textbf{Postulat 5:} Funkcję falową reprezentującą dowolny stan dynamiczny można wyrazić jako kombinacje liniową funkcji własnych operatora A, gdzie A jest operatorem związanym z naszą zmienną. Inaczej, $\psi = \sum_n e_n \psi_n$. Liczba stanów nie musi być skończona ale liczba ta nie jest dla nas jakoś specjalnie ciekawa. Będziemy odcinać stany które nie są praktyczne w obliczeniu
 
-Jaka jest różnica między stanem a funkcją falową? \textbf{Odpowiedź z sali:} stan to nasze zaobserwowanie cząstki a funkcja falowa to wszystkie stany jakie ta cząstka może przyjąć. Możemy zapisywać $\langle x | \Xi \rangle \equiv \psi (\overrightarrow{x})$, gdzie po lewej mamy stan a po prawej funkcję falową, czyli z definicji zawiera wszystkie informacje aby określić stan. Możemy tez dla pędu zapisać $\langle p | \Xi \rangle \equiv \phi (\overrightarrow{p})$. Możemy rozpisywać $$ \psi(t, x_1, x_2) = \psi_1(t, x_1) \psi_2(t, x_2) $$ dla cząstek.
+Jaka jest różnica między stanem a funkcją falową? \textbf{Odpowiedź z sali:} stan to nasze zaobserwowanie cząstki a funkcja falowa to wszystkie stany jakie ta cząstka może przyjąć. Możemy zapisywać $\langle x | \Xi \rangle \equiv \psi (\vec{x})$, gdzie po lewej mamy stan a po prawej funkcję falową, czyli z definicji zawiera wszystkie informacje aby określić stan. Możemy tez dla pędu zapisać $\langle p | \Xi \rangle \equiv \phi (\vec{p})$. Możemy rozpisywać $$ \psi(t, x_1, x_2) = \psi_1(t, x_1) \psi_2(t, x_2) $$ dla cząstek.
 Mówimy że jeżeli w taki sposób jesteśmy w stanie zapisać takie wyrażenie to zbiór $\{\psi_n\}$ jest pełny. Ale nie każdy operator Hermitowski generuje zbiór funkcji własnych. Powiedzmy że jakiś operator ma trzy funkcje własne, wtedy nigdy nie potrafimy rozpisać dowolnej funkcji falowej (na przykład wodoru) jako taką kombinację z tych trzech funkcji, bo to by oznaczało że chcemy nieskończenie wymiarowy wektor i zmieniamy bazę z przestrzeni nieskończenie-wielowymiarowej do bazy trzy-wymiarowej co nie do końca ma sens. Taka baza musi być przynajmniej nieskończona żeby to się dało obliczyć.
 
 Dalej, mówimy że 
@@ -306,8 +306,8 @@ Teraz chcemy zobaczyć jak to działa na funkcję falową. $F$ nazywamy generato
 	\right\}
 	\Rightarrow X = \sum_m d_m \psi_m
 \end{align*}
-Gdzie $$d_m = \langle \psi_m | X \rangle = \sum_n \langle \psi_m | A | \psi_n \rangle c_n.$$ Mówimy że $\langle \psi_m | A | \psi_n \rangle = A_{m,n}$ to element macierzowy w jakieś bazie. Inaczej też przypisujemy $ d_m = \sum_n A_{mn}c_n $ i wtedy możemy wprowadzić to jako $\overrightarrow{d} = A \overrightarrow{c}$. W przypadku gdy chcemy obliczyć iloczyn skalarny między stanem $X$ a $\psi$ to wtedy $$ \langle X | \psi \rangle = \sum_n d_n^* c_n = (\overrightarrow{d^{\dagger}} \cdot \overrightarrow{c})$$. 
-Jeżeli mamy zbiór stanów ${\psi_n}$ i chcemy przekształcić w zbiór ${\phi_m}$ to wtedy piszemy
+Gdzie $$d_m = \langle \psi_m | X \rangle = \sum_n \langle \psi_m | A | \psi_n \rangle c_n.$$ Mówimy że $\langle \psi_m | A | \psi_n \rangle = A_{m,n}$ to element macierzowy w jakieś bazie. Inaczej też przypisujemy $ d_m = \sum_n A_{mn}c_n $ i wtedy możemy wprowadzić to jako $\vec{d} = A \vec{c}$. W przypadku gdy chcemy obliczyć iloczyn skalarny między stanem $X$ a $\psi$ to wtedy $$ \langle X | \psi \rangle = \sum_n d_n^* c_n = (\vec{d^{\dagger}} \cdot \vec{c})$$. 
+Jeżeli mamy zbiór stanów ${\psi}_n$ i chcemy przekształcić w zbiór ${\phi_m}$ to wtedy piszemy
 \begin{equation*}
 	\psi_n = \sum_m U_{mn}\phi_n, \hspace{1cm} \text{gdzie} U_{mn} = \langle \phi_m | \psi_n \rangle
 \end{equation*}
@@ -320,8 +320,8 @@ Można z tego udowodnić że gdy $U$ jest unitarny oraz $A$ jest Hermitowski to 
 gdzie $H$ to hamiltonian - operator całkowitej energii układu.
 
 Zazwyczaj zapisujemy Hamiltonian następująco:
-$$  H=\sum_{i=1}^{N} \hat{\overrightarrow{p}}^{2} \frac{1}{2 m_{i}} + U\left(\vec{r}, \ldots \overrightarrow{r_{n}}, t\right)  $$
-Operator pędu zapisujemy jako $\hat{\overrightarrow{p}} = -i \hbar \overrightarrow{\nabla}_i$
+$$  H=\sum_{i=1}^{N} \hat{\overrightarrow{p}}^{2} \frac{1}{2 m_{i}} + U\left(\vec{r}, \ldots \vec{r_{n}}, t\right)  $$
+Operator pędu zapisujemy jako $\hat{\vec{p}} = -i \hbar \vec{\nabla}_i$
 Następnie wprowadzamy Operator Ewolucji $U(t, t_0)$ i ma właściwości:
 \begin{itemize}
 	\item $  \psi(t)=u\left(t, t_{0}\right) \psi\left(t_{0}\right)  $
