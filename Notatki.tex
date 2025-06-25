@@ -10,17 +10,28 @@
 \usepackage{parskip}
 \usepackage{tikz}
 \usepackage{amsmath}
+\usepackage{braket}
 \usepackage[hidelinks]{hyperref}
 \geometry{left=25mm, right=25mm, top=25mm, bottom=25mm}
 \graphicspath{{images/}{./}}
 
 \begin{document}
 
+% temporary
+\hbadness=10000 % suppress underfull hbox warnings
+\vbadness=10000 % suppress underfull vbox warnings
+\hfuzz=1000pt % suppress overfull hbox warnings (visual + log)
+\vfuzz=1000pt % suppress overfull vbox warnings (visual + log)
+\overfullrule=0pt % suppress black bars in output
+
 \title{Podstawy mechaniki kwantowej}
 \author{Notatki z wykładu}
 \date{\today}
 \maketitle
 \tableofcontents
+
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
 
 \include{Wykład1}
 \include{Wykład2}

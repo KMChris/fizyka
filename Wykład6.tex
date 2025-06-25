@@ -1,10 +1,77 @@
 \section{Formalizm Mechaniki Kwantowej}
+Przed przejściem do właściwego formalizmu mechaniki kwantowej
+ustalmy notację. Dla przestrzeni Hilberta $\mathcal H$ iloczyn skalarny
+oznaczamy przez $\langle \cdot | \cdot \rangle$. Jest on liniowy ze względu
+na drugą zmienną i antylinowy ze względu na pierwszą, czyli wedle konwencji
+matematycznej mamy
+\begin{equation*}
+    \langle x | y \rangle = \langle y, x \rangle.
+\end{equation*}
+W związku z tym, rozważając przestrzenie Hilberta postaci $L^2(X)$ mamy
+\begin{equation*}
+    \langle f | g \rangle = \int_X f(x)^* g(x) dx.
+\end{equation*}
+Sprzeżenie (Hermitowskie) operatora $A$ będziemy oznaczać $A^\dagger$
+zamiast $A^*$. To znaczy $\braket{f|Ag} = \braket{A^\dagger f| g}$.
+Przypomnijmy kilka własności sprzężenia:
+\begin{equation*}
+	\begin{split}
+		&(cA)^{\dagger} = c^* A^{\dagger}, \\
+		&(A + B)^{\dagger} = A^{\dagger} + B^{\dagger},\\
+		&(AB)^{\dagger} = B^{\dagger}A^{\dagger}.
+	\end{split}
+\end{equation*}
+Operator samosprzężony (Hermitowski) to taki, dla którego $A^\dagger = A$.
+
+Poniżej, znajduje się formalne matematyczne wyjaśnienie notacji bra--ket.
+
+Z twierdzenia Riesza, $x \mapsto \langle x | \cdot \rangle$ jest antyliniową
+izometrią $\mathcal H \to \mathcal H^*$.
+Ciągłe funkcjonały linowe na $\mathcal H$ będziemy oznaczać $\langle x|$,
+gdzie $\langle x| (y) = \langle x | y \rangle$.
+Po dwukrotnym zastosowaniu twierdzenia Riesza jasnym jest, że $\mathcal H^{**}$
+jest liniowo izometryczna z $\mathcal H$ przez $y \mapsto | y \rangle$, gdzie
+$|y\rangle (\langle x |) = \langle x | y \rangle$.
+Od tej pory będziemy utożsamiać $x$ z $|x\rangle$; w takim wypadku
+\begin{equation*}
+    |x \rangle \mapsto \langle x |
+\end{equation*}
+jest antyliniową izometrią występującą w twierdzeniu Riesza.
+W przy takim utożsamieniu, dla dowolnego liniowego operatora
+$A \colon \mathcal H \to \mathcal H$ mamy (pomijając nawiasy)
+$\braket{f|A|g} = \braket{f|Ag} = \braket{A^\dagger f | g}$.
+
+Jest jasnym, że zachodzą następujące własności: dla
+$f, g, h \in \mathcal H, \alpha \in \mathbb C$ oraz operatorów
+liniowych $A, B, C\colon \mathcal H \to \mathcal H$
+\begin{itemize}
+    \item $\braket{f|g} = \braket{g|f}^*$,
+    \item $\braket{f|\alpha g + h} = \alpha \braket{f|g} + \braket{f|h}$,
+    \item $\braket{\alpha f + g|h} = \alpha^* \braket{f|h} + \braket{g|h}$,
+    \item $\braket{f|ABC|g} = \braket{A^\dagger f| B | C g}$,
+    \item $\langle \phi |  = \langle x | A^{\dagger} \iff | \phi \rangle = A | x \rangle$,
+\end{itemize}
+etc.
+W fizyce często używa się operatorów nieograniczonych, określonych nie na
+całym $\mathcal H$ a na pewnej gęstej podprzestrzeni; wówczas powyższe
+dalej jest prawdziwe, przy odpowiednim uwzględnieniu dziedzin.
+
+
+
+
 \subsection{Stan układu}
 Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym samym co aksjomaty w matematyce, ale mimo wszystko są czymś, czego nie możemy wyprowadzić, a co jest nam bardzo potrzebne, aby zbudować jakąś teorię.
 
 \textbf{Postulat 1:} Do zespołu układów fizycznych w pewnych przypadkach można przypisać funkcję falową lub funkcję stanu, która zawiera wszystkie informacje, jakie można znać o~tym zespole. Funkcja ta jest zespolona, można pomnożyć tę funkcję przez dowolną liczbę zespoloną (poza zerem) bez zmiany jej znaczenia fizycznego.
 
-\textbf{Pytanie z sali:} Liczbę zespoloną o module zero, tak? \textbf{Odp.} Normalizacja ucierpi wtedy, to znaczy będzie inna normalizacja, ale jeżeli wrzucimy do równania Schrödingera, to wynik będzie taki sam. I nawet potem, jak zobaczymy i obliczamy dowolne obserwable, to wtedy niezależnie od normalizacji funkcji otrzymamy ten sam wynik.
+To znaczy, że będziemy zajmować się funkcjami
+$\Psi \colon [0, t_{\text{max}}) \times \RR^n \to \CC$ gdzie $\Psi(t, \cdot ) \in L^2(\RR^n)$
+(krzywa w przestrzeni $L^2(\RR^n)$)
+lub $\psi \colon \RR^n \to \CC$, $\psi \in L^2(\RR^n)$ (punkt w tejże przestrzeni).
+Dla prostych zagadnień $n=1$, dla przestrzeni trójwymiarowej $n=3$, dla
+układu $k$ cząstek w przestrzeni trójwymiarowej $n=3k$ itd.
+
+\textbf{Pytanie z sali:} Liczbę zespoloną o module różnym od zera, tak? \textbf{Odp.} Normalizacja ucierpi wtedy, to znaczy będzie inna normalizacja, ale jeżeli wrzucimy do równania Schrödingera, to wynik będzie taki sam. I nawet potem, jak zobaczymy i obliczamy dowolne obserwable, to wtedy niezależnie od normalizacji funkcji otrzymamy ten sam wynik.
 
 Postulat 1.2 jest implikacją postulatu 1.
 
@@ -18,7 +85,9 @@ Postulat 1.2 jest implikacją postulatu 1.
 
 Jedynka jest ze znakiem zapytania, ponieważ tak zazwyczaj wychodzi dla wygody, ale to nie jest tak zawsze.
 
+\iffalse % to jest nieaktualne po uściśleniu postulatu 1
 \textbf{Komentarz z sali:} Implikacja mi się wydaje, że może być tylko dlatego, bo chcemy mieć dowolną informację, a to daje nam informację o prawdopodobieństwie położenia, więc jakby to było nieskończone, to byśmy tracili jakąś informację. To jedyne, co mogę wymyślić, dlaczego to jest implikacja, a nie postulat 1.2. \textbf{Odp.} No racja, faktycznie można tak powiedzieć.
+\fi
 
 Jeszcze taka rzecz, której nie mieliśmy. Jeżeli chcemy znaleźć prawdopodobieństwo tego, że cząstka znajduje się w jakimś punkcie $r_1$ w jakimś czasie $t$, wtedy możemy wziąć prawdopodobieństwo dla całego układu $n$ cząstek i zcałkować wszystko po współrzędnych zaczynając od $r_2$, czyli po wszystkich cząstkach poza tą, która nas ciekawi:
 
@@ -39,6 +108,7 @@ Mówiliśmy o tym, że funkcja falowa z jakimś zdefiniowanym pędem to fala pł
 Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolonych, są tylko pewne specjalne zagadnienia, kiedy funkcje falowe są rzeczywiste.
 
 \textbf{Funkcja falowa w przestrzeni pędu}
+% TODO
 \begin{equation*}
 	\phi (\vec{p}_1, \dots, \vec{p}_{\omega}, t) = \int |\psi|^2 d \vec{p} = 1
 \end{equation*}
@@ -52,12 +122,14 @@ Współczynniki przy funkcjach falowych zawsze są w kontekście liczb zespolony
 	\left< \psi_1 \vert \psi_2 \right> \equiv \int \psi_1^*(\vec{z}) \psi_2(\vec{z})\text{d}\vec{z} 	
 \end{equation*}
 \subsection{Zmienne dynamiczne a operatory}
-\textbf{Postulat 3:} Z każdą zmienną powiązany jest operator liniowy. 
+\textbf{Postulat 3:} Z każdą zmienną fizyczną powiązany jest operator liniowy. 
 Więc kiedy mówimy o~czymś co możemy wymyślić w przypadku fizyki klasycznej (ale nie tylko), na przykład położenie, pęd, energia, wtedy mamy operator który odpowiada tej zmiennej dynamicznej. W mechanice kwantowej będą rzeczy których może nie być w fizyce klasycznej, na przykład spin. 
+\iffalse % oczywiste dla każdego po pierwszym roku matematyki
 Co to znaczy że operator jest liniowy? Operator taki musi spełniać poniższe
 \begin{equation*}
 	A(c_1 \psi_1 + c_2 \psi_2) = c_1 A(\psi_1) + c_2 A(\psi_2)
 \end{equation*}
+\fi
 W jaki sposób te operatory zapisujemy? Taki operator może być zależny od różnych parametrów, na przykład Hamiltonian był zależny od położenia i pędu, więc generalnie operatory możemy jako zależny od wszystkich położeń oraz pędów w czasie. Jaki to jest problem? Problem jest taki że my pracujemy albo w przestrzeni położenia albo w przestrzeni pędów, więc oba na raz wyglądają nieco dziwnie, więc możemy zapisać jak poniżej za pomocą operatora Nabla.
 \begin{equation*}
 	\begin{split}
@@ -66,9 +138,17 @@ W jaki sposób te operatory zapisujemy? Taki operator może być zależny od ró
 		&A(-i \hbar \vec{\nabla}_{p_1}, \dots, p_1, \dots, t)
 	\end{split}	
 \end{equation*}
-\textbf{Definicja:} ${a_n \psi}_n$ to jest zbiór wartości własnych a również stanów operatora A $\iff$ $A \psi_n = a_n \psi_n$.
 
-\textbf{Postulat 4:} Jedynym wynikiem pomiaru zmiennej A jest jedna z wartości własnych operatora liniowego A skojarzonego z tą zmienną A.
+\iffalse % oczywiste dla każdego po pierwszym roku matematyki
+\textbf{Definicja:} ${a_n \psi}_n$ to jest zbiór wartości własnych a również stanów operatora A $\iff$ $A \psi_n = a_n \psi_n$.
+\fi
+
+\textbf{Postulat 4:} Jedynym wynikiem pomiaru zmiennej $A$ jest jedna
+z wartości własnych operatora liniowego $A$ skojarzonego z tą zmienną. \\
+Ponieważ wszystkie wyniki pomiarów w fizyce są rzeczywiste, zakładamy
+że każdy operator odpowiadający mierzalnej wielkości fizycznej
+(czyli obserwabli) jest Hermitowski (samosprzężony), t.j. $A^\dagger = A$;
+takie operatory mają właśnie rzeczywiste wartości własne.
 
 Może się zdarzyć sytuacja w której mamy jakiś stan p który jest jak poniżej
 \begin{equation*}
@@ -76,6 +156,7 @@ Może się zdarzyć sytuacja w której mamy jakiś stan p który jest jak poniż
 \end{equation*}
 Czy to jest operator? Nie, to nie jest operator, to jest oznaczenie stanu. Trzeba wyćwiczyć co to jest operatora a co to jest wartość własna operatora.
 
+\iffalse $ napisane wyżej
 \textbf{Definicja:} Operator Hermitowski A to jest taki operator który dla którego zachodzi
 \begin{equation*}
 	\left< x | (A\psi) \right> = \langle (Ax) \vert \psi \rangle
@@ -84,6 +165,10 @@ Czy to jest operator? Nie, to nie jest operator, to jest oznaczenie stanu. Trzeb
 	\left< x | (A\psi) \right> \equiv \langle x | A \vert \psi \rangle
 \end{equation*}
 Korzystając z powyższych możemy zapisać
+\fi
+
+\iffalse to powinno być znane, jest też wspomniane wyżej.
+Jeśli $\psi_n$ są funkcjami własnymi operatora $A$ o wartościach własnych $a_n$, to
 \begin{align*}
 	&\left.
 	\begin{aligned}
@@ -93,33 +178,28 @@ Korzystając z powyższych możemy zapisać
 	\right\}
 	\Rightarrow a_n = a_n^*, \quad a_n \in \Re
 \end{align*}
+\fi
+
 \textbf{Postulat 5:} Jeżeli seria pomiarów zmiennej dynamicznej A zostanie wykonana na zespole układów opisaną funkcją falową $\psi$ wtedy wartość oczekiwana (średnia) tej zmiennej wynosi
 \begin{equation*}
 	A = \frac{\langle \psi | A | \psi \rangle}{\langle\psi | \psi\rangle}
 \end{equation*}
-Tutaj trzeba zwrócić uwagę na jedną bardzo ważną rzecz, mianowicie wszystkie układy tego pomiaru (np. atomy) muszą być w dokładnie takim samym stanie. Tu jest różnica między statystyką klasyczną (jak na przykład przy pomiaru prędkości atomów w gazie) a~kwantową (gdzie wszystkie atomy s.ą przygotowane w dokładnie takim samym stanie ale proces kiedy mierzymy ten stan jest procesem z jakimś pewnym prawdopodobieństwem).
+Tutaj trzeba zwrócić uwagę na jedną bardzo ważną rzecz, mianowicie wszystkie układy tego pomiaru (np. atomy) muszą być w dokładnie takim samym stanie
+(opisanym przez $\psi$). Tu jest różnica między statystyką klasyczną
+(jak na przykład przy pomiaru prędkości atomów w gazie) a~kwantową
+(gdzie wszystkie atomy s.ą przygotowane w dokładnie takim samym
+stanie ale proces kiedy mierzymy ten stan jest procesem z jakimś pewnym prawdopodobieństwem).
 
 \textbf{Pytanie z sali:} A dlaczego wprowadzamy formalizm dopiero teraz? \textbf{Odp.} Bo gdyby wprowadzić formalizm mechaniki kwantowej na samym początku to by nie było wiadomo co się dzieje, a tak zaczynaliśmy od prostszych zagadnień i teraz mamy podstawę do tego by to zrozumieć.
 
+% to jest bardzo nieformalna definicja. Studenci matematyki powinni znać poprawną wersję z wcześniejszych kursów.
+\iffalse
 \textbf{Definicja:} Operator sprzężony $A^{\dagger}$ definiujemy następująco
 \begin{equation*}
 	\langle x | A^{\dagger} | \psi \rangle = \langle (Ax)  | \psi \rangle = \langle \psi | A | x \rangle^{*}
 \end{equation*}
+\fi
 
-Możemy też zapisać że 
-\begin{equation*}
-	\langle \phi |  = \langle x | A^{\dagger} \iff | \phi \rangle = A | x \rangle
-\end{equation*}
-
-Mówimy, że kiedy równość $A = A^{\dagger}$ to operator jest samo-sprzężony. Własności takiego operatora to
-
-\begin{equation*}
-	\begin{split}
-		&(CA)^{\dagger} = C^* A^{\dagger} \\
-		&(A + B)^{\dagger} = A^{\dagger} + B^{\dagger}\\
-		&(AB)^{\dagger} = B^{\dagger}A^{\dagger}
-	\end{split}
-\end{equation*}
 Możemy też rozpisywać funkcje operatorowe.
 \begin{equation*}
 	f(z) = \sum_{i = 0}^{\infty} c_i z^i \rightarrow f(A) = \sum_{i = 0}^{\infty} c_i A^i,
