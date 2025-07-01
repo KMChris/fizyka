@@ -21,7 +21,7 @@ Przypomnijmy kilka własności sprzężenia:
 		&(AB)^{\dagger} = B^{\dagger}A^{\dagger}.
 	\end{split}
 \end{equation*}
-Operator samosprzężony (Hermitowski) to taki, dla którego $A^\dagger = A$.
+Przypomnijmy też, że operator samosprzężony (Hermitowski) to taki, dla którego $A^\dagger = A$.
 
 Poniżej, znajduje się formalne matematyczne wyjaśnienie notacji bra--ket.
 
@@ -66,8 +66,9 @@ Będziemy mieli w temacie mechaniki kwantowej kilka postulatów. Nie są one tym
 
 To znaczy, że będziemy zajmować się funkcjami
 $\Psi \colon [0, t_{\text{max}}) \times \RR^n \to \CC$ gdzie $\Psi(t, \cdot ) \in L^2(\RR^n)$
-(krzywa w przestrzeni $L^2(\RR^n)$)
-lub $\psi \colon \RR^n \to \CC$, $\psi \in L^2(\RR^n)$ (punkt w tejże przestrzeni).
+(krzywa w przestrzeni $L^2(\RR^n)$ --- przy pewnych dodatkowych założeniach będzie
+to funkcja falowa)
+lub $\psi \colon \RR^n \to \CC$, $\psi \in L^2(\RR^n)$ (punkt w tejże przestrzeni, t.j. stan).
 Dla prostych zagadnień $n=1$, dla przestrzeni trójwymiarowej $n=3$, dla
 układu $k$ cząstek w przestrzeni trójwymiarowej $n=3k$ itd.
 
@@ -154,7 +155,8 @@ Może się zdarzyć sytuacja w której mamy jakiś stan p który jest jak poniż
 \begin{equation*}
 	|p_x \rangle = e^{-ip_x x}
 \end{equation*}
-Czy to jest operator? Nie, to nie jest operator, to jest oznaczenie stanu. Trzeba wyćwiczyć co to jest operatora a co to jest wartość własna operatora.
+Czy to jest operator? Nie, to nie jest operator, to jest oznaczenie stanu.
+Trzeba wyćwiczyć co to jest operator a co to jest wartość własna operatora.
 
 \iffalse $ napisane wyżej
 \textbf{Definicja:} Operator Hermitowski A to jest taki operator który dla którego zachodzi
@@ -182,7 +184,7 @@ Jeśli $\psi_n$ są funkcjami własnymi operatora $A$ o wartościach własnych $
 
 \textbf{Postulat 5:} Jeżeli seria pomiarów zmiennej dynamicznej A zostanie wykonana na zespole układów opisaną funkcją falową $\psi$ wtedy wartość oczekiwana (średnia) tej zmiennej wynosi
 \begin{equation*}
-	A = \frac{\langle \psi | A | \psi \rangle}{\langle\psi | \psi\rangle}
+	A = \frac{\langle \psi | A | \psi \rangle}{\langle\psi | \psi\rangle}.
 \end{equation*}
 Tutaj trzeba zwrócić uwagę na jedną bardzo ważną rzecz, mianowicie wszystkie układy tego pomiaru (np. atomy) muszą być w dokładnie takim samym stanie
 (opisanym przez $\psi$). Tu jest różnica między statystyką klasyczną
@@ -208,8 +210,7 @@ gdzie $A^i$ oznacza że operator A powtarza swoje działanie $i$-razy, $A^i = \u
 W ten sposób możemy zapisać
 \begin{equation*}
 	\begin{split}
-		A^i \psi_n = A \cdot \dotsc \cdot A \psi_n = (a_n)^i
-		A\psi_n = a_n \psi_n
+		A^i \psi_n = A \cdot \dotsc \cdot A \psi_n = (a_n)^i \psi_n.
 	\end{split}
 \end{equation*}
 Z powyższych $(*)$ możemy w takim razie połączyć, że
@@ -220,18 +221,25 @@ Ostatnie co możemy z tej definicji wyciągamy to
 \begin{equation*}
 	[f(A)]^{\dagger} = \sum_{i = 0}^{\infty} c_i^* (A^i)^{\dagger} = f^*(A^{\dagger})
 \end{equation*}
-Możemy też zdefiniować operator odwrotny oraz unitarny.
 
+Przypomnijmy definicje operatora odwrotnego i operatora unitarnego.
 \textbf{Definicja:} B jest odwrotny do operatora A $\iff$ $BA = AB = I$ i zapisujemy $B = A^{-1}$
 
-\textbf{Definicja:} U jest unitarny $\iff$ $U^{-1} = U^{\dagger}$, $U U^{\dagger} = U^{\dagger} U = I$. 
+\textbf{Definicja:} U jest unitarny $\iff$ $U^{-1} = U^{\dagger}$, czyli
+$U U^{\dagger} = U^{\dagger} U = I$. 
 
-Zawsze też możemy zapisać $U = e^{iA}$, gdzie $A$ - operator Hermitowski, ponieważ \newline $U^{\dagger} = (e^{iA})^{\dagger} = e^{-iA} = U^{-1} $
+% Nie znam takiego twierdzenia jak niżej. I nie, tu nie ma napisanego jego dowodu.
+Zawsze też możemy zapisać $U = e^{iA}$, gdzie $A$ --- operator Hermitowski,
+ponieważ \newline $U^{\dagger} = (e^{iA})^{\dagger} = e^{-iA} = U^{-1}$.
 
-\textbf{Definicja:} A jest operatorem idempotentnym $\iff A^2 = 1$
+\textbf{Definicja:} A jest operatorem idempotentnym $\iff A^2 = A$
 
-\textbf{Definicja:} Operator projekcji jest Hermitowski i idempotentny.
+\textbf{Definicja:} Operator $\Lambda$ nazywamy projekcją,
+jeśli jest Hermitowski i idempotentny.
 Z tego możemy powiedzieć że 
+% ciężko stwierdzić, co ma oznaczać napis poniżej bez dodatkowych informacji.
+% Być może chodzi o rozkład wszystkich wektorów \psi na x + \phi -- ortogonalne,
+% takie że \Lambda x + \phi = \phi --- to znaczy x \in \ker \Lambda, \phi \in \im \Lambda.
 \begin{equation*}
 	\begin{split}
 		&\forall \psi \exists \phi, x \quad \langle \phi | x \rangle = 0, \psi = \phi + x \\
@@ -269,22 +277,33 @@ Możemy też zapisać operator jednostkowy $ \psi=\sum C_{n} \psi_{n} H $ poniew
 \begin{equation*}
 	\sum_{n}\left|\psi_{n}\right\rangle\left\langle\psi_{n}\right|=I 
 \end{equation*}
-\textbf{Pytanie z sali:} a tutaj nie ma problemu że kolejność jest odwrotna? \textbf{Odp.} Możemy zauważyć że jeżeli weźmiemy na przykład operator P
+Zapis $\ket{\psi}\bra{\phi}$ oznacza jednowymiarowy operator liniowy, to znaczy
 \begin{equation*}
-	P \psi=\sum_{n} |\psi_{n} \rangle \langle \psi_{n} | \sum_{k} c_{k} |\psi_{n} \rangle  =\sum_{n}\left|\psi_{n}\right\rangle c_{n}=\psi,
+    \ket{\psi}\braket{\phi|x} = (\braket{\phi|x})\ket{\psi}.
+\end{equation*}
+Rodzaj zbieżności podanego szeregu pozostaje zagadką.
+% na pewno nie jest to zbieżność w normie operatorowej, jako że wówczas wynik
+% musiałby być operatorem zwartym a nie jest -- to identyczność.
+Natomiast formalnie możemy przeprowadzić następujący rachunek: dla
+stanu $\ket{\phi} = \sum_k c_k \ket{\psi_k}$,
+\begin{equation*}
+    \left(\sum_{n} |\psi_{n} \rangle \langle \psi_{n} |\right) \ket{\phi} = 
+	\sum_{n} |\psi_{n} \rangle \langle \psi_{n} | \sum_{k} c_{k} |\psi_{k} \rangle  =\sum_{n}\left|\psi_{n}\right\rangle c_{n}=\phi,
 \end{equation*}
 więc sam operator nic nie zmienia.
 No a w przypadku gdy obliczamy średnią wartość operatora $A$ to jest 
 \begin{equation*}
 	\langle A\rangle=\langle\psi| A|\psi\rangle= \dotsc = \sum_{n}\left|c_{n}\right|^{2} a_{n}
 \end{equation*}
-Normalizacja w przypadku gdy $\langle \psi | \psi \rangle = 1$ to z tego wynika że $\sum |c_n^2|$ też jest $1$.
-W~przypadku gdy istnieją stany zdegenerowane, wtedy możemy $\psi$ możemy rozpisać jako 
+Przy normalizacji $\langle \psi | \psi \rangle = 1$ mamy $\sum |c_n^2| = 1$.
+W~przypadku gdy istnieją stany zdegenerowane, $\psi$ możemy rozpisać jako 
 \begin{equation*}
 	\psi = \sum_n \sum_{r=1}^{\alpha} c_{n_r} \psi_{n_r}
 \end{equation*}
 
-Nie zawsze mamy wartości własne dyskretne dlatego też musimy rozważyć spektrum ciągłe. Wtedy możemy zapisać $A \psi_a = a \psi_a$ gdzie $\psi_a$ to funkcja własna tego operatora a $A$ jest wartością własną która jest ciągła i będziemy w tym wypadku wtedy pisać że iloczyn skarany pomiędzy tymi dwoma stanami dotyczącymi różnych wartości własnych będzie po prostu delta funkcji w której argument jest różnicą miedzy tymi wartościami własnymi $\langle \psi_{a'} | \psi_a  \rangle = \delta(a - a')$.
+Nie zawsze mamy wartości własne dyskretne i ogólnie musimy rozważyć spektrum ciągłe.
+Wtedy możemy zapisać $A \psi_a = a \psi_a$ gdzie $\psi_a$ to funkcja własna tego
+operatora a $a$ jest wartością własną która jest ciągła i będziemy w tym wypadku wtedy pisać że iloczyn skarany pomiędzy tymi dwoma stanami dotyczącymi różnych wartości własnych będzie po prostu delta funkcji w której argument jest różnicą miedzy tymi wartościami własnymi $\langle \psi_{a'} | \psi_a  \rangle = \delta(a - a')$.
 Wtedy też zmienimy trochę \textbf{Postulat 6} i zapiszemy
 \begin{equation*}
 	\psi = \sum_n c_n \psi_n + \int c(a) \psi_a \text{d}a
@@ -294,53 +313,75 @@ I powyższe to istotny sposób jeżeli ktoś chce dobrze opisać wszystkie stany
 \textbf{Definicja:} Komutator operatorów $A, B$ to $[A, B] = AB - BA$.
 W przypadku gdy mamy $[A, B] = 0$ to mówimy że $A, B$ są przemienne.
 
-\textbf{Twierdzenie:} $A, B$ przemienne $\iff$ posiadają ten sam zbiór stanów własnych. Zadanie dla czytającego dowieść to twierdzenie.
-Mamy też następujące własności
+\textbf{Twierdzenie:} Niech $A, B$ będą Hermitowskie.
+Wtedy są przemienne przemienne $\iff$ posiadają ten sam zbiór stanów własnych.
+Zadanie dla czytającego dowieść to twierdzenie.
+Mamy następujące własności komutatora
 \begin{equation}
-	\begin{split}
-		&[A, B] = - [B, A] \\
-		&[A, B+C] = [A, B] + [A, C] \\
-		&[A, BC] = [A,B]C = B[A,C] \\
-		&[A,[B,C]] + [B,[A,C]] + [C,[A,B]] = 0
-	\end{split}
-\end{equation}
-\textbf{Twierdzenie:} Niech $\langle A\rangle=\langle\psi| A|\psi\rangle$ oraz $\langle B\rangle=\langle\psi| B|\psi\rangle$. Dalej mówimy że $\Delta A \equiv (\langle (A - A)^2\rangle)^{\frac12}$ to wtedy mamy $$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|.$$
-\textbf{Dowód:} A, B - Hermitowskie. $\bar{A} \equiv A-\langle A\rangle,  \bar{B} \equiv B-\langle B\rangle $. 
-Możemy zapisać $ (\Delta A)^{2}=\langle\bar{A}^{2}\rangle,  (\Delta B)^{2}=\langle\bar{B}^{2}\rangle $. 
-Z tego natomiast mamy $$ [\bar{A}, \bar{B}]=[A-\langle A\rangle, B-\langle B\rangle]=[A, B].$$ 
-Dalej definiujemy operator $C \equiv \bar{A}+i \lambda \bar{B}$ oraz operator do niego sprzężony $C^+ \equiv \bar{A}-i \lambda \bar{B}$. 
-Następnie jesteśmy ciekawi jaka będzie wartość $$  \langle C C^{+}\rangle=\langle\psi| C C^{+}|\psi\rangle= \langle C^{+} \psi|C^{+} \psi\rangle \geqslant 0  .$$
-Ale tak samo możemy podstawić definicje tego operator i dostajemy
-\begin{equation*}
-	\langle C C^{+}\rangle =\langle (\bar{A}+ i \lambda \bar{B}) (\bar{A}-i \lambda \bar{B})\rangle  =\underbrace{\langle A^{2}+\lambda^{2} \bar{B}^{2}-i\lambda[\bar{A}, \bar{B}]\rangle}_{\equiv f(\lambda)} \geqslant 0 
-\end{equation*}
-Więc wychodzi
-\begin{equation*}
-	0 \leq f(\lambda) = \langle\bar{A}^{2}\rangle + \lambda^{2}\langle B^{2}\rangle + i\lambda\langle[A, B]\rangle \geq 0 
-\end{equation*}
-Ponieważ $(\Delta A^2)^2$ oraz $(\Delta B^2)^2$ są większe od zera mamy
-\begin{equation*}
-	\Rightarrow i \lambda \langle[A, B]\rangle \in \Re, \quad \text{Re}(\langle[A, B]\rangle) = 0
-\end{equation*}
-Dalej mówimy że $f(\lambda)$ ma minimum w punkcie $\lambda_0  = \frac{i}{2} \frac{\langle[A, B]\rangle}{(\Delta B)^2}$ i z tego mamy
-\begin{equation*}
-	f(\lambda_0)  = (\Delta A)^2 \frac{1}{4} \frac{(\langle[A, B]\rangle)^2}{(\Delta B)^2}
-\end{equation*}
-\begin{align*}
-	&\left.
 	\begin{aligned}
-		f(\lambda_0)  = (\Delta A)^2 \frac{1}{4} \frac{(\langle[A, B]\rangle)^2}{(\Delta B)^2} \\
-		f(\lambda_0) \geq 0
+        &[A, B] = - [B, A] & \text{antysymetria} \\
+        &[A, B+C] = [A, B] + [A, C] & \text{(dwu-)liniowość}\\
+        &[A, BC] = [A,B]C + B[A,C] & \text{reguła Leibniza}\\
+        &[A,[B,C]] + [B,[A,C]] + [C,[A,B]] = 0 & \text{tożsamość Jacobiego.}
 	\end{aligned}
-	\right\}
-	\Rightarrow (\Delta A)^2 \cdot (\Delta B)^2 \geq -\frac14(\langle[A, B]\rangle)
+\end{equation}
+\textbf{Twierdzenie:} Niech $\langle A\rangle=\langle\psi| A|\psi\rangle$ oraz
+$\langle B\rangle=\langle\psi| B|\psi\rangle$.
+Oznaczamy
+\begin{equation*}
+    \Delta A \equiv \sqrt{\langle (A - \langle A \rangle)^2\rangle}.
+\end{equation*}
+Wtedy mamy $$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|.$$
+\textbf{Dowód:} $A, B$ --- Hermitowskie.
+Oznaczmy $\bar{A} \equiv A-\langle A\rangle,  \bar{B} \equiv B-\langle B\rangle $. 
+Możemy zapisać $ (\Delta A)^{2}=\langle\bar{A}^{2}\rangle, 
+(\Delta B)^{2}=\langle\bar{B}^{2}\rangle $. 
+Z liniowości i faktu, że identyczność komutuje z każdym operatorem mamy
+$$ [\bar{A}, \bar{B}]=[A-\langle A\rangle, B-\langle B\rangle]=[A, B].$$ 
+Dalej definiujemy operator $C \equiv \bar{A}+i \lambda \bar{B}$.
+Operator do niego sprzężony to $C^\dagger \equiv \bar{A}-i \lambda \bar{B}$. 
+Jesteśmy ciekawi jaka będzie wartość
+$$  \langle C C^{\dagger}\rangle=\langle\psi| C C^{\dagger}|\psi\rangle= \langle C^{\dagger} \psi|C^{\dagger} \psi\rangle \geqslant 0  .$$
+Podstawiając definicję tego operatora dostajemy
+\begin{equation*}
+	\langle C C^{+}\rangle =
+        \langle (\bar{A}+ i \lambda \bar{B}) (\bar{A}-i \lambda \bar{B})\rangle
+        =\underbrace{\langle \bar A^{2}+\lambda^{2} \bar{B}^{2}-i\lambda[\bar{A}, \bar{B}]\rangle}_{\equiv f(\lambda)}.
+\end{equation*}
+Stąd
+\begin{equation*}
+	0 \leq f(\lambda) = \langle\bar{A}^{2}\rangle + \lambda^{2}\langle
+        \bar B^{2}\rangle - i\lambda\langle[A, B]\rangle.
+\end{equation*}
+Ponieważ $(\Delta A)^2$ oraz $(\Delta B)^2$ są większe od zera,
+przyjmując $\lambda \in \mathbb R$ mamy
+\begin{equation*}
+	i \lambda \langle[A, B]\rangle \in \mathbb R \quad \implies
+    \quad \text{Re}\langle[A, B]\rangle = 0.
+\end{equation*}
+Rzeczywista funkcja kwadratowa $f(\lambda)$ ma minimum w punkcie
+$\lambda_0  = \frac{i}{2} \frac{\langle[A, B]\rangle}{(\Delta B)^2}$, oraz
+\begin{equation*}
+	f(\lambda_0)  = (\Delta A)^2  +
+        \frac{1}{4} \frac{\langle[A, B]\rangle^2}{(\Delta B)^2}.
+\end{equation*}
+Stąd
+\begin{align*}
+		0 \leq f(\lambda_0)  = (\Delta A)^2 + \frac{1}{4} \frac{\langle[A, B]\rangle^2}{(\Delta B)^2}
+	\implies (\Delta A)^2 \cdot (\Delta B)^2 \geq - \frac14\langle[A, B] \rangle^2
 \end{align*}
-Dalej przypominamy sobie że $(\langle[A, B]\rangle)^2 = -| \langle[A, B]\rangle |$ i z ego końcowo dostajemy $$\Delta A \Delta B \geq \frac12 |\langle [A, B] \rangle|.$$
+Ostatecznie, jako że $\langle [A, B] \rangle$ jest czysto urojone,
+mamy $-\langle [A, B]\rangle^2 = |\langle [A, B]\rangle|^2$ i
+\begin{equation*}
+    \Delta A \Delta B \geq \frac 1 2 | \langle [A, B] \rangle |.
+\end{equation*}
+
+
 \textbf{Przykład} Dla $[x, p_x] = i \hbar$ dostaniemy $\Delta x \Delta p \geq \frac12 \hbar$.
 Ktoś może zapytać czy możemy stworzyć stan który będzie posiadał faktycznie tutaj znak równości a nie $\geq$. 
 Żeby zyskać odpowiedź musimy znaleźć minimalną nieoznaczoność i do tego musimy wziąć $\lambda = \lambda_0$. 
 Powiedzmy że mamy ten przypadek $[x, p_x]$. Mamy $\bar{A} = x - \langle x \rangle$, $\bar{B} = p_x - \langle p_x \rangle$, a $\lambda_0 = \frac{-\hbar}{2(\Delta p_x)^2}$. 
-Pamiętajmy tez że $C^+ \psi = 0$ a także $(\bar{A} - i \lambda_0 \bar{B})\psi = 0$. Rozpisujemy to i mamy
+Pamiętajmy tez że $C^\dagger \psi = 0$ a także $(\bar{A} - i \lambda_0 \bar{B})\psi = 0$. Rozpisujemy to i mamy
 \begin{equation*}
 	\begin{split}
 		\left(-i \hbar \frac{d}{dx} - \langle p_x \rangle \right)\psi(x) = \frac{2i(\Delta p_x)^2}{\hbar} (x - \langle x \rangle) \psi(x) \\
@@ -349,32 +390,44 @@ Pamiętajmy tez że $C^+ \psi = 0$ a także $(\bar{A} - i \lambda_0 \bar{B})\psi
 \end{equation*}
 To są tak zwane stany koherentne. 
 \subsection{Przekształcenia Unitarne}
-Niech $A = A^{\dagger}$ i niech $A \psi = X$. Dalej niech $U U^{\dagger} = I$ oraz $\psi' = U \psi, X' = UX$. Dalej powiedzmy że $A' \psi' = X'$ i pytanie jakie jest $A'$. Piszemy
+Niech $A = A^{\dagger}$ i niech $A \psi = X$. Dalej niech
+$U U^{\dagger} = I$ (na przykład $U$ unitarny) oraz $\psi' = U \psi, X' = UX$.
+Powiedzmy że $A' \psi' = X'$. Wtedy
 \begin{equation*}
-	A' U \psi = UX = UA\psi \Rightarrow A'U = UA
+	A' U \psi = UX = UA\psi \quad \implies \quad  A'U = UA.
 \end{equation*}
-Następnie piszemy
-\begin{equation*}
-	\begin{split}
-		A' U U^{\dagger} &= U A U^{\dagger} \\
-		A' &= U A U^{\dagger} \\
-		A &= U^{\dagger} A U
-	\end{split}
-\end{equation*}
+Operację $A \mapsto A'$ możemy zapisać
+formalnie w następujący sposób:
+\begin{align*}
+		A' = A' U U^{\dagger} &= U A U^{\dagger}, \quad \text{lub}\\ 
+		A &= U^{\dagger} A U.
+\end{align*}
 Własności:
 \begin{enumerate}
 	\item Jeżeli $A = A^{\dagger}$ to $A' = (A')^{\dagger}$
-	\item Jeżeli $  A=\alpha B+\beta C D \Rightarrow A^{\prime}=\alpha B^{\prime}+\beta C' D^{\prime}  $ i jeżeli $[A, B] = \gamma$ to $[A', B'] = \gamma$
+	\item Jeżeli $  A=\alpha B+\beta C D$ to $A^{\prime}=\alpha B^{\prime}+\beta C' D^{\prime}  $ i jeżeli $[A, B] = \gamma$ to $[A', B'] = \gamma$
 	\item $A, A'$ posiadają taką samą bazę stanów własnych
 	\item $\langle X | A | \psi \rangle = \langle X' | A' | \psi' \rangle$ 
 \end{enumerate}
-Następna rzecz to nieskończenie małe przekształcenia unitarne (\textit{infinitesimal}). Niech $U = I + i \epsilon F$, gdzie $\epsilon << 1$, a $F = F^{\dagger}$. Chcemy pokazać że $U$ jest unitarny.
+Następna rzecz to nieskończenie małe przekształcenia unitarne (\textit{infinitesimal}).
+Niech $U = I + i \epsilon F$, gdzie $\epsilon \ll 1$, a $F = F^{\dagger}$. Chcemy pokazać że $U$ jest unitarny.
 \begin{equation*}
-	U^{\dagger} U = (I - i \epsilon F^{\dagger})(I + i \epsilon F) = I + i \epsilon\underbrace{(F - F^{\dagger})}_{= 0} + \epsilon^2F^{\dagger}F \sim I \Rightarrow U \text{jest unitarny.}
+	U^{\dagger} U = (I - i \epsilon F^{\dagger})(I + i \epsilon F) = I
+        + i \epsilon\underbrace{(F - F^{\dagger})}_{= 0}
+        + \underbrace{\epsilon^2F^{\dagger}F}_{=O(\epsilon^2)}
+        \approx I.
 \end{equation*}
-Teraz chcemy zobaczyć jak to działa na funkcję falową. $F$ nazywamy generatorem przekształcenia. Teraz zapiszmy $$\psi' \equiv \psi = \delta \psi = U \psi = (I + i \epsilon F)\psi \Rightarrow \delta \psi = i \epsilon F \psi.$$ W przypadku gdy mamy jakiś operator $A$ też możemy tak zadziałać
+Analogicznie $U U^{\dagger} \approx I$.
+$F$ nazywamy \emph{generatorem} przekształcenia $U$.
+Teraz chcemy zobaczyć jak to działa na funkcję falową.
+Zapiszmy
+$$\psi' \equiv \psi + \delta \psi = U \psi = (I + i \epsilon F)\psi
+\quad \implies \quad
+\delta \psi = i \epsilon F \psi.$$
+W przypadku gdy mamy jakiś operator $A$ też możemy tak zadziałać
 \begin{equation*}
-	A' = A + \delta A = U A U^{\dagger} = \dotsc = A + i \epsilon [F, A] + O(\epsilon^2) \Rightarrow \delta A \sim i \epsilon [F, A]
+	A' = A + \delta A = U A U^{\dagger} = \dotsc = A + i \epsilon [F, A] + O(\epsilon^2) 
+    \quad \implies \quad \delta A \approx i \epsilon [F, A].
 \end{equation*}
 \subsection{Wektory i Macierze}
 \begin{align*}
@@ -386,12 +439,17 @@ Teraz chcemy zobaczyć jak to działa na funkcję falową. $F$ nazywamy generato
 	\right\}
 	\Rightarrow X = \sum_m d_m \psi_m
 \end{align*}
-Gdzie $$d_m = \langle \psi_m | X \rangle = \sum_n \langle \psi_m | A | \psi_n \rangle c_n.$$ Mówimy że $\langle \psi_m | A | \psi_n \rangle = A_{m,n}$ to element macierzowy w jakieś bazie. Inaczej też przypisujemy $ d_m = \sum_n A_{mn}c_n $ i wtedy możemy wprowadzić to jako $\vec{d} = A \vec{c}$. W przypadku gdy chcemy obliczyć iloczyn skalarny między stanem $X$ a $\psi$ to wtedy $$ \langle X | \psi \rangle = \sum_n d_n^* c_n = (\vec{d^{\dagger}} \cdot \vec{c})$$. 
+Gdzie $$d_m = \langle \psi_m | X \rangle = \sum_n \langle \psi_m | A | \psi_n \rangle c_n.$$
+Mówimy że $\langle \psi_m | A | \psi_n \rangle = A_{m,n}$ to element macierzowy w jakieś bazie.
+Inaczej też przypisujemy $ d_m = \sum_n A_{mn}c_n $
+i wtedy możemy wprowadzić to jako $\vec{d} = A \vec{c}$.
+W przypadku gdy chcemy obliczyć iloczyn skalarny między stanem $X$ a $\psi$ to wtedy
+$$ \langle X | \psi \rangle = \sum_n d_n^* c_n = (\vec{d^{\dagger}} \cdot \vec{c}).$$ 
 Jeżeli mamy zbiór stanów ${\psi}_n$ i chcemy przekształcić w zbiór ${\phi_m}$ to wtedy piszemy
 \begin{equation*}
-	\psi_n = \sum_m U_{mn}\phi_n, \hspace{1cm} \text{gdzie} U_{mn} = \langle \phi_m | \psi_n \rangle
+	\psi_n = \sum_m U_{mn}\phi_n, \hspace{1cm} \text{gdzie} \,\,\, U_{mn} = \langle \phi_m | \psi_n \rangle.
 \end{equation*}
-Można z tego udowodnić że gdy $U$ jest unitarny oraz $A$ jest Hermitowski to ślad generatora A to ślad A
+Można z tego udowodnić że gdy $U$ jest unitarny oraz $A$ jest Hermitowski to ślad generatora A to ślad A.
 \subsection{Równanie Schrödingera}
 \textbf{Postulat 7:} Ewolucję czasową funkcji falowej układu wyznacza zależne od czasu równanie Schrödingera które można zapisać następująco:
 \begin{equation*}
@@ -402,9 +460,11 @@ gdzie $H$ to hamiltonian - operator całkowitej energii układu.
 Zazwyczaj zapisujemy Hamiltonian następująco:
 $$  H=\sum_{i=1}^{N} \hat{\overrightarrow{p}}^{2} \frac{1}{2 m_{i}} + U\left(\vec{r}, \ldots \vec{r_{n}}, t\right)  $$
 Operator pędu zapisujemy jako $\hat{\vec{p}} = -i \hbar \vec{\nabla}_i$
-Następnie wprowadzamy Operator Ewolucji $U(t, t_0)$ i ma właściwości:
+Następnie wprowadzamy Operator Ewolucji $U(t, t_0)$ przez następujące
+aksjomaty: % , czyli operator reprodukujący
+% rozwiązania równania Shr\"odingera. Ma on następujące właściwości:
 \begin{itemize}
-	\item $\psi(t)=u\left(t, t_{0}\right) \psi\left(t_{0}\right)$
+	\item $\psi(t)=U\left(t, t_{0}\right) \psi\left(t_{0}\right)$
 	\item $U(t_0, t_0) = I$
 	\item $U(t, t_0) = U(t, t')U(t', t_0)$
 	\item $U^{-1}(t, t_0) = U(t_0, t)$
@@ -424,17 +484,19 @@ Teraz chcemy pokazać że operator $U$ jest unitarny.
 	\end{split}
 \end{equation*}
 Aby końcowe wyrażenie było takie samo jak początkowe musimy wprowadzić że $U U^{\dagger} = I$ więc $U$ jest unitarny.
+% nie rozumiem tego dowodu. Jakie są tu założenia? Wygląda jakbyśmy zakładali,
+% że równanie 
 
 Dalej chcemy rozważać sytuacje że Hamiltonian jest niezależny od czasu, wtedy $$  U\left(t, t_{0}\right)=\exp \left(-\frac{i}{\hbar} H \cdot(t-t_{0})\right)  $$
 $$  \psi(t)=\exp \left(-\frac{i}{\hbar} H \cdot(t-t_{0})\right) \psi(t_0)  $$
-Na koniec chcemy rozważyć tak zwane równanie schrödingera dla operatorów. Powiedzmy że mamy operator Hermitowski i chcemy zobaczyć jak będzie się zmieniać jego wartość średnia w czasie. Mamy wtedy 
+Na koniec chcemy rozważyć tak zwane równanie Schrödingera dla operatorów. Powiedzmy że mamy operator Hermitowski i chcemy zobaczyć jak będzie się zmieniać jego wartość średnia w czasie. Mamy wtedy 
 \begin{equation*}
 	\begin{split}
 		\frac{d}{dt} \langle A \rangle &= \frac{d}{d t}\langle\psi| A|\psi\rangle \\
 		&= \left\langle\frac{\partial \psi}{\partial t}\left|  A\right| \psi\right\rangle+\left\langle\psi| \frac{\partial A}{\partial t}| \psi\right\rangle+\left\langle\psi\left| A\right|\frac{\partial \psi}{\partial t}\right\rangle \\
-		&= (-i \hbar)^{-1} \langle H\psi| A|\psi\rangle + \left\langle\psi| \frac{\partial A}{\partial t}| \psi\right\rangle + (-i \hbar)^{-1} \langle \psi| A|H\psi\rangle \\
+		&= (-i \hbar)^{-1} \langle H\psi| A|\psi\rangle + \left\langle\psi| \frac{\partial A}{\partial t}| \psi\right\rangle + (i \hbar)^{-1} \langle \psi| A|H\psi\rangle \\
 		&= (i\hbar)^{-1} \langle [A, H] \rangle + \langle \frac{\partial A}{\partial t} \rangle \\
-		&= \frac{d}{dt}A
+		% &= \frac{d}{dt}A
 	\end{split}
 \end{equation*}
 To jest tak zwane równanie Heisenberga. \textbf{Pytanie z sali:} H jest samo-sprzężony tutaj? \textbf{Odp.} Tak, bo wartości własne mają być rzeczywiste bo jest energia, ale niektórzy twierdzą że aby operator miał rzeczywiste wartości własne może spełniać inne warunki i nie musi być Hermitowski.
