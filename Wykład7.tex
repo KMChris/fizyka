@@ -19,7 +19,7 @@ $$
 \caption{Moment pędu jako iloczyn wektorowy $\vec{r}$ i $\vec{p}$.}
 \end{figure}
 
-Wartość bezwzględna momentu pędu wynosi
+Moduł momentu pędu wynosi
 $$
 |\vec{L}| = |\vec{r}| \cdot |\vec{p}| \cdot \sin \alpha,
 $$
@@ -97,24 +97,21 @@ $$
 $$
 co oznacza, że nie można jednocześnie znać dokładnych wartości wszystkich trzech składowych momentu pędu.
 
-Gdyby nie operatory to poniższa relacja byłaby sprzeczna
-$$
-\hat{\vec{L}} \times \hat{\vec{L}} = i\hbar \hat{\vec{L}}.
-$$
-
 \subsubsection*{Operator $\hat{L}^2$}
 Kwadrat całkowitego momentu pędu zdefiniowany jest jako
 $$
 \hat{L}^2 = \hat{L}_x^2 + \hat{L}_y^2 + \hat{L}_z^2.
 $$
-Działa on jako operator skalarowy. Co istotne, komutuje ze wszystkimi składowymi momentu pędu
+Wynikiem działania tego operatora jest skalar.
+Co istotne, komutuje on ze wszystkimi składowymi momentu pędu
 $$
 [\hat{L}^2, \hat{L}_x] = [\hat{L}^2, \hat{L}_y] = [\hat{L}^2, \hat{L}_z] = 0.
 $$
 Zatem można jednocześnie mierzyć $\hat{L}^2$ i jedną wybraną składową, np. $\hat{L}_z$.
 
-\subsubsection*{Wybór układu współrzędnych -- baza sferyczna}
-W przypadku momentu pędu wygodnie jest przejść do współrzędnych sferycznych. Przejście z kartezjańskich do sferycznych opisuje się wzorami:
+\subsubsection*{Sferyczny układ współrzędnych}
+W przypadku momentu pędu wygodnie jest przejść do współrzędnych sferycznych.
+Zmiana współrzędnych kartezniańskich na sferyczne jest dana przez
 $$
 \begin{aligned}
 x &= r \sin \theta \cos \varphi, \\
@@ -122,11 +119,16 @@ y &= r \sin \theta \sin \varphi, \\
 z &= r \cos \theta.
 \end{aligned}
 $$
-W tej bazie wyrażenia dla operatorów $\hat{L}_z$ i $\hat{L}^2$ przyjmują szczególnie prostą postać, co umożliwia rozwiązywanie równań własnych i wyznaczanie funkcji własnych momentu pędu (sferyczne funkcje harmoniczne).
+W tej bazie wyrażenia dla operatorów $\hat{L}_z$ i $\hat{L}^2$
+przyjmują szczególnie prostą postać,
+co umożliwia wyznaczanie funkcji i wartości własnych momentu pędu
+(sferyczne funkcje harmoniczne).
 
 
 \subsubsection*{Operator momentu pędu w współrzędnych sferycznych}
-W układzie sferycznym wyrażenia dla operatorów momentu pędu upraszczają się i zależą tylko od kątów $\theta$ i $\varphi$. Składowe operatora momentu pędu mają następującą postać:
+We współrzędnych sferycznych operatory momentu pędu upraszczają się
+i zależą tylko od kątów $\theta$ i $\varphi$.
+Składowe operatora momentu pędu mają następującą postać:
 $$
 \begin{aligned}
 \hat{L}_x &= -i\hbar \left( \sin\varphi \frac{\partial}{\partial\theta} + \cot\theta \cos\varphi \frac{\partial}{\partial\varphi} \right) \\
@@ -135,24 +137,26 @@ $$
 \end{aligned}
 $$
 
-Kwadrat momentu pędu $\hat{L}^2$ w układzie sferycznym wyraża się jako
+Kwadrat momentu pędu $\hat{L}^2$ we współrzędnych sferycznych wyraża się jako
 $$
 \hat{L}^2 = -\hbar^2 \left[ \frac{1}{\sin\theta} \frac{\partial}{\partial\theta} \left( \sin\theta \frac{\partial}{\partial\theta} \right) + \frac{1}{\sin^2\theta} \frac{\partial^2}{\partial\varphi^2} \right]
 $$
 
-Jest to tzw. \textbf{operator Laplace'a-Beltramiego} na sferze jednostkowej, który jest kluczowy w~opisie funkcji własnych momentu pędu, czyli sferycznych funkcji harmonicznych.
+Jest to tzw. \textbf{operator Laplace'a--Beltramiego} na sferze jednostkowej,
+który jest kluczowy w~opisie funkcji własnych momentu pędu, czyli sferycznych
+funkcji harmonicznych.
 
-Nie ma zależności między funkcjami własnymi różnych składowych. Z operatorów $\hat{L}_x, \hat{L}_y, \hat{L}_z$ tylko jedna składowa może być jednocześnie diagonalizowana razem z $\hat{L}^2$. Zatem
+Nie ma zależności między funkcjami własnymi różnych składowych.
+Z operatorów $\hat{L}_x, \hat{L}_y, \hat{L}_z$ tylko jedna składowa może być
+jednocześnie diagonalizowana razem z $\hat{L}^2$. Zatem
 $$
 [\hat{L}_i, f(\theta, \varphi)] \ne 0 \quad \text{dla } i = x, y.
 $$
 
+Dla dowolnej bazy ortonormalnej $u, v, w$ mamy tak samo
+jak w przypadku $x, y, z$
 $$
-V_n = \vec{n} \cdot \vec{V} = n_x V_x + n_y V_y + n_z V_z \quad ; \quad \vec{w} = \vec{u} \times \vec{v}, \; \norm{\vec{w}} = \norm{\vec{u}} = \norm{\vec{v}} = 1
-$$
-Z tego wynika analogiczna algebra komutatorów
-$$
-[L_u, L_v] = i\hbar L_w \quad ; \quad [L_v, L_w] = i\hbar L_u \quad ; \quad [L_w, L_u] = i\hbar L_v
+[L_u, L_v] = i\hbar L_w ; \quad [L_v, L_w] = i\hbar L_u ; \quad [L_w, L_u] = i\hbar L_v.
 $$
 
 \subsubsection*{Układ złożony z wielu cząstek}
@@ -204,18 +208,18 @@ $$
 \hat{U}_n(\delta\alpha) = \hat{I} - \frac{i}{\hbar} \delta\alpha (\vec{n} \cdot \hat{\vec{L}}).
 $$
 
-Jest to operator generujący obrót w przestrzeni Hilberta. W dużym limicie daje wyrażenie eksponencjalne
+Jest to operator generujący obrót w przestrzeni Hilberta.
+Ogólniej, dla dowolnego kąta $\alpha$ mamy eksponentę
 $$
 \hat{U}_n(\alpha) = e^{-i \alpha (\vec{n} \cdot \hat{\vec{L}})/\hbar}.
 $$
 
 \subsubsection*{Zachowanie momentu pędu}
-Jeśli operator Hamiltonianu $\hat{H}$ komutuje z operatorem momentu pędu $\hat{\vec{L}}$, to moment pędu jest wielkością zachowaną
-$$
-[\hat{H}, \hat{\vec{L}}] = 0.
-$$
+Jeśli operator Hamiltona $\hat{H}$ komutuje z operatorem momentu pędu
+$ [\hat{H}, \hat{\vec{L}}] = 0 $, to moment pędu jest wielkością zachowaną
 
-W szczególności, jeśli $\hat{H}$ opisuje układ o symetrii kulistej (np. centralny potencjał), to
+W szczególności, jeśli $\hat{H}$ opisuje układ o symetrii sferycznej
+(np. centralny potencjał), to
 $$
 [\hat{H}, \hat{L}_z] = 0, \quad [\hat{H}, \hat{L}^2] = 0,
 $$
@@ -256,12 +260,13 @@ $$
 Normalizacja funkcji względem kąta $\varphi$ zapewnia ich ortonormalność.
 
 \subsubsection*{Funkcje własne $\hat{L}^2$}
-Działanie operatora $\hat{L}^2$ można zapisać jako równanie różniczkowe względem $\theta$ i $\varphi$
+Działanie operatora $\hat{L}^2$ na funkcję własną $Y^m_l$ można zapisać
+w sferycznym układzie współrzędnych jako
 $$
 \hat{L}^2 Y_l^m(\theta, \varphi) = -\hbar^2 \left[ \frac{1}{\sin\theta} \frac{d}{d\theta} \left( \sin\theta \frac{d}{d\theta} \right) + \frac{1}{\sin^2\theta} \frac{d^2}{d\varphi^2} \right] Y_l^m = \hbar^2 l(l+1) Y_l^m.
 $$
 
-Zakładając rozwiązanie separowane
+Zakładając, że rozwiązanie jest funkcją o zmiennych rozdzielonych
 $$
 Y_l^m(\theta, \varphi) = \Theta_l^m(\theta) \Phi_m(\varphi),
 $$
@@ -297,7 +302,8 @@ Y_l^{-m}(\theta, \varphi) = (-1)^m \overline{Y_l^m(\theta, \varphi)}.
 $$
 
 \subsubsection*{Przykłady funkcji sferycznych}
-Funkcje $Y_l^m(\theta, \varphi)$ mają konkretne postacie dla małych wartości $l$ i $m$. Przykładowo:
+Przykładowe postacie funkcji $Y_l^m(\theta, \varphi)$
+dla kilku małych parametrów $l$ i $m$ to
 $$
 Y_0^0(\theta, \varphi) = \frac{1}{\sqrt{4\pi}},
 $$
@@ -308,7 +314,8 @@ $$
 Y_1^1(\theta, \varphi) = -\sqrt{\frac{3}{8\pi}} \sin\theta \, e^{i\varphi}.
 $$
 
-Powyższe funkcje reprezentują różne przestrzenne rozkłady prawdopodobieństwa -- zobrazowane na rysunkach jako obłoki elektronowe (np. dla atomu wodoru).
+Powyższe funkcje reprezentują różne przestrzenne rozkłady prawdopodobieństwa
+--- zobrazowane na rysunkach jako chmury elektronowe (np. dla atomu wodoru).
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=2]
@@ -375,18 +382,20 @@ Zatem operator $L_+$ zwiększa, a $L_-$ zmniejsza wartość liczby kwantowej $m$
 $$
 L_{\pm} Y_l^m(\theta, \varphi) \propto Y_l^{m \pm 1}(\theta, \varphi).
 $$
+Uwaga: nie są to operatory Hermitowskie.
 
 \subsection{Uogólniony moment kątowy}
 W mechanice kwantowej istnieje także wewnętrzny moment pędu cząstki, zwany \textbf{spinem}. W odróżnieniu od orbitalnego momentu pędu, spin nie ma klasycznego odpowiednika i~nie wynika z ruchu w przestrzeni.
 
-Jeśli chcemy uogólnić teorię momentu pędu na przypadek ogólny (w tym spinowy), musimy rozważyć:
+Jeśli chcemy uogólnić teorię momentu pędu tak, aby obejmowała spin, musimy rozważyć:
 \begin{enumerate}
 \item układy, dla których nie istnieje klasyczna trajektoria (np. elektron),
 \item obiekty opisane w przestrzeni Hilberta bez odniesienia do współrzędnych przestrzennych.
 \end{enumerate}
 
 \subsubsection*{Algebra Liego SU(2)}
-Niech $\hat{J}_x, \hat{J}_y, \hat{J}_z$ będą operatorami momentu pędu (ogólniejszego), spełniającymi reguły komutacji
+Powiemy, że $\hat{J}_x, \hat{J}_y, \hat{J}_z$ są uogólnionymi operatorami
+momentu pędu, jeśli spełniają reguły komutacji
 $$
 [\hat{J}_x, \hat{J}_y] = i\hbar \hat{J}_z, \quad [\hat{J}_y, \hat{J}_z] = i\hbar \hat{J}_x, \quad [\hat{J}_z, \hat{J}_x] = i\hbar \hat{J}_y.
 $$
@@ -457,6 +466,9 @@ $$
 co daje $2j + 1$ możliwych wartości.
 
 \subsubsection*{Możliwe wartości spinu}
+% To jest jakieś machanie nogami (nawet nie rękami). Nie ma absolutnie
+% żadnego związku z definicją operatora J, która też nie jest specjalnie
+% jasna.
 Z algebraicznej struktury operatorów $\hat{J}$ wynika, że dopuszczalne wartości $j$ to liczby całkowite lub połówkowe. Przykłady:
 \begin{itemize}
 \item dla cząstek bez spinu: $j = 0, 1, 2, \dots$
@@ -500,6 +512,11 @@ Zatem:
   $$
   \hat{J}_x = \hat{J}_y = \hat{J}_z = \begin{pmatrix} 0 \end{pmatrix}
   $$
+  Oczywiście to stwierdzenie nie ma sensu --- wówczas operatory te komutują,
+  czyli z definicji nie mogą być uogólnionymi operatorami momentu pędu.
+  % Taka już jest magia fizyki, że mówimy masę rzeczy bez sensu, zapominamy
+  % o części i na końcu wychodzi coś.
+  % FIXME !!
 \end{itemize}
 
 \textbf{Dla $j = \frac{1}{2}$}:
@@ -526,9 +543,9 @@ i & 0
 1 & 0 \\
 0 & -1
 \end{pmatrix}
-= \frac{\hbar}{2} \sigma_z,
+= \frac{\hbar}{2} \sigma_z.
 $$
-czyli są to \textbf{macierze Pauliego}.
+Są to \textbf{macierze Pauliego}.
 \end{itemize}
 
 \textbf{Dla $j = 1$}:
@@ -585,6 +602,9 @@ $$
 \end{itemize}
 
 \subsubsection*{Reprezentacja funkcji spinorowej}
+% Ho ho ho, spinory a spin to nie to samo. Wypadałoby powiedzieć coś
+% na ten temat. Ja się nie znam, nie wiem co. FIXME
+% Być może jest to jakieś niepoprawne użycie nazwy -- to też trzeba brać pod uwagę.
 Stan całkowity cząstki opisywany jest funkcją falową uwzględniającą zarówno współrzędne przestrzenne $\vec{r}$, jak i spin $m_s$
 $$
 \Psi(\vec{r}, t) = \sum_{m_s = -s}^{s} \Psi_{m_s}(\vec{r}, t) \chi_{s, m_s},
