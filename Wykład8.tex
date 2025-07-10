@@ -1,30 +1,34 @@
 \section{Atom wodoru}
 \subsection{Wstęp}
-Przypomnijmy sobie, czym jest atom wodoru. Mamy jeden atom i jeden wektor, dwa ciała, które ze sobą współdziałają: jakieś cząstki A oraz B. Pytanie: czy możemy jakoś zredukować to zagadnienie do jedno-cząstkowego? Odpowiedź brzmi: faktycznie możemy. Najpierw możemy zapisać, że potencjał współdziałania między tymi cząstkami rozpisujemy jako
+Przypomnijmy sobie, czym jest atom wodoru. Mamy jeden atom i jeden elektron,
+dwa ciała, które ze sobą współdziałają: jakieś cząstki A oraz B.
+Pytanie: czy możemy jakoś zredukować to zagadnienie do jedno-cząstkowego?
+Odpowiedź brzmi: faktycznie możemy. Najpierw możemy zapisać, że potencjał
+współdziałania między tymi cząstkami to
 $$
 V(\vec{r}_A, \vec{r}_B) = V(\vec{r})
 $$
 gdzie $\vec{r} = \vec{r}_A - \vec{r}_B$. Hamiltonian będzie wtedy wyglądał następująco
 \begin{equation*}
-	H =  \frac{p_{A}^{2}}{2 m_{A}}+\frac{p_{B}^{2}}{2 m_{B}} + V(\vec{r} _A- \vec{r}_B)
+	H =  \frac{p_{A}^{2}}{2 m_{A}}+\frac{p_{B}^{2}}{2 m_{B}} + V(\vec{r} _A- \vec{r}_B).
 \end{equation*}
 Równanie Schrödingera dla tego układu natomiast będzie wyglądać tak
 \begin{equation*}
 	i \hbar \frac{\partial}{\partial t} \psi \left(\vec{r}_{A}, \vec{r}_{B}, t\right) = \left[-\frac{\hbar^{2}}{2 m_{A}} \vec{\nabla}_{A}^{2}+V(\vec{r})\right] \psi \left(\vec{r}_{A}, \vec{r}_{B}, t\right)
 \end{equation*}
-Jak teraz to uprościć? Możemy wprowadzić promień położenia
+Jak teraz to uprościć? Możemy wprowadzić środek masy
 \begin{equation*}
-	\vec{R}=\frac{m_{A} \vec{r}_{A}+m_{B} \vec{r}_{B}}{m_{A}+m_{B}}, \quad m = m_A + m_B
+	\vec{R}=\frac{m_{A} \vec{r}_{A}+m_{B} \vec{r}_{B}}{m_{A}+m_{B}}, \quad m = m_A + m_B.
 \end{equation*}
 Wprowadzamy również tzw. masę zredukowaną
 \begin{equation*}
-	\mu = \frac{m_A m_B}{m_A + m_B}
+	\mu = \frac{m_A m_B}{m_A + m_B}.
 \end{equation*}
 W takim razie równanie Schrödingera będzie wyglądało następująco:
 \begin{align*}
 	&\left.
 	\begin{aligned}
-		i \hbar\dot{\psi}(\bar{R}, \bar{r}, t)  =  \left[-\frac{\hbar^{2}}{2 M} \nabla_{R}^{2}-\frac{\hbar^{2}}{2 \mu} \nabla_{r}^{2}+V(\vec{r})\right]  \psi(\bar{R}, \bar{r}, t) \\
+		i \hbar\dot{\psi}(\vec{R}, \vec{r}, t)  =  \left[-\frac{\hbar^{2}}{2 m} \nabla_{R}^{2}-\frac{\hbar^{2}}{2 \mu} \nabla_{r}^{2}+V(\vec{r})\right]  \psi(\vec{R}, \vec{r}, t) \\
 		\psi(\vec{R}, \vec{r}, t)=\phi(\vec{R}) \psi(\vec{r}) \exp \left(\frac{-[E_m + E]t}{\hbar}\right)
 	\end{aligned}
 	\right\}
@@ -44,9 +48,9 @@ W pierwszym przypadku weźmy oscylator harmoniczny
 \begin{equation*}
 	V(\vec{r})=\frac{1}{2} k_{1} x^{2}+\frac{1}{2} k_{2} y^{2}+\frac{1}{2} k_{3} z^{2}, \quad \vec{r} = (x, y, z)
 \end{equation*}
-W przypadku, gdy mamy potencjał centralny, będzie on wyglądał następująco
+W przypadku, gdy mamy potencjał centralny, możemy oznaczyć
 \begin{equation*}
-	V(\vec{r}) = V(|\vec{r}|) = V(r)
+	V(\vec{r}) = V(|\vec{r}|) = V(r).
 \end{equation*}
 Będziemy pisać $r$ bez strzałki i to po prostu oznacza długość wektora $r$. To jest tzw. potencjał centralny i w tym przypadku wygodnie jest przejść do współrzędnych sferycznych. Wtedy Hamiltonian będzie wyglądał tak:
 \begin{equation*}
@@ -85,8 +89,8 @@ Wrzucamy to wszystko do równania Schrödingera i dostajemy
 Powiedzmy teraz, że będziemy pisać $U_{EL}(r) = r \cdot R_{EL}(r)$ i wtedy równanie Schrödingera będzie miało postać:
 \begin{equation*}
 	\begin{gathered}
-		-\frac{\hbar^2}{2\mu}\frac{d^2 U_{EL}(r)}{dr^2}+V_{eff}(r)U_{EL}(r)=EU_{EL}(r) \\
-		V_{eff} = V(r)+\frac{l(l+1)\hbar^2}{2\mu r^2}
+		-\frac{\hbar^2}{2\mu}\frac{d^2 U_{EL}(r)}{dr^2}+V_{\text{eff}}(r)U_{EL}(r)=EU_{EL}(r) \\
+		V_{\text{eff}} = V(r)+\frac{l(l+1)\hbar^2}{2\mu r^2}
 	\end{gathered}
 \end{equation*}
 \subsection{Wodór}
@@ -94,19 +98,21 @@ Dla wodoru potencjał będzie wyglądał następująco
 \begin{equation*}
 	\begin{gathered}
 		V(r)=-\frac{z e^{2}}{\left(4 \pi \varepsilon_{0}\right)^2}\\
-		V_{eff}(r) = -\frac{z e^2}{4 \pi \varepsilon_0 r} + \frac{l(l+1)\hbar^2}{2\mu r^2}
+		V_{\text{eff}}(r) = -\frac{z e^2}{4 \pi \varepsilon_0 r} + \frac{l(l+1)\hbar^2}{2\mu r^2}
 	\end{gathered}
 \end{equation*}
-Gdzie "$z$" to jest ładunek jądrowy (1 dla wodoru, 2 dla pierwszego jony Helu i tak dalej). Wrzucamy to wszystko znowu do równania Schrödingera ale przed tym zdefiniujemy sobie zmienne do ułatwienia zapisu
+Gdzie ``$z$'' to ładunek jądrowy (1 dla wodoru,
+2 dla pierwszego jony Helu i tak dalej). Wrzucamy to wszystko znowu
+do równania Schrödingera ale przed tym, dla ułatwienia zapisu zdefiniujemy zmienne
 \begin{equation*}
 	\begin{gathered}
 		\rho=\left(\frac{-8\mu E}{\hbar^2}\right)^{1/2}r\\
-		\lambda = \frac{Z e^2}{(4 \pi \epsilon_0) \hbar} \left(\frac{-\mu}{2E}\right)^{1/2}
+		\lambda = \frac{Z e^2}{(4 \pi \varepsilon_0) \hbar} \left(\frac{-\mu}{2E}\right)^{1/2}
 	\end{gathered}
 \end{equation*}
 Wtedy RS się przekształci w 
 \begin{equation*}
-	\left[\frac{d^{2}}{d \rho^{2}}-\frac{l(l+1)}{\rho^{2}}+\frac{\lambda}{\rho}-\frac{1}{4}\right]U_{El(\rho)}=0
+	\left[\frac{d^{2}}{d \rho^{2}}-\frac{l(l+1)}{\rho^{2}}+\frac{\lambda}{\rho}-\frac{1}{4}\right]U_{El(\rho)}=0.
 \end{equation*}
 Chcemy zrozumieć jak będą wyglądały nasze rozwiązania. Podejście będzie analogiczne jak kiedy rozwiązywaliśmy dla oscylatora harmonicznego. Najpierw chcemy zrobić jak będzie wyglądało rozwiązane asymptotyczne gdy $\rho \to \infty$, wtedy 
 \begin{equation*}
@@ -121,16 +127,20 @@ Mając to możemy założyć że
 	U_{El(\rho)} = \exp(\frac{-\rho}{2}) \cdot f(\rho)
 \end{equation*}
 No i teraz możemy to wrzucić do RS i będziemy mieli
-$$  \left[\frac{d^{2}}{d \rho}-\frac{d}{d \rho}-\frac{l(l+1)}{\rho^{2}}+\frac{\lambda}{\rho}\right] f(\rho)=0  $$
-Dalej robimy że $f(\rho) = \rho^{l+1}g(\rho)$. Teraz będziemy chcieli zrozumieć jakie będą wartości własne operatora Hamiltona, i do tego nie potrzebujemy całkowitego rozwiązania tylko takie rozwiązanie które określi warunki na znaczenie tych wartości własnych, i dlatego znowu rozkładamy funkcje $g(\rho)$ w szereg.
+$$  \left[\frac{d^{2}}{d \rho^2}-\frac{d}{d \rho}-\frac{l(l+1)}{\rho^{2}}+\frac{\lambda}{\rho}\right] f(\rho)=0.  $$
+Dalej stosujemy cechowanie $f(\rho) = \rho^{l+1}g(\rho)$.
+Będziemy chcieli zrozumieć jakie są wartości własne operatora Hamiltona
+i do tego nie potrzebujemy całkowitego rozwiązania tylko takie rozwiązanie,
+które określi warunki na znaczenie tych wartości własnych,
+i dlatego znowu rozkładamy funkcje $g(\rho)$ w szereg.
 \begin{equation*}
-	g(\rho)=\sum_{k=0}^{\infty} c_{k} \rho^{k}, \quad c_0 \neq 0
+	g(\rho)=\sum_{k=0}^{\infty} C_{k} \rho^{k}, \quad c_0 \neq 0
 \end{equation*}
-Wrzucamy najpierw podstawienie $f(\rho) = \rho^{l+1}g(\rho)$ i mamy
+Stosujemy najpierw podstawienie $f(\rho) = \rho^{l+1}g(\rho)$; mamy
 \begin{equation*}
-	\left[\rho\frac{\text{d}^{2}}{\text{d} \rho}+(2l + 2 - \rho)\frac{\text{d}}{\text{d} \rho} + (\lambda - l - 1)\right] g(\rho)=0
+	\left[\rho\frac{\text{d}^{2}}{\text{d} \rho^2}+(2l + 2 - \rho)\frac{\text{d}}{\text{d} \rho} + (\lambda - l - 1)\right] g(\rho)=0
 \end{equation*}
-Jeżeli teraz dodamy założenie o postaci $g(\rho)$ dostaniemy
+Jeżeli teraz dodamy założenie o postaci $g(\rho)$ otrzymujemy
 \begin{equation*}
 	\sum_{k=0}^{\infty}\left[ \left( k(k+1) + (2l+2)(k+1) \right)C_{k+1} + (\lambda - l - 1 -k)C_k \right]\rho^k=0
 \end{equation*}
@@ -138,15 +148,26 @@ Skoro suma jest zerem to każdy składnik jest zerem więc możemy z tego wyznac
 \begin{equation*}
 	C_{k+1} = \frac{-(\lambda - l - 1 -k)}{(k+1)(2l+2+k)} C_k
 \end{equation*}
-Mamy też $\frac{C_{k+1}}{C_k} \xrightarrow{k \to \infty} \frac{1}{k}$ przez co mamy niezbieżność, ten sam problem co mieliśmy w~przypadku oscylatora harmonicznego. Teraz musimy odciąć w takim razie ten nasz szereg w~jakimś punkcie, to znaczy musi istnieć jakieś $\lambda$ dla którego ten współczynnik będzie po prostu zero dla jakiegoś $k$. Mówimy że niech istnieje taki $r_n:C_{r_n}= 0$. W takim razie teraz mamy
+Zauważmy, że dla pewnych wartości $\lambda$ ciąg $C_k$ jest od pewnego
+momentu stale równy zero, a w pozostałych przypadkach
+$\frac{C_{k+1}}{C_k} \approx \frac{1}{k}$ przy $k \to \infty$.
+Dla takiej asymptotyki otrzymalibyśmy zbieżność szeregu porównywalną
+do zbieżności szeregu definiującego eksponentę (bardzo szybką, nieskońkończony
+promień zbieżności). Jednak z bliżej niezindetyfikowanego powodu,
+% wcześniej bylo napisane, że to ze względu na brak zbieżności, co jest
+% nieprawdą.
+będziemy zakładać, że $\lambda$ jest dobrana tak, by $C_k$ zerowały się
+od pewnego miejsca. Jeśli tym miejscem jest $r_n$, to
 \begin{equation*}
 	\begin{gathered}
 		r_n+ l +1 - \lambda = 0 \\
 		\lambda = r_n + l +1
-		\text{Niech} n = \lambda = r_n + l +1
 	\end{gathered}
 \end{equation*}
-Powyżej $n$ nazywamy główną liczbą kwantową. Tutaj możemy zobaczyć że mamy kilka warunków, że $l \in \mathcal{N}$, z tego wynika że $0 \leq l \leq n - 1$. Teraz wstawiamy to co mieliśmy 
+Powyżej $n$ nazywamy główną liczbą kwantową. Tutaj możemy zobaczyć że mamy
+% Nic tu z niczego nie wynika na moje oko. Nie wiem co ma znaczyć to zdanie poniżej. FIXME
+kilka warunków, że $l \in \mathbb{N}$, z tego wynika że $0 \leq l \leq n - 1$.
+Teraz wstawiamy to co mieliśmy 
 \begin{equation*}
 	\begin{split}
 		&\lambda = n = \frac{Z e^2}{(4 \pi \epsilon_0) \hbar} \left(\frac{-\mu}{2E}\right)^{1/2} \\
@@ -172,7 +193,7 @@ Chcielibyśmy wprowadzić nowe zmienne żeby to przekształcić do równania
 \begin{equation*}
 	z \frac{d w}{d z^{2}}+(c-z) \frac{d w}{d z}-a w=0 
 \end{equation*}
-Jest to tak zwane równanie Kummer'a-Laplace'a. Musimy wprowadzić w takim razie
+Jest to tak zwane równanie Kummer'a-Laplace'a. Wprowadzamy
 \begin{equation*}
 	\begin{gathered}
 		z \equiv \rho \\
@@ -181,19 +202,25 @@ Jest to tak zwane równanie Kummer'a-Laplace'a. Musimy wprowadzić w takim razie
 		c \equiv 2l + 2
 	\end{gathered}
 \end{equation*}
-To równanie jest nam potrzebne ponieważ znamy rozwiązanie tego równania i są to funkcje hiper geometryczne. Są one definiowane następująco
+To równanie jest nam potrzebne ponieważ znamy rozwiązanie tego równania i są
+to funkcje hipergeometryczne. Są one definiowane następująco
 \begin{equation*}
 	\prescript{}{1}{F}_{1}(a, c, z)=1+\frac{a z}{c\cdot1!}+\frac{a(a+1) z^{2}}{c(c+1) 2!}+\ldots=\sum_{k=0}^{\infty} \frac{(a)_{k} z^{k}}{(c)_{k} k!}
 \end{equation*}
-Gdzie $(\alpha)_k = \alpha (\alpha+1)\dotsc(\alpha+k-1)$, $(\alpha)_0=1$. Asymptotyczne zachowanie tej funkcji dla $z \to \infty$ jest następujący
+Gdzie $(\alpha)_k = \alpha (\alpha+1)\dotsc(\alpha+k-1)$, $(\alpha)_0=1$.
+Przy $z \to \infty$ zachodzi
 \begin{equation*}
-	\prescript{}{1}{F}_{1}(a, c, z) \xrightarrow[z \to \infty]{} \frac{\Gamma(c)}{\Gamma(a)}e^z z^{a-c}
+	\prescript{}{1}{F}_{1}(a, c, z) \xrightarrow[z \to \infty]{} \frac{\Gamma(c)}{\Gamma(a)}e^z z^{a-c}.
 \end{equation*}
-Teraz kiedy podstawiamy wszystko mamy
+Stąd
 \begin{equation*}
 	\prescript{}{1}{F}_{1}(l + 1 - n, 2l+2, \rho) \rightarrow \rho^{-l-1-\lambda} e^{\rho}
 \end{equation*}
-Jaki mamy tu problem? Ta funkcja jest rozbieżna. Musimy z tym szeregiem popracować i znowu gdzieś go odciąć. Mianowicie musimy znowu wyzerować licznik więc znowu $l + 1 - \lambda = -r_n$ i z tego
+Jaki mamy tu problem? Ta funkcja jest rozbieżna.
+% Gdzie jest rozbieżna? Tylko w 0.
+Musimy z tym szeregiem popracować i znowu gdzieś go odciąć.
+% To jest straszne zdanie. Warto je przeformułować. TODO
+Mianowicie musimy znowu wyzerować licznik więc znowu $l + 1 - \lambda = -r_n$ i z tego
 \begin{equation*}
 	\prescript{}{1}{F}_{1}(l + 1 - n, 2l+2, \rho) = \sum_{n=0}^{n - l -1} \frac{(k+l - n)(k -1+l-n)\dots(l+1-n)}{(k+2l+1)(k-1+2l - n)\dots(1 + 2l - 1)} \frac{\rho^k}{k!}
 \end{equation*}
@@ -204,7 +231,8 @@ I niby mamy rozwiązanie ale tyle nam nie wystarczy, chcemy wyprowadzić jeszcze
 		L_q(\rho) &= e^{\rho} \frac{d^q}{d \rho^q}\left(\rho^q e^{-\rho}\right)
 	\end{split}
 \end{equation*}
-To są wielomiany Laguerre'a i możemy rozpisać związek między funkcjami hiper geometrycznymi a wielomianem Laguerre'a.
+To są wielomiany Laguerre'a i możemy rozpisać związek między funkcjami
+hipergeometrycznymi a wielomianem Laguerre'a.
 \begin{equation*}
 	L_{n+l}^{2l+1}(\rho) = -\frac{[(n+l)!]^2}{(n-l-1)!(2l+1)!} \prescript{}{1}{F}_{1}(l + 1 - n, 2l+2, \rho) 
 \end{equation*}

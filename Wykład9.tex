@@ -3,7 +3,7 @@
 \paragraph*{Równanie Schrödingera dla układu wielu cząstek}\mbox{}\\
 %
 \begin{equation*}
-    i \hbar \dot{\Psi} = H \psi
+    i \hbar \dot{\Psi} = H \Psi
 \end{equation*}
 %
 Z tego wynika: 
@@ -25,17 +25,21 @@ Wprowadzamy operator permutacji $P_{ij}$ dla $i$-tej i $j$-tej cząstki:
 Będziemy rozważać cząstki identyczne, czyli nierozróżnialne. Wtedy:
 %
 \begin{equation*}
-    H(P_{ij}, \Psi) = P_{ij} (H \Psi) => [H, P_{ij}] = 0
+    H(P_{ij}\Psi) = P_{ij} (H \Psi) \implies [H, P_{ij}] = 0
 \end{equation*}
 %
-Zatem operator $H$ jest symetryczny względem permutacji $P_{ij}$.
+% Zatem operator $H$ jest symetryczny względem permutacji $P_{ij}$. % nie wiem co to niby miałoby znaczyć.
 %
-Operator $P_{ij}$ jest operatorem liniowym i unitarnym, czyli $P_{ij}^2 = I$. Zatem $P_{ij} = \pm 1$, gdzie $\pm 1$ są wartościami własnymi.
+Operator $P_{ij}$ jest operatorem liniowym i $P_{ij}^2 = I$; w szczególności
+jest unitarny. Ponieważ jest też Hermitowski, jego wartości własne to $\pm 1$.
 %
 \paragraph*{Funkcje falowe}\mbox{}\\
 %
-Ze względu na własności operatora permutacji, istnieją dwa typy funkcji falowych dla układów identycznych cząstek.
-Pierwszy typ - funkcje symetryczne $\psi_+$, które pozostają niezmienione pod działaniem operatora permutacji:
+Skoro $H$ oraz $P_{ij}$ są Hermitowskie i komutują, możemy znaleźć wspólną bazę
+funkcji własnych. Naturalnie dzielimy je na dwa typy --- związane z wartością
+własną $1$ oraz z $-1$ dla operatora $P_{ij}$.
+Dla układów identycznych cząstek
+pierwszy typ nazywamy funkcjami symetrycznymi $\psi_+$:
 %
 \begin{equation*}
     \begin{aligned}
@@ -44,26 +48,31 @@ Pierwszy typ - funkcje symetryczne $\psi_+$, które pozostają niezmienione pod 
     \end{aligned}
 \end{equation*}
 %
-Drugi typ - funkcje antysymetryczne $\psi_-$, które zmieniają znak pod działaniem operatora permutacji.
-Oznacza to, że zamiana miejscami dwóch identycznych cząstek prowadzi do zmiany znaku całej funkcji falowej:
+Drugi typ --- funkcje antysymetryczne $\psi_-$, które zmieniają znak
+pod działaniem operatora permutacji.
+Oznacza to, że zamiana miejscami dwóch identycznych cząstek prowadzi
+do zmiany znaku całej funkcji falowej:
 %
 \begin{equation*}
     P_{ij} \Psi_- (q_1, \cdots, q_i, \cdots, q_j, \cdots, q_N, t) = - \Psi_- (q_1, \cdots, q_i, \cdots, q_j, \cdots, q_N, t)
 \end{equation*}
 Ta antysymetryczna właściwość jest fundamentalna dla fermionów i prowadzi bezpośrednio do zasady wykluczenia Pauliego.
-Funkcje antysymetryczne charakteryzują się tym, że prawdopodobieństwo znalezienia dwóch fermionów w tej samej pozycji wynosi zero,
-co oznacza, że fermiony "unikają" siebie nawzajem.
+Funkcje antysymetryczne charakteryzują się tym, że prawdopodobieństwo
+znalezienia dwóch fermionów w tej samej pozycji wynosi zero:
+jeśli $q_i = q_j$, to zastosowanie permutacji z jednej strony zmienia
+znak funkcji falowej, a z drugiej go zachowuje (permutacja identycznych
+elementów to identyczność). Stąd wartość musi być zerowa.
+Oznacza to, że fermiony ,,unikają'' siebie nawzajem.
 %
 \\ \\
 %
 Możemy rozważyć operator uogólniony $\hat{P}: P \Psi = P_{ij}P_{ik} \cdots \Psi$
 %
 \begin{equation*}
-    P \Psi  (q_1, \cdots, q_n) = \Psi(q_{P_1}, \cdots, q_{P_n})
+    P \Psi  (q_1, \cdots, q_n) = \Psi(q_{P_1}, \cdots, q_{P_n}).
 \end{equation*}
 %
-gdzie $P$ to permutacja i-tej cząstki.
-%
+Wtedy
 \begin{equation*}
     P \psi_+ \equiv \psi_+
 \end{equation*}
@@ -78,25 +87,24 @@ gdzie $P$ to permutacja i-tej cząstki.
 %
 \paragraph*{Postulat}\mbox{}\\
 %
-Jeżeli spin $s = \frac{n}{2}$, $n \in \mathbb{N}$ - układ identycznych cząstek znajduje się w antysymetrycznym stanie $\psi_-$ i mamy \textbf{fermiony}.
-Jeżeli spin $s = n$, $n \in \mathbb{N}$ - układ identycznych cząstek znajduje się w symetrycznym stanie $\psi_+$ i mamy \textbf{bozony}.
+Jeżeli spin jest połówkowy $s = \frac{n}{2}$, $n \in 2\mathbb{N} + 1$
+--- układ identycznych cząstek znajduje się w antysymetrycznym stanie $\psi_-$,
+to mówimy, że cząstki są \textbf{fermionami}.
+Jeżeli spin jest całkowity $s = n$, $n \in \mathbb{N}$
+--- układ identycznych cząstek znajduje się w symetrycznym stanie
+$\psi_+$, to mówimy, że cząstkik są \textbf{bozonami}.
 %
 \paragraph*{Przykłady}\mbox{}\\
 \begin{itemize}
-    \item Elektron: $s = \frac{1}{2}$ - fermion
-    \item Proton: $s = \frac{1}{2}$ - fermion
-    \item atom: może być bozonem lub fermionem
+    \item Elektron: $s = \frac{1}{2}$ --- fermion
+    \item Proton: $s = \frac{1}{2}$ --- fermion
+    \item atom: może być bozonem lub fermionem.
 \end{itemize}
 %
 \subsection{Całkowicie symetryczne oraz całkowicie antysymetryczne \texorpdfstring{\\}{} funkcje falowe}
 %
-Możemy oznaczyć funkcje falowe symetryczne i antysymetryczne jako:
-%
-\begin{equation*}
-    \Psi_s \equiv \Psi_+ \text{ oraz } \Psi_a \equiv \Psi_-
-\end{equation*}
-Rozważamy układ N cząstek.
-%
+Będziemy rozważać teraz symetryzacje ($\Psi_s$) i antysymetryzacje ($\Psi_a$)
+funkcji falowej dla N cząstek.
 Dla $N = 2$ mamy:
 %
 \begin{equation*}
@@ -109,7 +117,6 @@ Dla $N = 2$ mamy:
 %
 Dla $N = 3$ mamy:
 %
-
 \begin{align*}
     \Psi_s (q_1, q_2, q_3) &= \frac{1}{\sqrt{6}} \big( 
         \Psi(q_1, q_2, q_3) + \Psi(q_1, q_3, q_2) + \Psi(q_2, q_1, q_3) \\
@@ -117,7 +124,9 @@ Dla $N = 3$ mamy:
     \big)
 \end{align*}
 %
-Jest to suma po wszystkich permutacjach trzech cząstek.
+Ogólnie, jest to suma po wszystkich permutacjach trzech cząstek, znormalizowana
+przez pierwiastek z liczby wszystkich permutacji --- wówczas prawdopodobieństwo
+pozostaje jedynką.
 %
 Zakładamy brak oddziaływań między cząstkami, tzn. zapisujemy Hamiltonian w postaci:
 %
@@ -128,24 +137,12 @@ Zakładamy brak oddziaływań między cząstkami, tzn. zapisujemy Hamiltonian w 
 Wtedy możemy rozpisać Równanie Schrödingera:
 %
 \begin{equation*}
-    h_i u_i = \epsilon_i u_i \quad \forall_{i \in (0, N], i \in \mathbb{N}}
+    h_i u_i = \epsilon_i u_i \quad \forall_{i = 1, 2, \ldots, N}
 \end{equation*}
 %
-Dla $N = 2$ mamy:
-%
-\\
-%
-Dla symetrycznej funkcji falowej:
+Dla $N = 2$ mamy i symetrycznej funkcji falowej mamy
 \begin{equation*}
     \Psi_s(q_1, q_2) = \frac{1}{\sqrt{2}} (u_\alpha(q_1) u_\beta(q_2) + u_\beta(q_1) u_\alpha(q_2))
-\end{equation*}
-%
-Stąd wyznacznik:
-\begin{equation*}
-    \begin{vmatrix}
-        u_\alpha(q_1) & u_\beta(q_1) \\
-        u_\alpha(q_2) & u_\beta(q_2)
-    \end{vmatrix}
 \end{equation*}
 %
 Dla antysymetrycznej funkcji falowej zmienia się znak:
@@ -153,10 +150,18 @@ Dla antysymetrycznej funkcji falowej zmienia się znak:
 \begin{equation*}
     \Psi_a(q_1, q_2) = \frac{1}{\sqrt{2}} (u_\alpha(q_1) u_\beta(q_2) - u_\beta(q_1) u_\alpha(q_2))
 \end{equation*}
+Zauważmy, że ta postać jest unormowanym wyznacznikiem
+\begin{equation*}
+    \begin{vmatrix}
+        u_\alpha(q_1) & u_\beta(q_1) \\
+        u_\alpha(q_2) & u_\beta(q_2)
+    \end{vmatrix}.
+\end{equation*}
 %
 $\Psi_a$ oraz $\Psi_s$ nie są prostymi iloczynami $u_\alpha$ i $u_\beta$.
-Oznacza to, że są to stany splątane kwantowo - cząstki nie mogą być opisane niezależnie od siebie.
-Udowodnimy że to "stan splątania. Dla uogólnionego przypadku $N = N$ (N cząstek) mamy:
+Oznacza to, że są to stany splątane kwantowo ---
+cząstki nie mogą być opisane niezależnie od siebie.
+Dla uogólnionego przypadku $N = N$ (N cząstek) mamy:
 %
 \begin{equation*}
     \Psi_\triangle (q_1, \cdots, q_N) = \frac{1}{\sqrt{N!}}
@@ -206,23 +211,18 @@ Przykład diagramu energetycznego pokazującego różne stany kwantowe dla elekt
     \includegraphics[width=0.5\textwidth]{bozony_fermiony}
     \label{fig:bozony_fermiony}
 \end{figure}
-%
 \begin{equation*}
     N_e(1s^2, 2s^2, 2p^6)
 \end{equation*}
-%
 Liczba w wykładniku to liczba elektronów w danym stanie (w danym orbitalu na danym poziomie). Zmienna $n$ numeruje poziomy energetyczne. Na pierwszym
 poziomie występuje jeden orbital $1s$, na drugim poziomie występują dwa orbitale $2s$ i $2p$ - mieszczą odpowiednio 2, 2, 6 elektronów. Zmienna $l$ to
 orbitalna liczba kwantowa - $0$ odpowiada orbitalowi $s$, $1$ odpowiada orbitalowi $p$, $2$ odpowiada orbitalowi $d$, $3$ odpowiada orbitalowi $f$.
 Zmienna $m$ to magnetyczna liczba kwantowa - opisuje orientację orbitalu w przestrzeni. Orbital $s$ ma tylko jedną możliwą orientację,
 stąd $m = 0$. Orbital $p$ ma trzy możliwe orientacje, stąd $m = -1, 0, 1$.
 \paragraph*{Wniosek}\mbox{}\\
-%
 Bez tej zasady świat byłby inny, albo by nie istniał. Bez tej zasady wszystkie elektrony byłyby w tym samym stanie (skondensowałyby się w jednym stanie),
 czyli w najniższym stanie energetycznym, co oznaczałoby brak różnorodności pierwiastków chemicznych i stabilnych struktur molekularnych.
 %
 Zasada Pauliego jest podstawową własnością cząstek.
-%
-\paragraph*{Pytanie}\mbox{}\\
 %
 \textbf{Pytanie}: Czym są strzałki góra/dół? Strzałka reprezentuje spin elektronu, który może mieć wartość $m_s = \pm \frac{1}{2}$ (magnetyczna liczba spinowa).
