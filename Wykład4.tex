@@ -20,6 +20,7 @@ wynika, że całkowite prawdopodobieństwo znalezienia cząstki w całej przestr
 $$
 \frac{d}{dt} \int_V |\psi(\vec{r}, t)|^2 \, d\vec{r} = 0.
 $$
+%Jest jakaś niekonsekwencja w oznaczeniu zbioru, po którym całkujemy
 
 Powyższe równanie można przekształcić do postaci równania ciągłości. Najpierw zapisujemy pochodną jako
 $$
@@ -250,15 +251,17 @@ Z powyższych powodów analiza stacjonarnego równania Schrödingera odgrywa cen
 
 Funkcje własne operatora Hamiltona $\hat{H}$, oznaczane jako $\psi_E(\vec{r})$, spełniają równanie Schrödingera $\hat{H} \psi_E = E \psi_E,$ gdzie $E$ jest odpowiadającą im wartością własną, interpretowaną jako energia stanu. Zakładamy, że funkcje $\psi_E(\vec{r})$ są unormowane
 $$
-\int \psi_E^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 1,
-$$
-oraz ortogonalne względem siebie dla różnych wartości energii
-$$
-\int \psi_E^*(\vec{r}) \psi_{E'}(\vec{r}) \, d\vec{r} = 0
-\quad \text{dla } E \ne E'.
+\int \psi_E^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 1.
 $$
 
-Rozważmy teraz dowód ortogonalności stanów własnych odpowiadających różnym wartościom energii. Zakładamy, że $\hat{H}$ jest hermitowski, tzn. spełnia warunek
+Funkcje własne są ortogonalne względem siebie, jeśli odpowiadają różnym wartościom własnym energii, tzn.
+$$
+\int \psi_E^*(\vec{r}) \psi_{E'}(\vec{r}) \, d\vec{r} = 0
+\quad \text{dla } E \ne E',
+$$
+co teraz udowodnimy.
+
+Zakładamy, że $\hat{H}$ jest hermitowski, tzn. spełnia warunek
 $$
 \int \phi^*(\vec{r}) \hat{H} \psi(\vec{r}) \, d\vec{r}
 = \int (\hat{H} \phi(\vec{r}))^* \psi(\vec{r}) \, d\vec{r}.
@@ -280,7 +283,7 @@ $$
 (E - E') \int \psi_{E'}^*(\vec{r}) \psi_E(\vec{r}) \, d\vec{r} = 0.
 $$
 
-Dla $E \ne E'$ całka musi być równa zeru, czyli funkcje własne odpowiadające różnym wartościom energii są ortogonalne.
+Dla $E \ne E'$ całka musi być równa zeru, czyli funkcje własne odpowiadające różnym wartościom energii są ortogonalne, co mieliśmy udowodnić.
 
 Z faktu, że operator Hamiltona jest hermitowski, wynika również, że jego funkcje własne tworzą pełną bazę przestrzeni Hilberta. Oznacza to, że każdą funkcję falową $\Psi(\vec{r}, t)$ można przedstawić jako kombinację liniową funkcji własnych Hamiltonianu
 $$
